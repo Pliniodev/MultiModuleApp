@@ -1,20 +1,20 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
 
 android {
-    compileSdk(ConfigData.compileSdkVersion)
+    compileSdk 31
 
     defaultConfig {
-        applicationId "feature.multimoduleapp"
         minSdk(ConfigData.minSdkVersion)
         targetSdk(ConfigData.targetSdkVersion)
         versionCode(ConfigData.versionCode)
         versionName(ConfigData.versionName)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -30,18 +30,17 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures{
-        viewBinding true
-    }
 }
 
 dependencies {
 
-    implementation project(path: ':feature-dashboard')
-    implementation project(path: ':feature-rickyandmorty')
-
     implementation Dependencies.room
+    implementation Dependencies.glide
+    annotationProcessor Dependencies.glideCompiler
     kapt "androidx.room:room-compiler:$Versions.roomCompilerVersion"
-    DiModule.main.forEach { implementation it }
-    NetworkDepModule.withCoroutines.forEach { implementation it }
+    AndroidModule.main.forEach {implementation it }
+    DiModule.main.forEach {implementation it }
+    NetworkDepModule.withCoroutines.forEach {implementation it }
+    TestModule.main.forEach {testImplementation it }
+    AndroidTestModule.main.forEach {androidTestImplementation it }
 }
