@@ -1,7 +1,7 @@
 package feature.presentation
 
 import androidx.annotation.StringRes
-import com.example.home.R
+import feature.feature_dashboard.R
 
 internal data class FeaturePresentation(
     @StringRes val title: Int,

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="episodios">episodios</string>
+    <string name="button_characters">personagens</string>
+    <string name="episodes_bottom_bar_menu">episódios</string>
+    <string name="characters_bottom_bar_menu">personagens</string>
+    <string name="locations_bottom_bar_menu">localizações</string>
+</resources>

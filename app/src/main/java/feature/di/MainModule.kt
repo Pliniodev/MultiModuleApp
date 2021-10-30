@@ -8,7 +8,9 @@ import com.retrofit.provideRetrofitRAM
 import feature.data.local.localdatasource.LocalDataSource
 import feature.data.local.localdatasource.LocalDataSourceImpl
 import feature.domain.usecase.ApiUseCase
+import feature.presentation.home.HomeViewModel
 import okhttp3.OkHttpClient
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -30,4 +32,8 @@ val dataModule = module {
 
 val domainModule = module {
     factory { ApiUseCase(repository = get()) }
+}
+
+val homeModule = module {
+    viewModel { HomeViewModel() }
 }

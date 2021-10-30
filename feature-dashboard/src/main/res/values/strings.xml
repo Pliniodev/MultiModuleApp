@@ -1,0 +1,11 @@
+<!--Naming pattern-->
+<!--screen-or-item_feature_component_property-->
+<resources>
+    <string name="home_rickyAndMorty_button_text">Ricky and Morty</string>
+    <string name="home_rickyAndMorty_presentation_title_ricky_and_morty">Ricky and Morty</string>
+    <string name="home_rickyAndMorty_presentation_title_chat">Fake Chat</string>
+    <string name="home_rickyAndMorty_presentation_title_gas_calculator">Calculadora de gasolina</string>
+    <string name="home_rickyAndMorty_presentation_title_books">Livros</string>
+    <string name="home_rickyAndMorty_presentation_title_news">Notícias</string>
+    <string name="home_dashboard_presentation_title_examples">Exemplos</string>
+</resources>

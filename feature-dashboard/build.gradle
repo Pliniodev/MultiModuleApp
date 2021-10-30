@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk(ConfigData.compileSdkVersion)
 
     defaultConfig {
         minSdk(ConfigData.minSdkVersion)
@@ -29,11 +29,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
+    implementation project(path: ':feature-commons')
 
     implementation Dependencies.glide
+
     annotationProcessor Dependencies.glideCompiler
     AndroidModule.main.forEach {implementation it }
     DiModule.main.forEach {implementation it }

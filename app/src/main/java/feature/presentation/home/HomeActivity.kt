@@ -3,14 +3,14 @@ package feature.presentation.home
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.home.databinding.ActivityHomeBinding
-import feature.presentation.activity.ExamplesHomeActivity
+import feature.feature_dashboard.databinding.ActivityHomeBinding
 import feature.presentation.FeatureFlag
 import feature.presentation.FeatureFlag.EXAMPLES
 import feature.presentation.FeatureFlag.RICKY_AND_MORTY
 import feature.presentation.FeaturePresentation
-import feature.presentation.activity.RickyAndMortyHomeActivity
 import feature.presentation.HomeAdapter
+import feature.presentation.activity.ExamplesHomeActivity
+import feature.presentation.activity.RickyAndMortyHomeActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**

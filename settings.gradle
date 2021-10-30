@@ -10,3 +10,5 @@ rootProject.name = "MultiModuleApp"
 include ':app'
 include ':feature-dashboard'
 include ':feature-rickyandmorty'
+include ':feature-commons'
+include ':feature-examples'
