@@ -42,7 +42,6 @@ dependencies {
     implementation Dependencies.room
     implementation Dependencies.glide
     annotationProcessor Dependencies.glideCompiler
-    kapt "com.android.databinding:compiler:3.1.4"
     kapt "androidx.room:room-compiler:$Versions.roomCompilerVersion"
     AndroidModule.main.forEach {implementation it }
     DiModule.main.forEach {implementation it }

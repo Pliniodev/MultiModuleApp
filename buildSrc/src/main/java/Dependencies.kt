@@ -1,0 +1,120 @@
+object Versions {
+    const val lifecycleExtensionsVersion = "2.2.0"
+    const val lifecycleViewModelVersion = "2.3.1"
+    const val coroutinesVersion = "1.4.3"
+    const val koinVersion = "3.0.2"
+    const val retrofitVersion = "2.9.0"
+    const val gsonVersion = "2.8.6"
+    const val gsonConverterVersion = "2.9.0"
+    const val okHttpVersion = "4.9.1"
+    const val okHttpLoggingVersion = "4.9.1"
+    const val roomRuntimeVersion = "2.3.0"
+    const val roomCompilerVersion = "2.3.0"
+    const val dataBindingCompilerVersion = "3.1.4"
+    const val rxJavaVersion = "3.0.0"
+    const val gradleVersion = "7.0.3"
+    const val kotlinVersion = "1.5.31"
+    const val androidXCoreVersion = "1.6.0"
+    const val appCompatVersion = "1.3.1"
+    const val materialVersion = "1.4.0"
+    const val constraintLayoutVersion = "2.1.1"
+    const val jUnitVersionVersion = "4.13.2"
+    const val androidJUnitVersion = "1.1.3"
+    const val espressoVersion = "3.4.0"
+    const val glideVersion = "4.12.0"
+    const val glideCompilerVersion = "4.12.0"
+}
+
+object ConfigData {
+    const val compileSdkVersion = 31
+    const val minSdkVersion = 23
+    const val targetSdkVersion = 31
+    const val versionCode = 1
+    const val versionName = "1.0"
+}
+
+object BuildPlugins {
+    val gradle_build = "com.android.tools.build:gradle:${Versions.gradleVersion}"
+    val kotlin_build = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
+}
+
+object Dependencies {
+    val lifecycleExtensions =  "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleExtensionsVersion}"
+    val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleViewModelVersion}"
+    val koin = "io.insert-koin:koin-android:${Versions.koinVersion}"
+    val koinExt = "io.insert-koin:koin-android-ext:${Versions.koinVersion}"
+    val koinWorkManager = "io.insert-koin:koin-androidx-workmanager:${Versions.koinVersion}"
+    val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofitVersion}"
+    val gson = "com.google.code.gson:gson:${Versions.gsonVersion}"
+    val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.gsonConverterVersion}"
+    val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttpVersion}"
+    val okHttpLogging = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpLoggingVersion}"
+    val room = "androidx.room:room-runtime:${Versions.roomRuntimeVersion}"
+    val roomCompiler = "androidx.room:room-compiler:${Versions.roomCompilerVersion}"
+    val rxAndroid = "io.reactivex.rxjava3:rxandroid:${Versions.rxJavaVersion}"
+    val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}"
+    val androidXCore = "androidx.core:core-ktx:${Versions.androidXCoreVersion}"
+    val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
+    val material = "com.google.android.material:material:${Versions.materialVersion}"
+    val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}"
+    val glide = "com.github.bumptech.glide:glide:${Versions.glideVersion}"
+    val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glideCompilerVersion}"
+    val dataBindingCompiler = "com.android.databinding:compiler:${Versions.dataBindingCompilerVersion}"
+    val jUnit = "junit:junit:${Versions.jUnitVersionVersion}"
+
+    val androidJUnit = "androidx.test.ext:junit:${Versions.androidJUnitVersion}"
+    val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoVersion}"
+}
+
+object AndroidModule {
+    val main = listOf(
+        Dependencies.lifecycleExtensions,
+        Dependencies.lifecycleViewModel,
+        Dependencies.androidXCore,
+        Dependencies.appCompat,
+        Dependencies.material,
+        Dependencies.constraintLayout,
+        Dependencies.dataBindingCompiler
+    )
+}
+
+object DiModule {
+    val main = listOf(
+        Dependencies.koin,
+        Dependencies.koinExt,
+        Dependencies.koinWorkManager
+    )
+}
+
+object NetworkDepModule {
+    val withCoroutines = listOf(
+        Dependencies.coroutines,
+        Dependencies.gson,
+        Dependencies.gsonConverter,
+        Dependencies.retrofit,
+        Dependencies.okHttp,
+        Dependencies.okHttpLogging
+    )
+
+    val withRx = listOf(
+        Dependencies.rxAndroid,
+        Dependencies.gson,
+        Dependencies.gsonConverter,
+        Dependencies.retrofit,
+        Dependencies.okHttp,
+        Dependencies.okHttpLogging
+    )
+}
+
+object TestModule {
+    val main = listOf(
+        Dependencies.jUnit
+    )
+}
+
+object AndroidTestModule {
+    val main = listOf(
+        Dependencies.androidJUnit,
+        Dependencies.espresso
+    )
+}
