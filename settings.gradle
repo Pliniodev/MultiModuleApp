@@ -8,7 +8,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MultiModuleApp"
 include ':app'
-include ':feature-dashboard'
-include ':feature-rickyandmorty'
+include ':feature-bills-to-pay'
 include ':feature-commons'
 include ':feature-examples'
+include ':feature-ricky'
+include ':feature-dogs'

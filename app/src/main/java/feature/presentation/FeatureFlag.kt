@@ -5,9 +5,10 @@ package feature.presentation
  */
 internal enum class FeatureFlag {
     RICKY_AND_MORTY,
-    CHAT,
     BOOKS,
     NEWS,
+    DOGS,
+    BILLS_TO_PAY,
     GAS_CALCULATOR,
     EXAMPLES
 }

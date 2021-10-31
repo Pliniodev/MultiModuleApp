@@ -42,19 +42,23 @@ android {
 }
 
 dependencies {
-
-    implementation project(path: ':feature-dashboard')
-    implementation project(path: ':feature-rickyandmorty')
     implementation project(path: ':feature-commons')
+    implementation project(path: ':feature-bills-to-pay')
     implementation project(path: ':feature-examples')
 
     implementation Dependencies.glide
+    implementation project(path: ':feature-ricky')
+
+
     annotationProcessor Dependencies.glideCompiler
     AndroidModule.main.forEach {implementation it }
     TestModule.main.forEach {testImplementation it }
     AndroidTestModule.main.forEach {androidTestImplementation it }
+
     implementation Dependencies.room
-    kapt "androidx.room:room-compiler:$Versions.roomCompilerVersion"
+    kapt Dependencies.dataBindingCompiler
+    kapt Dependencies.roomCompiler
+
     DiModule.main.forEach { implementation it }
     NetworkDepModule.withCoroutines.forEach { implementation it }
 }

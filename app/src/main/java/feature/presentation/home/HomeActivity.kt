@@ -1,16 +1,16 @@
 package feature.presentation.home
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import feature.feature_dashboard.databinding.ActivityHomeBinding
+import feature.multimoduleapp.databinding.ActivityHomeBinding
 import feature.presentation.FeatureFlag
 import feature.presentation.FeatureFlag.EXAMPLES
 import feature.presentation.FeatureFlag.RICKY_AND_MORTY
 import feature.presentation.FeaturePresentation
 import feature.presentation.HomeAdapter
 import feature.presentation.activity.ExamplesHomeActivity
-import feature.presentation.activity.RickyAndMortyHomeActivity
+import feature.presentation.activity.RickyHomeActivity
+import feature.utils.navigateTo
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
@@ -36,7 +36,6 @@ class HomeActivity : AppCompatActivity() {
      * Centraliza todas as funções que devem acontecer quando a tela é iniciada.
      */
     private fun onEnterActivity() {
-//        setupViews() //quando necessária
         populateViews()
         observers()
     }
@@ -65,7 +64,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setAdapter(featurePresentations: List<FeaturePresentation>) {
         val adapter = HomeAdapter(
             presentations = featurePresentations,
-            action = { featureFlag -> navigateTo(startNavigation(featureFlag)) }
+            action = { featureFlag -> startNavigation(featureFlag) }
         )
         binding.homeRecycler.adapter = adapter
     }
@@ -75,26 +74,18 @@ class HomeActivity : AppCompatActivity() {
      *Centraliza tudo que as views devem fazer ao serem acionadas(Caso sejam),
      * exemplo: Listeners
      */
-//    private fun setupViews() {}
 
     /**
      * Navega de acordo com o item do recycler clicado
      */
     private fun startNavigation(featureFlag: FeatureFlag) = when(featureFlag) {
-        RICKY_AND_MORTY -> RickyAndMortyHomeActivity::class.java
-        EXAMPLES -> ExamplesHomeActivity::class.java
-        FeatureFlag.CHAT -> TODO()
+        RICKY_AND_MORTY -> navigateTo<RickyHomeActivity>()
+        EXAMPLES -> navigateTo<ExamplesHomeActivity>()
         FeatureFlag.BOOKS -> TODO()
         FeatureFlag.NEWS -> TODO()
         FeatureFlag.GAS_CALCULATOR -> TODO()
-
-    }
-
-    /**
-     * Centraliza navegação
-     */
-    private fun navigateTo(activity: Class<out AppCompatActivity>) {
-        startActivity(Intent(this, activity))
+        FeatureFlag.DOGS -> TODO()
+        FeatureFlag.BILLS_TO_PAY -> TODO()
     }
 
     /**
@@ -108,5 +99,4 @@ class HomeActivity : AppCompatActivity() {
      * Quando adicionar uma activity certifique-se que ela estará no arquivo manifest do módulo App
      * Ainda vou descobrir uma forma de não haver arquivo manifest em cada módulo e sim sempre no módulo App
      */
-
 }

@@ -25,8 +25,7 @@ class App : Application() {
                 dataModule,
                 domainModule,
                 databaseModule,
-                homeModule,
-                exampleModule,
+                homeModule
             )
         }
     }

@@ -1,7 +1,8 @@
 package feature.presentation
 
 import androidx.annotation.StringRes
-import feature.feature_dashboard.R
+import feature.multimoduleapp.R
+
 
 internal data class FeaturePresentation(
     @StringRes val title: Int,
@@ -17,11 +18,12 @@ internal data class FeaturePresentation(
         private fun defineTitle(tag: FeatureFlag) =
             when (tag) {
                 FeatureFlag.RICKY_AND_MORTY -> R.string.home_rickyAndMorty_presentation_title_ricky_and_morty
-                FeatureFlag.CHAT -> R.string.home_rickyAndMorty_presentation_title_chat
                 FeatureFlag.BOOKS -> R.string.home_rickyAndMorty_presentation_title_books
                 FeatureFlag.NEWS -> R.string.home_rickyAndMorty_presentation_title_news
                 FeatureFlag.GAS_CALCULATOR -> R.string.home_rickyAndMorty_presentation_title_gas_calculator
                 FeatureFlag.EXAMPLES -> R.string.home_dashboard_presentation_title_examples
+                FeatureFlag.DOGS -> R.string.home_dashboard_presentation_title_dogs
+                FeatureFlag.BILLS_TO_PAY -> R.string.home_dashboard_presentation_title_bills_to_pay
             }
     }
 }

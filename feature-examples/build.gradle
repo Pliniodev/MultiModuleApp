@@ -14,6 +14,11 @@ android {
         versionName(ConfigData.versionName)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
         consumerProguardFiles "consumer-rules.pro"
     }
 
@@ -36,13 +41,15 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':feature-commons')
 
+    implementation Dependencies.glide
+    annotationProcessor Dependencies.glideCompiler
 
     implementation Dependencies.room
-    implementation Dependencies.glide
-    implementation project(path: ':feature-commons')
-    annotationProcessor Dependencies.glideCompiler
-    kapt "androidx.room:room-compiler:$Versions.roomCompilerVersion"
+    kapt Dependencies.dataBindingCompiler
+    kapt Dependencies.roomCompiler
+
     AndroidModule.main.forEach {implementation it }
     DiModule.main.forEach {implementation it }
     NetworkDepModule.withCoroutines.forEach {implementation it }

@@ -22,8 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="feature.presentation.activity.RickyAndMortyHomeActivity" />
+        <activity android:name="feature.presentation.activity.RickyHomeActivity" />
         <activity android:name="feature.presentation.activity.ExamplesHomeActivity" />
+        <activity android:name="feature.presentation.activity.ExampleDetailsActivity" />
 
     </application>
 

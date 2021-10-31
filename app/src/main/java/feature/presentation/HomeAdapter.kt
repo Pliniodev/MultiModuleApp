@@ -3,7 +3,7 @@ package feature.presentation
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import feature.feature_dashboard.databinding.ItemHomeFeatureBinding
+import feature.multimoduleapp.databinding.ItemHomeFeatureBinding
 
 internal class HomeAdapter(
     val action: (FeatureFlag) -> Unit,
