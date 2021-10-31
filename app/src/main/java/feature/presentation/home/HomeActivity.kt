@@ -1,7 +1,7 @@
 package feature.presentation.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import feature.multimoduleapp.databinding.ActivityHomeBinding
 import feature.presentation.FeatureFlag
 import feature.presentation.FeatureFlag.EXAMPLES
@@ -49,9 +49,12 @@ class HomeActivity : AppCompatActivity() {
      * Observa o viewModel
      */
     private fun observers() {
-        viewModel.featureList.observe(this, { featurePresentations ->
-            setAdapter(featurePresentations)
-        })
+        viewModel.featureList.observe(
+            this,
+            { featurePresentations ->
+                setAdapter(featurePresentations)
+            }
+        )
     }
 
     /**
@@ -76,7 +79,7 @@ class HomeActivity : AppCompatActivity() {
     /**
      * Navega de acordo com o item do recycler clicado
      */
-    private fun startNavigation(featureFlag: FeatureFlag) = when(featureFlag) {
+    private fun startNavigation(featureFlag: FeatureFlag) = when (featureFlag) {
         RICKY_AND_MORTY -> navigateTo<RickyHomeActivity>()
         EXAMPLES -> navigateTo<ExamplesHomeActivity>()
         FeatureFlag.BOOKS -> TODO()

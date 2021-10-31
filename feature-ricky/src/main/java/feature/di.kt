@@ -1,5 +1,9 @@
 package feature
 
+import feature.data.local.localdatasource.LocalDataSource
+import feature.data.local.localdatasource.LocalDataSourceImpl
+import feature.data.local.provideDB
+import feature.data.local.provideStepDAO
 import feature.data.remote.api.ApiService
 import feature.data.remote.remotedatasource.RemoteDataSource
 import feature.data.remote.remotedatasource.RemoteDatasourceImpl
@@ -24,4 +28,13 @@ val networkRickyAndMortyModule = module {
 val dataRickyAndMortyModule = module {
     single<RemoteDataSource> { RemoteDatasourceImpl(api = get(named("apiRicky"))) }
     single<ApiRepository> { ApiRepositoryImpl(remoteDataSource = get()) }
+}
+
+val databaseModule = module {
+    single { provideDB(application = get()) }
+    single { provideStepDAO(database = get()) }
+}
+
+val dataModule = module {
+    factory<LocalDataSource> { LocalDataSourceImpl(db = get()) }
 }

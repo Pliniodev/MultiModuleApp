@@ -2,7 +2,9 @@ package feature.presentation.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import feature.dataModule
 import feature.dataRickyAndMortyModule
+import feature.databaseModule
 import feature.feature_ricky.databinding.ActivityHomeRickyBinding
 import feature.networkRickyAndMortyModule
 import feature.rickyAndMortyModule
@@ -37,7 +39,9 @@ class RickyHomeActivity : AppCompatActivity() {
             listOf(
                 rickyAndMortyModule,
                 networkRickyAndMortyModule,
-                dataRickyAndMortyModule
+                dataRickyAndMortyModule,
+                dataModule,
+                databaseModule
             )
         )
     }
@@ -48,7 +52,9 @@ class RickyHomeActivity : AppCompatActivity() {
             listOf(
                 rickyAndMortyModule,
                 networkRickyAndMortyModule,
-                dataRickyAndMortyModule
+                dataRickyAndMortyModule,
+                dataModule,
+                databaseModule
             )
         )
     }

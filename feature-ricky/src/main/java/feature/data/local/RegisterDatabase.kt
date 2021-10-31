@@ -1,4 +1,4 @@
-package feature.database
+package feature.data.local
 
 import android.app.Application
 import androidx.room.Database

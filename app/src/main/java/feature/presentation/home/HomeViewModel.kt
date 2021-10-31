@@ -6,13 +6,13 @@ import androidx.lifecycle.ViewModel
 import feature.presentation.FeatureFlag
 import feature.presentation.FeaturePresentation
 
-internal class HomeViewModel: ViewModel() {
+internal class HomeViewModel : ViewModel() {
     private val _featureList = MutableLiveData<List<FeaturePresentation>>()
     val featureList: LiveData<List<FeaturePresentation>> = _featureList
 
     fun getFeaturesList() {
         val features = mutableListOf<FeaturePresentation>()
-        for (feature in FeatureFlag.values()){
+        for (feature in FeatureFlag.values()) {
             features.add(FeaturePresentation(feature))
         }
         _featureList.value = features

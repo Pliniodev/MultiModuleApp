@@ -3,7 +3,6 @@ package feature.presentation
 import androidx.annotation.StringRes
 import feature.multimoduleapp.R
 
-
 internal data class FeaturePresentation(
     @StringRes val title: Int,
     val featureFlag: FeatureFlag
