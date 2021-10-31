@@ -1,11 +1,8 @@
-package feature.presentation.activity
+package feature.presentation.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.feature_examples.databinding.ActivityExampleDetailsBinding
-import feature.di.exampleModule
-import org.koin.core.context.loadKoinModules
-import org.koin.core.context.unloadKoinModules
 
 class ExampleDetailsActivity : AppCompatActivity() {
 

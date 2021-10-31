@@ -1,4 +1,4 @@
-package feature.presentation.activity
+package feature.presentation.home
 
 import android.content.Intent
 import android.os.Bundle

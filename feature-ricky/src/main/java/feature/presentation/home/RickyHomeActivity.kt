@@ -1,12 +1,10 @@
-package feature.presentation.activity
+package feature.presentation.home
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import feature.dataRickyAndMortyModule
 import feature.feature_ricky.databinding.ActivityHomeRickyBinding
 import feature.networkRickyAndMortyModule
-import feature.presentation.viewmodel.RickyAndMortyHomeViewModel
 import feature.rickyAndMortyModule
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules

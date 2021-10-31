@@ -8,8 +8,6 @@ import feature.presentation.FeatureFlag.EXAMPLES
 import feature.presentation.FeatureFlag.RICKY_AND_MORTY
 import feature.presentation.FeaturePresentation
 import feature.presentation.HomeAdapter
-import feature.presentation.activity.ExamplesHomeActivity
-import feature.presentation.activity.RickyHomeActivity
 import feature.utils.navigateTo
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -92,7 +90,7 @@ class HomeActivity : AppCompatActivity() {
      * Ao fazer o xml das telas certifique-se de centralizar as strings no arquivo strings.xml
      * As strings ficarão no arquivo strings de cada módulo para ajudar a organizar.
      * E dimensões (exceto tamanho de fonte) em dimens.xml na feature commons
-     * Cores também ficarão centralizadas em colors.xml da feature commons
+     * Cores também ficarão centralizadas em colors da feature commons
      */
 
     /**

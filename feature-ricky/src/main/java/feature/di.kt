@@ -5,7 +5,7 @@ import feature.data.remote.remotedatasource.RemoteDataSource
 import feature.data.remote.remotedatasource.RemoteDatasourceImpl
 import feature.data.remote.repository.ApiRepositoryImpl
 import feature.domain.repository.ApiRepository
-import feature.presentation.viewmodel.RickyAndMortyHomeViewModel
+import feature.presentation.home.RickyAndMortyHomeViewModel
 import feature.utils.createApi
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
