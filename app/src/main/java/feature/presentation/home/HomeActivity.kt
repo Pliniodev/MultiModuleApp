@@ -95,6 +95,6 @@ class HomeActivity : AppCompatActivity() {
 
     /**
      * Quando adicionar uma activity certifique-se que ela estará no arquivo manifest do módulo App
-     * Ainda vou descobrir uma forma de não haver arquivo manifest em cada módulo e sim sempre no módulo App
+     * Ainda vou descobrir uma forma de não haver arquivo manifest em cada módulo e sim sempre no módulo Ap
      */
 }
