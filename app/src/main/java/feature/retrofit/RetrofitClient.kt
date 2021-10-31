@@ -29,7 +29,7 @@ fun provideOkHttpClient(): OkHttpClient {
 /**
  * On Work
  */
-//object BuildRetrofit {
+// object BuildRetrofit {
 //    operator fun invoke(apiBaseUrl: String, okHttpClient: OkHttpClient): Retrofit =
 //        with(Retrofit.Builder()) {
 //            baseUrl(apiBaseUrl)
@@ -37,7 +37,7 @@ fun provideOkHttpClient(): OkHttpClient {
 //            addConverterFactory(GsonConverterFactory.create())
 //            build()
 //        }
-//}
+// }
 
 private class AuthInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {

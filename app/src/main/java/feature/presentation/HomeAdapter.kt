@@ -8,12 +8,12 @@ import feature.multimoduleapp.databinding.ItemHomeFeatureBinding
 internal class HomeAdapter(
     val action: (FeatureFlag) -> Unit,
     val presentations: List<FeaturePresentation>
-): RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
+) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val binding = ItemHomeFeatureBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        return HomeViewHolder(binding, onClick = { featureFlag ->  action(featureFlag) })
+        return HomeViewHolder(binding, onClick = { featureFlag -> action(featureFlag) })
     }
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
@@ -25,11 +25,11 @@ internal class HomeAdapter(
     inner class HomeViewHolder(
         private val binding: ItemHomeFeatureBinding,
         private val onClick: (FeatureFlag) -> Unit
-    ): RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(featurePresentation: FeaturePresentation){
+        fun bind(featurePresentation: FeaturePresentation) {
             binding.apply {
-                with(root.context){
+                with(root.context) {
                     title.text = getString(featurePresentation.title)
                     root.setOnClickListener { onClick(featurePresentation.featureFlag) }
                 }
