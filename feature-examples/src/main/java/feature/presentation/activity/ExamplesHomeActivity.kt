@@ -4,10 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.feature_examples.databinding.ActivityExamplesHomeBinding
+import feature.di.exampleModule
 import feature.presentation.adapter.ExampleAdapter
 import feature.presentation.viewmodel.ExampleViewModel
 import feature.utils.ExampleClickListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.context.loadKoinModules
+import org.koin.core.context.unloadKoinModules
 
 class ExamplesHomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityExamplesHomeBinding
@@ -24,6 +27,7 @@ class ExamplesHomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityExamplesHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        loadModules()
         /**
          * In this onCreate method, it's a good practice just instantiate your methods to configure
          * your screen.
@@ -88,6 +92,15 @@ class ExamplesHomeActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+    }
+
+    private fun loadModules() {
+        loadKoinModules(listOf(exampleModule))
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        unloadKoinModules(exampleModule)
     }
 
     /**
