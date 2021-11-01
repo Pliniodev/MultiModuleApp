@@ -1,7 +1,7 @@
 package feature.presentation.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.feature_examples.databinding.ActivityExampleDetailsBinding
 
 class ExampleDetailsActivity : AppCompatActivity() {
@@ -25,7 +25,7 @@ class ExampleDetailsActivity : AppCompatActivity() {
     /**
      * responsible to get the data from the previous activity
      */
-    companion object{
+    companion object {
         const val INTENT_DETAILS = "INTENT_DETAILS"
     }
 }

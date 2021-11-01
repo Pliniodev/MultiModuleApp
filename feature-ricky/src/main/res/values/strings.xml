@@ -5,4 +5,5 @@
     <string name="episodes_bottom_bar_menu">episódios</string>
     <string name="characters_bottom_bar_menu">personagens</string>
     <string name="locations_bottom_bar_menu">localizações</string>
+    <string name="title">Titulo</string>
 </resources>

@@ -2,7 +2,7 @@ package feature.presentation.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import feature.multimoduleapp.databinding.ActivityHomeBinding
+import feature.multimoduleapp.databinding.ActivityMainHomeBinding
 import feature.presentation.FeatureFlag
 import feature.presentation.FeatureFlag.EXAMPLES
 import feature.presentation.FeatureFlag.RICKY_AND_MORTY
@@ -17,13 +17,13 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
  * O ideal é que o código seja auto explicativo.
  */
 
-class HomeActivity : AppCompatActivity() {
+class MainHomeActivity : AppCompatActivity() {
     private val viewModel: HomeViewModel by viewModel()
-    private lateinit var binding: ActivityHomeBinding
+    private lateinit var binding: ActivityMainHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
+        binding = ActivityMainHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         onEnterActivity()

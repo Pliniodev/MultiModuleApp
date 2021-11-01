@@ -1,7 +1,6 @@
 package feature.data.remote.mapper
 
 import feature.data.remote.model.EpisodeResponse
-
 import feature.domain.model.EpisodeInfoDomain
 
 object EpisodeMapper {

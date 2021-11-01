@@ -44,4 +44,3 @@ internal data class ImageResponse(
     val url: String? = null,
     val width: String? = null
 )
-

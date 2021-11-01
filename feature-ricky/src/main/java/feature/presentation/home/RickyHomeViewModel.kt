@@ -9,7 +9,7 @@ import feature.presentation.model.InfoPresentation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class RickyAndMortyHomeViewModel(
+class RickyHomeViewModel(
     private val api: ApiRepository
 ) : ViewModel() {
 

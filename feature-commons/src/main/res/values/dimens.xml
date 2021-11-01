@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Naming Pattern-->
-<!--component_property_value-->
+<!--component_property_value_dp-->
 <resources>
     <dimen name="default_card_view_size">100dp</dimen>
     <dimen name="button_horizontal_margin_24dp">24dp</dimen>
@@ -11,9 +11,6 @@
 
     <!-- dimens for spacing and margins  -->
 
-    <dimen name="margin_small">4dp</dimen>
-
-
-    <!-- dimens for text size-->
-    <dimen name="common_text_size">20sp</dimen>
+    <dimen name="margin_small_4dp">4dp</dimen>
+    <dimen name="padding_medium_10dp">10dp</dimen>
 </resources>

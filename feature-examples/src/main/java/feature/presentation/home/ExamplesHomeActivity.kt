@@ -55,9 +55,12 @@ class ExamplesHomeActivity : AppCompatActivity() {
          * to data changes. In the first parameter we pass "this" activity as the lifeCycleOwner,
          * this means that the observer of this liveData is gonna live while this activity is alive.
          */
-        viewModel.exampleList.observe(this, { exampleList ->
-            mAdapter.setList(exampleList)
-        })
+        viewModel.exampleList.observe(
+            this,
+            { exampleList ->
+                mAdapter.setList(exampleList)
+            }
+        )
     }
 
     /**

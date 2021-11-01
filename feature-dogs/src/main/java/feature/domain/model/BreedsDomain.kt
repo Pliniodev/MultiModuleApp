@@ -42,4 +42,3 @@ internal data class ImageDomain(
     val url: String? = null,
     val width: String? = null
 )
-
