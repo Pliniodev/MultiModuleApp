@@ -95,9 +95,4 @@ class HomeActivity : AppCompatActivity() {
      * E dimensões (exceto tamanho de fonte) em dimens.xml na feature commons
      * Cores também ficarão centralizadas em colors da feature commons
      */
-
-    /**
-     * Quando adicionar uma activity certifique-se que ela estará no arquivo manifest do módulo App
-     * Ainda vou descobrir uma forma de não haver arquivo manifest em cada módulo e sim sempre no módulo Ap
-     */
 }
