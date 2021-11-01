@@ -6,7 +6,6 @@ plugins {
 
 android {
     compileSdkVersion(ConfigData.compileSdkVersion)
-//    compileSdk(ConfigData.compileSdkVersion)
 
     defaultConfig {
         applicationId "feature.multimoduleapp"
