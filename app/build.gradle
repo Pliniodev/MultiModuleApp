@@ -5,7 +5,8 @@ plugins {
 }
 
 android {
-    compileSdk(ConfigData.compileSdkVersion)
+    compileSdkVersion(ConfigData.compileSdkVersion)
+//    compileSdk(ConfigData.compileSdkVersion)
 
     defaultConfig {
         applicationId "feature.multimoduleapp"
