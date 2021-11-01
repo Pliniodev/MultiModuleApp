@@ -4,5 +4,4 @@ import feature.domain.repository.ApiRepository
 
 class ApiUseCase(
     private val repository: ApiRepository
-) {
-}
+)

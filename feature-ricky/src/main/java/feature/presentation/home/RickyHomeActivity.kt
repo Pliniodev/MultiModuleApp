@@ -7,13 +7,15 @@ import feature.dataRickyAndMortyModule
 import feature.databaseModule
 import feature.feature_ricky.databinding.ActivityHomeRickyBinding
 import feature.networkRickyAndMortyModule
+import feature.presentation.episodes.EpisodesActivity
 import feature.rickyAndMortyModule
+import feature.utils.navigateTo
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 
 class RickyHomeActivity : AppCompatActivity() {
-    private val viewModel: RickyAndMortyHomeViewModel by viewModel()
+    private val viewModel: RickyHomeViewModel by viewModel()
     private lateinit var binding: ActivityHomeRickyBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +33,9 @@ class RickyHomeActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
-
+        binding.buttonEpisodes.setOnClickListener {
+            navigateTo<EpisodesActivity>()
+        }
     }
 
     private fun loadModules() {

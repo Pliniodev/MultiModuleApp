@@ -6,5 +6,5 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 val networkDogsModule = module {
-    single (named("apiDogs")){ createApi<DogsApiService>(get(named("retrofitDogs"))) }
+    single(named("apiDogs")) { createApi<DogsApiService>(get(named("retrofitDogs"))) }
 }

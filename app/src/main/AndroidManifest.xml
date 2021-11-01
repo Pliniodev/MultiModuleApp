@@ -12,19 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MultiModuleApp">
+        <activity android:name="feature.presentation.home.RickyHomeActivity" />
+        <activity android:name="feature.presentation.home.ExamplesHomeActivity" />
+        <activity android:name="feature.presentation.home.ExampleDetailsActivity" />
         <activity
-            android:name="feature.presentation.home.HomeActivity"
+            android:name="feature.presentation.home.MainHomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name="feature.presentation.home.RickyHomeActivity" />
-        <activity android:name="feature.presentation.home.ExamplesHomeActivity" />
-        <activity android:name="feature.presentation.home.ExampleDetailsActivity" />
+
 
     </application>
 

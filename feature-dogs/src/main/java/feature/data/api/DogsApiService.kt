@@ -12,5 +12,5 @@ internal interface DogsApiService {
             value = "page",
             encoded = true
         ) page: Int
-    ) : BreedsResponse
+    ): BreedsResponse
 }

@@ -60,4 +60,3 @@ data class Origin(
     @SerializedName("url")
     val url: String?
 )
-

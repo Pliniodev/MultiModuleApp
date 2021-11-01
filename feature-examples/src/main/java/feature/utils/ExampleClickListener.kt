@@ -6,5 +6,5 @@ package feature.utils
  */
 interface ExampleClickListener {
 
-    fun onClick(position : Int)
+    fun onClick(position: Int)
 }
