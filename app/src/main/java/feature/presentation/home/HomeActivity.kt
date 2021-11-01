@@ -77,7 +77,7 @@ class HomeActivity : AppCompatActivity() {
      */
 
     /**
-     * Navega de acordo com o item do recycler clicado
+     * Navega de acordo com o clique no item do recycler
      */
     private fun startNavigation(featureFlag: FeatureFlag) = when (featureFlag) {
         RICKY_AND_MORTY -> navigateTo<RickyHomeActivity>()
