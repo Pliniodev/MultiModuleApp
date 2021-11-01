@@ -5,14 +5,14 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdkVersion(ConfigData.compileSdkVersion)
 
     defaultConfig {
         applicationId "feature.multimoduleapp"
-        minSdk 23
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        minSdk(ConfigData.minSdkVersion)
+        targetSdk(ConfigData.targetSdkVersion)
+        versionCode(ConfigData.versionCode)
+        versionName(ConfigData.versionName)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
