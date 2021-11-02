@@ -19,7 +19,6 @@ class App : Application() {
             androidContext(this@App)
 
             modules(
-                networkCoreModule,
                 domainModule,
                 homeModule
             )
