@@ -1,5 +1,6 @@
 package feature
 
+import feature.constants.BaseUrl
 import feature.data.local.localdatasource.LocalDataSource
 import feature.data.local.localdatasource.LocalDataSourceImpl
 import feature.data.local.provideDB
@@ -10,6 +11,8 @@ import feature.data.remote.remotedatasource.RemoteDatasourceImpl
 import feature.data.remote.repository.ApiRepositoryImpl
 import feature.domain.repository.ApiRepository
 import feature.presentation.home.RickyHomeViewModel
+import feature.retrofit.BuildRetrofit
+import feature.retrofit.provideOkHttpClient
 import feature.utils.createApi
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
@@ -22,6 +25,12 @@ val rickyAndMortyModule = module {
 }
 
 val networkRickyAndMortyModule = module {
+    single(named("retrofitRicky")) {
+        BuildRetrofit(
+            apiBaseUrl = BaseUrl.rickyAndMorty,
+            okHttpClient = provideOkHttpClient()
+        )
+    }
     single(named("apiRicky")) { createApi<ApiService>(get(named("retrofitRicky"))) }
 }
 
