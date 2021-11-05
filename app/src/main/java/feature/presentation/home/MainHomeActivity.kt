@@ -81,7 +81,7 @@ class MainHomeActivity : AppCompatActivity() {
      */
     private fun startNavigation(featureFlag: FeatureFlag) = when (featureFlag) {
         RICKY_AND_MORTY -> navigateTo<RickyHomeActivity>()
-        EXAMPLES -> navigateTo<ExamplesHomeActivity>()
+        EXAMPLES -> navigateTo<ExampleSplashActivity>()
         FeatureFlag.BOOKS -> TODO()
         FeatureFlag.NEWS -> TODO()
         FeatureFlag.GAS_CALCULATOR -> TODO()

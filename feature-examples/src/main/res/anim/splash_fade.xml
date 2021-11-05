@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        this alpha means the transparency of the view.
+        In this case, we are making the content of our splash screen
+        comes from alpha 0.1 ( almost invisible )
+        to alpha 1.0 ( totally visible ),
+        and this progression of transparency will happens inside of 1 second
+    -->
+
+    <alpha
+        android:duration="1000"
+        android:fromAlpha="0.1"
+        android:toAlpha="1.0" />
+
+</set>
