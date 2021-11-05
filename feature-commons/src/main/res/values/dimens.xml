@@ -14,7 +14,6 @@
     <dimen name="margin_small_4dp">4dp</dimen>
     <dimen name="padding_medium_10dp">10dp</dimen>
 
-
     <!-- dimens for images sizes   -->
     <dimen name="medium_size_150dp">150dp</dimen>
 </resources>
