@@ -4,7 +4,7 @@ Marque após a criação do pull request
 - [ ] Rodou o lint?
 - [ ] Marque você em Assignes aqui à direita ->>>>>>>>
 - [ ] Marque o projeto aqui à direita ->>>>>>>>
-- [ ] Marque a task aqui à direita ->>>>>>>>
+- [ ] Caso a task já exista marque-a à direita em linked-issues ->>>>>>>>
 
 Edite abaixo
 
