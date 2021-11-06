@@ -57,10 +57,9 @@ dependencies {
     implementation project(path: ':feature-commons')
     implementation project(path: ':feature-bills-to-pay')
     implementation project(path: ':feature-examples')
-
-    implementation Dependencies.glide
     implementation project(path: ':feature-ricky')
 
+    implementation Dependencies.glide
     annotationProcessor Dependencies.glideCompiler
     AndroidModule.main.forEach {implementation it }
     TestModule.main.forEach {testImplementation it }
