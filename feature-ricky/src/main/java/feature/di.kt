@@ -1,6 +1,7 @@
 package feature
 
 import feature.constants.BaseUrl
+import feature.constants.InjectionTag
 import feature.data.local.localdatasource.LocalDataSource
 import feature.data.local.localdatasource.LocalDataSourceImpl
 import feature.data.local.provideDB
@@ -25,17 +26,19 @@ val rickyAndMortyModule = module {
 }
 
 val networkRickyAndMortyModule = module {
-    single(named("retrofitRicky")) {
+    single(named(InjectionTag.RETROFIT_RICKY)) {
         BuildRetrofit(
             apiBaseUrl = BaseUrl.rickyAndMorty,
             okHttpClient = provideOkHttpClient()
         )
     }
-    single(named("apiRicky")) { createApi<ApiService>(get(named("retrofitRicky"))) }
+    single(named(InjectionTag.API_RICKY)) {
+        createApi<ApiService>(get(named(InjectionTag.RETROFIT_RICKY)))
+    }
 }
 
 val dataRickyAndMortyModule = module {
-    single<RemoteDataSourceRicky> { RemoteDatasourceImpl(api = get(named("apiRicky"))) }
+    single<RemoteDataSourceRicky> { RemoteDatasourceImpl(api = get(named(InjectionTag.API_RICKY))) }
     single<ApiRepository> { ApiRepositoryImpl(remoteDataSource = get()) }
 }
 
