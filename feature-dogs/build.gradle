@@ -15,5 +15,4 @@ dependencies {
     NetworkDepModule.withCoroutines.forEach {implementation it }
     TestModule.main.forEach {testImplementation it }
     AndroidTestModule.main.forEach {androidTestImplementation it }
-
 }

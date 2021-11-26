@@ -8,8 +8,6 @@ android {
     compileSdk(ConfigData.compileSdkVersion)
 
     defaultConfig {
-
-
         minSdk(ConfigData.minSdkVersion)
         targetSdk(ConfigData.targetSdkVersion)
         versionCode(ConfigData.versionCode)
@@ -40,5 +38,4 @@ android {
     buildFeatures {
         viewBinding true
     }
-
 }
