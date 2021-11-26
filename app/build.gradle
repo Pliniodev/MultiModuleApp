@@ -54,7 +54,7 @@ android {
 }
 
 dependencies {
-//    implementation project(path: ':feature-commons')
+    implementation project(path: ':feature-commons')
     implementation project(path: ':feature-bills-to-pay')
     implementation project(path: ':feature-ricky')
     implementation project(path: ':feature-examples')
