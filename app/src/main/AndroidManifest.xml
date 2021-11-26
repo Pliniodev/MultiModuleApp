@@ -13,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MultiModuleApp">
         <activity android:name="feature.presentation.home.RickyHomeActivity" />
-        <activity android:name="feature.presentation.home.ExamplesHomeActivity" />
-        <activity android:name="feature.presentation.home.ExampleDetailsActivity" />
-        <activity android:name="feature.presentation.home.DogsHomeActivity"/>
+        <activity android:name="featureexamples.presentation.home.ExamplesHomeActivity" />
+        <activity android:name="featureexamples.presentation.home.ExampleDetailsActivity" />
+        <activity android:name="featuredogs.presentation.home.DogsHomeActivity"/>
 
 
         <activity
