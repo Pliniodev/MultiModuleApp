@@ -1,6 +1,5 @@
 package feature.presentation.home
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import feature.multimoduleapp.databinding.ActivityMainHomeBinding
@@ -10,6 +9,8 @@ import feature.presentation.FeatureFlag.RICKY_AND_MORTY
 import feature.presentation.FeaturePresentation
 import feature.presentation.HomeAdapter
 import feature.utils.navigateTo
+import featuredogs.presentation.home.DogsHomeActivity
+import featureexamples.presentation.home.ExampleSplashActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainHomeActivity : AppCompatActivity() {
@@ -56,30 +57,7 @@ class MainHomeActivity : AppCompatActivity() {
         FeatureFlag.BOOKS -> TODO()
         FeatureFlag.NEWS -> TODO()
         FeatureFlag.GAS_CALCULATOR -> TODO()
-//        FeatureFlag.DOGS -> navigateTo<DogsHomeActivity>()
+        FeatureFlag.DOGS -> navigateTo<DogsHomeActivity>()
         FeatureFlag.BILLS_TO_PAY -> TODO()
-        else -> TODO()
-    }
-
-    private fun moduleNavigator(activityPackage: String) {
-        val intent = packageManager.getLaunchIntentForPackage(activityPackage)
-        startActivity(intent)
-    }
-
-    private fun moduleNavigatorByClass(activityClass: String) {
-        var intent: Intent? = null
-        try {
-            intent = Intent(
-                this,
-                Class.forName(activityClass)
-            )
-            startActivity(intent)
-        } catch (e: ClassNotFoundException) {
-            e.printStackTrace()
-        }
-    }
-
-    companion object {
-        const val DogsHomeActivity = "feature.presentation.home.DogsHomeActivity"
     }
 }
