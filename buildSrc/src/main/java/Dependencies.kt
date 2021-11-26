@@ -74,7 +74,6 @@ object AndroidModule {
         Dependencies.appCompat,
         Dependencies.material,
         Dependencies.constraintLayout,
-        Dependencies.dataBindingCompiler
     )
 }
 

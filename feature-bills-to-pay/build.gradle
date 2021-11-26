@@ -47,7 +47,7 @@ dependencies {
     implementation Dependencies.room
     kapt Dependencies.dataBindingCompiler
     kapt Dependencies.roomCompiler
-    annotationProcessor Dependencies.glideCompiler
+    kapt Dependencies.glideCompiler
     AndroidModule.main.forEach {implementation it }
     DiModule.main.forEach {implementation it }
     NetworkDepModule.withCoroutines.forEach {implementation it }

@@ -1,6 +1,6 @@
-package feature.domain.mapper
+package feature.data.mapper
 
-import feature.data.response.Breed
+import feature.data.response.BreedResponse
 import feature.data.response.HeightResponse
 import feature.data.response.ImageResponse
 import feature.data.response.WeightResponse
@@ -9,9 +9,9 @@ import feature.domain.model.HeightDomain
 import feature.domain.model.ImageDomain
 import feature.domain.model.WeightDomain
 
-internal object BreedMapper {
+internal object BreedsMapper {
 
-    fun toBreedsDomain(source: List<Breed>): List<BreedDomain> {
+    fun toBreedsDomain(source: List<BreedResponse>): List<BreedDomain> {
         return source.map { Breed ->
             with(Breed) {
                 BreedDomain(

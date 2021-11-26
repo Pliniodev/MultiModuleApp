@@ -38,7 +38,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -54,13 +54,14 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':feature-commons')
+//    implementation project(path: ':feature-commons')
     implementation project(path: ':feature-bills-to-pay')
-    implementation project(path: ':feature-examples')
     implementation project(path: ':feature-ricky')
+    implementation project(path: ':feature-examples')
+    implementation project(path: ':feature-dogs')
 
     implementation Dependencies.glide
-    annotationProcessor Dependencies.glideCompiler
+    kapt Dependencies.glideCompiler
     AndroidModule.main.forEach {implementation it }
     TestModule.main.forEach {testImplementation it }
     AndroidTestModule.main.forEach {androidTestImplementation it }

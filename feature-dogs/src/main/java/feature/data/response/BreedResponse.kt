@@ -2,11 +2,7 @@ package feature.data.response
 
 import com.google.gson.annotations.SerializedName
 
-internal data class BreedsResponse(
-    val breeds: List<Breed>
-)
-
-internal data class Breed(
+internal data class BreedResponse(
     @SerializedName("alt_names") val altNames: String? = null,
     @SerializedName("id") val id: Int? = null,
     @SerializedName("life_span") val lifeSpan: String? = null,

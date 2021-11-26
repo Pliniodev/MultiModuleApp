@@ -14,6 +14,7 @@ android {
         versionName(ConfigData.versionName)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
         consumerProguardFiles "consumer-rules.pro"
     }
 
@@ -38,11 +39,25 @@ android {
 dependencies {
     implementation project(path: ':feature-commons')
 
+
     implementation Dependencies.glide
-    annotationProcessor Dependencies.glideCompiler
+    kapt Dependencies.glideCompiler
+    kapt Dependencies.dataBindingCompiler
+
     AndroidModule.main.forEach {implementation it }
     DiModule.main.forEach {implementation it }
     NetworkDepModule.withCoroutines.forEach {implementation it }
     TestModule.main.forEach {testImplementation it }
     AndroidTestModule.main.forEach {androidTestImplementation it }
+
+//    implementation Dependencies.glide
+//    implementation Dependencies.room
+//    kapt Dependencies.dataBindingCompiler
+//    kapt Dependencies.roomCompiler
+//    kapt Dependencies.glideCompiler
+//    AndroidModule.main.forEach {implementation it }
+//    DiModule.main.forEach {implementation it }
+//    NetworkDepModule.withCoroutines.forEach {implementation it }
+//    TestModule.main.forEach {testImplementation it }
+//    AndroidTestModule.main.forEach {androidTestImplementation it }
 }

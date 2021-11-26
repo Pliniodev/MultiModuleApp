@@ -1,6 +1,7 @@
-package feature.domain.model
+package feature.presentation.model
 
-internal data class BreedDomain(
+
+internal data class BreedPresentation(
     val altNames: String? = null,
     val id: Int? = null,
     val lifeSpan: String? = null,
@@ -17,22 +18,22 @@ internal data class BreedDomain(
     val rare: Int? = null,
     val rex: Int? = null,
     val temperament: String? = null,
-    val weight: WeightDomain? = null,
-    val height: HeightDomain? = null,
-    val image: ImageDomain? = null
+    val weight: WeightPresentation? = null,
+    val height: HeightPresentation? = null,
+    val image: ImagePresentation? = null
 )
 
-internal data class WeightDomain(
+internal data class WeightPresentation(
     val imperial: String? = null,
     val metric: String? = null
 )
 
-internal data class HeightDomain(
+internal data class HeightPresentation(
     val imperial: String? = null,
     val metric: String? = null
 )
 
-internal data class ImageDomain(
+internal data class ImagePresentation(
     val height: Int? = null,
     val id: String? = null,
     val url: String? = null,

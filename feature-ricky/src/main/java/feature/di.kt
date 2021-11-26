@@ -6,7 +6,7 @@ import feature.data.local.localdatasource.LocalDataSourceImpl
 import feature.data.local.provideDB
 import feature.data.local.provideStepDAO
 import feature.data.remote.api.ApiService
-import feature.data.remote.remotedatasource.RemoteDataSource
+import feature.data.remote.remotedatasource.RemoteDataSourceRicky
 import feature.data.remote.remotedatasource.RemoteDatasourceImpl
 import feature.data.remote.repository.ApiRepositoryImpl
 import feature.domain.repository.ApiRepository
@@ -35,7 +35,7 @@ val networkRickyAndMortyModule = module {
 }
 
 val dataRickyAndMortyModule = module {
-    single<RemoteDataSource> { RemoteDatasourceImpl(api = get(named("apiRicky"))) }
+    single<RemoteDataSourceRicky> { RemoteDatasourceImpl(api = get(named("apiRicky"))) }
     single<ApiRepository> { ApiRepositoryImpl(remoteDataSource = get()) }
 }
 
