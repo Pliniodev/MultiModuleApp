@@ -6,7 +6,7 @@ import feature.domain.model.EpisodeInfoDomain
 
 class RemoteDatasourceImpl(
     private val api: ApiService
-) : RemoteDataSource {
+) : RemoteDataSourceRicky {
 
     override suspend fun getEpisode(): EpisodeInfoDomain {
         return EpisodeMapper.toEpisodeInfoDomain(api.getEpisodes())

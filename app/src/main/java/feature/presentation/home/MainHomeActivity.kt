@@ -9,6 +9,8 @@ import feature.presentation.FeatureFlag.RICKY_AND_MORTY
 import feature.presentation.FeaturePresentation
 import feature.presentation.HomeAdapter
 import feature.utils.navigateTo
+import featuredogs.presentation.home.DogsHomeActivity
+import featureexamples.presentation.home.ExampleSplashActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainHomeActivity : AppCompatActivity() {
@@ -55,7 +57,7 @@ class MainHomeActivity : AppCompatActivity() {
         FeatureFlag.BOOKS -> TODO()
         FeatureFlag.NEWS -> TODO()
         FeatureFlag.GAS_CALCULATOR -> TODO()
-        FeatureFlag.DOGS -> TODO()
+        FeatureFlag.DOGS -> navigateTo<DogsHomeActivity>()
         FeatureFlag.BILLS_TO_PAY -> TODO()
     }
 }

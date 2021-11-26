@@ -1,39 +1,7 @@
-plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
-}
-
-android {
-    compileSdk(ConfigData.compileSdkVersion)
-
-    defaultConfig {
-        minSdk(ConfigData.minSdkVersion)
-        targetSdk(ConfigData.targetSdkVersion)
-        versionCode(ConfigData.versionCode)
-        versionName(ConfigData.versionName)
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-    buildFeatures{
-        viewBinding true
-    }
-}
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: "../android-module.gradle"
 
 dependencies {
 
@@ -41,11 +9,13 @@ dependencies {
 
     implementation Dependencies.room
     implementation Dependencies.glide
-    annotationProcessor Dependencies.glideCompiler
+    kapt Dependencies.glideCompiler
+    implementation Dependencies.dataBindingCompiler
     kapt "androidx.room:room-compiler:$Versions.roomCompilerVersion"
     AndroidModule.main.forEach {implementation it }
     DiModule.main.forEach {implementation it }
     NetworkDepModule.withCoroutines.forEach {implementation it }
+
     TestModule.main.forEach {testImplementation it }
     AndroidTestModule.main.forEach {androidTestImplementation it }
 }
