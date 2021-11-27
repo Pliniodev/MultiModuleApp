@@ -3,9 +3,9 @@ package feature.app.presentation.home
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import feature.app.FeatureFlag
+import feature.app.FeatureFlag.COIN_CONVERSION
 import feature.app.FeatureFlag.EXAMPLES
 import feature.app.FeatureFlag.RICKY_AND_MORTY
-import feature.app.FeatureFlag.COIN_CONVERSION
 import feature.app.FeaturePresentation
 import feature.app.HomeAdapter
 import feature.app.presentation.UnderConstructionFeatActivity
