@@ -3,10 +3,10 @@ package feature.ricky.presentation.home
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import feature.feature_dogs.databinding.ActivityDogsHomeBinding
 import feature.dogs.dataDogsModule
 import feature.dogs.dogsModule
 import feature.dogs.networkDogsModule
+import feature.feature_dogs.databinding.ActivityDogsHomeBinding
 import feature.ricky.presentation.adapter.DogsAdapter
 import feature.ricky.presentation.details.DogDetailActivity
 import feature.ricky.presentation.model.BreedPresentation
