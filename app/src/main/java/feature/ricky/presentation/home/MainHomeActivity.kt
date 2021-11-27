@@ -2,14 +2,14 @@ package feature.ricky.presentation.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import feature.commons.utils.navigateTo
+import feature.examples.presentation.home.ExampleSplashActivity
 import feature.multimoduleapp.databinding.ActivityMainHomeBinding
 import feature.ricky.presentation.FeatureFlag
 import feature.ricky.presentation.FeatureFlag.EXAMPLES
 import feature.ricky.presentation.FeatureFlag.RICKY_AND_MORTY
 import feature.ricky.presentation.FeaturePresentation
 import feature.ricky.presentation.HomeAdapter
-import feature.commons.utils.navigateTo
-import feature.examples.presentation.home.ExampleSplashActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainHomeActivity : AppCompatActivity() {

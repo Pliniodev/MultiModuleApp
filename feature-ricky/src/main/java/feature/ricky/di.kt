@@ -2,6 +2,9 @@ package feature.ricky
 
 import feature.commons.constants.BaseUrl
 import feature.commons.constants.InjectionTag
+import feature.commons.retrofit.BuildRetrofit
+import feature.commons.retrofit.provideOkHttpClient
+import feature.commons.utils.createApi
 import feature.ricky.data.local.localdatasource.LocalDataSource
 import feature.ricky.data.local.localdatasource.LocalDataSourceImpl
 import feature.ricky.data.local.provideDB
@@ -12,9 +15,6 @@ import feature.ricky.data.remote.remotedatasource.RemoteDatasourceImpl
 import feature.ricky.data.remote.repository.ApiRepositoryImpl
 import feature.ricky.domain.repository.ApiRepository
 import feature.ricky.presentation.home.RickyHomeViewModel
-import feature.commons.retrofit.BuildRetrofit
-import feature.commons.retrofit.provideOkHttpClient
-import feature.commons.utils.createApi
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
