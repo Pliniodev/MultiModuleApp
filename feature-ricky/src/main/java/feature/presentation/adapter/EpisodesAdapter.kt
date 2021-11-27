@@ -1,9 +1,11 @@
-package feature.presentation
+package feature.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import feature.feature_ricky.databinding.ItemEpisodesBinding
+import feature.presentation.ClickListener
+import feature.presentation.EpisodeModel
 
 class EpisodesAdapter() : RecyclerView.Adapter<EpisodesAdapter.ViewHolder>() {
 

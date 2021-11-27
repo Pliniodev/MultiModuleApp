@@ -5,6 +5,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/padding_medium_10dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48sp"
+        android:id="@+id/textView"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"/>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonEpisodes"
         android:text="@string/episodes_bottom_bar_menu"

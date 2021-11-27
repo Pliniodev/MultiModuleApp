@@ -26,6 +26,7 @@ class RickyHomeActivity : AppCompatActivity() {
 
         onEnterActivity()
         viewModel.getEpisodes()
+        viewModel.getCharacters()
     }
 
     private fun onEnterActivity() {

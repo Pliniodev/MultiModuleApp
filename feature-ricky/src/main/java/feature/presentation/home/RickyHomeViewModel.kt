@@ -19,6 +19,9 @@ class RickyHomeViewModel(
     private val _episodeInfo = MutableLiveData<Pair<String?, Int?>>()
     val episodeInfo: LiveData<Pair<String?, Int?>> = _episodeInfo
 
+    private val _charactersInfo = MutableLiveData<Pair<String?, Int?>>()
+    val charactersInfo: LiveData<Pair<String?, Int?>> = _charactersInfo
+
     private val _errorMsg = MutableLiveData<String>()
     val errorMsg: LiveData<String> = _errorMsg
 
@@ -32,6 +35,18 @@ class RickyHomeViewModel(
                 api.getEpisodeInfo()
             }.onSuccess {
                 _episodeInfo.postValue(
+                    Pair(it.next, it.count)
+                )
+            }.onFailure { exception -> _errorMsg.postValue(exception.message) }
+        }
+    }
+
+    fun getCharacters() {
+        viewModelScope.launch(Dispatchers.IO) {
+            runCatching {
+                api.getCharacterInfo()
+            }.onSuccess {
+                _charactersInfo.postValue(
                     Pair(it.next, it.count)
                 )
             }.onFailure { exception -> _errorMsg.postValue(exception.message) }

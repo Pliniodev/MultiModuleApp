@@ -3,7 +3,9 @@
     package="feature.feature_ricky">
 
     <application>
-        <activity android:name="feature.presentation.episodes.EpisodesActivity" />
+        <activity
+            android:name="feature.presentation.episodes.EpisodesActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

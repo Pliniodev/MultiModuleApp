@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import feature.feature_ricky.databinding.ActivityEpisodesBinding
 import feature.presentation.EpisodeModel
-import feature.presentation.EpisodesAdapter
+import feature.presentation.adapter.EpisodesAdapter
 
 class EpisodesActivity : AppCompatActivity() {
 

@@ -4,35 +4,35 @@ import com.google.gson.annotations.SerializedName
 
 data class EpisodeResponse(
     @SerializedName("info")
-    val info: Info?,
+    val info: Info? = null,
     @SerializedName("results")
-    val results: List<Result>?
+    val results: List<Result>? = null,
 ) {
     data class Info(
         @SerializedName("count")
-        val count: Int?,
+        val count: Int? = null,
         @SerializedName("next")
-        val next: String?,
+        val next: String? = null,
         @SerializedName("pages")
-        val pages: Int?,
+        val pages: Int? = null,
         @SerializedName("prev")
-        val prev: String?
+        val prev: String? = null
     )
 
     data class Result(
         @SerializedName("air_date")
-        val airDate: String?,
+        val airDate: String? = null,
         @SerializedName("characters")
         val characters: List<String>?,
         @SerializedName("created")
-        val created: String?,
+        val created: String? = null,
         @SerializedName("episode")
-        val episode: String?,
+        val episode: String? = null,
         @SerializedName("id")
-        val id: Int?,
+        val id: Int? = null,
         @SerializedName("name")
-        val name: String?,
+        val name: String? = null,
         @SerializedName("url")
-        val url: String?
+        val url: String? = null
     )
 }
