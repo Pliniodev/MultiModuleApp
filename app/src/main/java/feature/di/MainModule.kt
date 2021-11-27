@@ -1,7 +1,7 @@
 package feature.di
 
-import feature.domain.usecase.ApiUseCase
-import feature.presentation.home.HomeViewModel
+import feature.ricky.domain.usecase.ApiUseCase
+import feature.ricky.presentation.home.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
