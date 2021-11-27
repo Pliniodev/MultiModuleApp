@@ -64,14 +64,12 @@ dependencies {
 
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler
+
     AndroidModule.main.forEach {implementation it }
     TestModule.main.forEach {testImplementation it }
     AndroidTestModule.main.forEach {androidTestImplementation it }
-
-    implementation Dependencies.room
-    kapt Dependencies.dataBindingCompiler
-    kapt Dependencies.roomCompiler
-
     DiModule.main.forEach { implementation it }
-    NetworkDepModule.withCoroutines.forEach { implementation it }
+    NetworkModule.withCoroutines.forEach { implementation it }
+
+
 }

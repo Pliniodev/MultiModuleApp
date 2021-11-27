@@ -7,13 +7,13 @@ dependencies {
     implementation project(path: ':feature-commons')
 
     implementation Dependencies.glide
-    implementation Dependencies.room
-    kapt Dependencies.dataBindingCompiler
-    kapt Dependencies.roomCompiler
+
+    //Why use kapt https://kotlinlang.org/docs/kapt.html#keeping-java-compiler-s-annotation-processors
     kapt Dependencies.glideCompiler
+
     AndroidModule.main.forEach {implementation it }
     DiModule.main.forEach {implementation it }
-    NetworkDepModule.withCoroutines.forEach {implementation it }
+    NetworkModule.withCoroutines.forEach {implementation it }
     TestModule.main.forEach {testImplementation it }
     AndroidTestModule.main.forEach {androidTestImplementation it }
 }

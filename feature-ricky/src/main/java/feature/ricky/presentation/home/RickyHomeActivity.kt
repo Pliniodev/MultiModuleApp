@@ -4,9 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import feature.commons.utils.navigateTo
 import feature.feature_ricky.databinding.ActivityHomeRickyBinding
-import feature.ricky.dataModule
 import feature.ricky.dataRickyAndMortyModule
-import feature.ricky.databaseModule
 import feature.ricky.networkRickyAndMortyModule
 import feature.ricky.presentation.episodes.EpisodesActivity
 import feature.ricky.rickyAndMortyModule
@@ -44,8 +42,6 @@ class RickyHomeActivity : AppCompatActivity() {
                 rickyAndMortyModule,
                 networkRickyAndMortyModule,
                 dataRickyAndMortyModule,
-                dataModule,
-                databaseModule
             )
         )
     }
@@ -57,8 +53,6 @@ class RickyHomeActivity : AppCompatActivity() {
                 rickyAndMortyModule,
                 networkRickyAndMortyModule,
                 dataRickyAndMortyModule,
-                dataModule,
-                databaseModule
             )
         )
     }
