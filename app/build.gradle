@@ -60,7 +60,7 @@ dependencies {
     implementation project(path: ':feature-examples')
     implementation project(path: ':feature-dogs')
     implementation project(path: ':feature-jsonplaceholder')
-    implementation project(path: ':feature-conversordemoedas')
+    implementation project(path: ':feature-coin-conversions')
 
     implementation Dependencies.glide
     kapt Dependencies.glideCompiler
