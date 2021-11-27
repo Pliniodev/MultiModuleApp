@@ -23,6 +23,7 @@ internal data class FeaturePresentation(
                 FeatureFlag.EXAMPLES -> R.string.home_dashboard_presentation_title_examples
                 FeatureFlag.DOGS -> R.string.home_dashboard_presentation_title_dogs
                 FeatureFlag.BILLS_TO_PAY -> R.string.home_dashboard_presentation_title_bills_to_pay
+                FeatureFlag.COIN_CONVERSION -> R.string.home_dashboard_presentation_title_coin_conversion
             }
     }
 }

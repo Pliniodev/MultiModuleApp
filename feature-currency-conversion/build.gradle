@@ -1,0 +1,21 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: "../android-module.gradle"
+
+dependencies {
+
+    implementation project(path: ':feature-commons')
+
+    implementation Dependencies.room
+    implementation Dependencies.glide
+    kapt Dependencies.glideCompiler
+    implementation Dependencies.dataBindingCompiler
+    kapt "androidx.room:room-compiler:$Versions.roomCompilerVersion"
+    AndroidModule.main.forEach {implementation it }
+    DiModule.main.forEach {implementation it }
+    NetworkDepModule.withCoroutines.forEach {implementation it }
+
+    TestModule.main.forEach {testImplementation it }
+    AndroidTestModule.main.forEach {androidTestImplementation it }
+}

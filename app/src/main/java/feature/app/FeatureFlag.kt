@@ -10,5 +10,6 @@ internal enum class FeatureFlag {
     DOGS,
     BILLS_TO_PAY,
     GAS_CALCULATOR,
-    EXAMPLES
+    EXAMPLES,
+    COIN_CONVERSION
 }
