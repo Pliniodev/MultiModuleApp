@@ -11,9 +11,9 @@ import feature.app.HomeAdapter
 import feature.app.presentation.UnderConstructionFeatActivity
 import feature.commons.utils.navigateTo
 import feature.conversordemoedas.CoinConversionActivity
+import feature.dogs.presentation.home.DogsHomeActivity
 import feature.examples.presentation.home.ExampleSplashActivity
 import feature.multimoduleapp.databinding.ActivityMainHomeBinding
-import feature.ricky.presentation.home.DogsHomeActivity
 import feature.ricky.presentation.home.RickyHomeActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

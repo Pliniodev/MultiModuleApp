@@ -16,7 +16,7 @@
         <activity android:name="feature.ricky.presentation.home.RickyHomeActivity" />
         <activity android:name="feature.examples.presentation.home.ExamplesHomeActivity" />
         <activity android:name="feature.examples.presentation.home.ExampleDetailsActivity" />
-        <activity android:name="feature.ricky.presentation.home.DogsHomeActivity" />
+        <activity android:name="feature.dogs.presentation.home.DogsHomeActivity" />
         <activity
             android:name="feature.app.presentation.home.MainHomeActivity"
             android:exported="true">
