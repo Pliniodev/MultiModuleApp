@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name="featuredogs.presentation.details.DogDetailActivity"
+            android:name="feature.ricky.presentation.details.DogDetailActivity"
             android:exported="false" />
     </application>
 
