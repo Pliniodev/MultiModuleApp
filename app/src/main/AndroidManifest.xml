@@ -12,14 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MultiModuleApp">
-        <activity android:name="feature.presentation.home.RickyHomeActivity" />
-        <activity android:name="featureexamples.presentation.home.ExamplesHomeActivity" />
-        <activity android:name="featureexamples.presentation.home.ExampleDetailsActivity" />
-        <activity android:name="featuredogs.presentation.home.DogsHomeActivity"/>
+        <activity android:name="feature.dogs.presentation.home.RickyHomeActivity" />
+        <activity android:name="feature.examples.presentation.home.ExamplesHomeActivity" />
+        <activity android:name="feature.examples.presentation.home.ExampleDetailsActivity" />
+        <activity android:name="feature.dogs.presentation.home.DogsHomeActivity"/>
 
 
         <activity
-            android:name="feature.presentation.home.MainHomeActivity"
+            android:name="feature.dogs.presentation.home.MainHomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

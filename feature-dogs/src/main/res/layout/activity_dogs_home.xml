@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="featuredogs.presentation.home.DogsHomeActivity">
+    tools:context="feature.dogs.presentation.home.DogsHomeActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dogsRecycler"
