@@ -3,7 +3,7 @@
     package="feature.feature_ricky">
 
     <application>
-        <activity android:name="feature.dogs.presentation.episodes.EpisodesActivity" />
+        <activity android:name="feature.ricky.presentation.episodes.EpisodesActivity" />
     </application>
 
 </manifest>
