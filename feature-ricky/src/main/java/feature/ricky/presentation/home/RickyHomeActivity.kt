@@ -2,13 +2,13 @@ package feature.ricky.presentation.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import feature.dataModule
-import feature.dataRickyAndMortyModule
-import feature.databaseModule
+import feature.ricky.dataModule
+import feature.ricky.dataRickyAndMortyModule
+import feature.ricky.databaseModule
 import feature.feature_ricky.databinding.ActivityHomeRickyBinding
-import feature.networkRickyAndMortyModule
+import feature.ricky.networkRickyAndMortyModule
 import feature.ricky.presentation.episodes.EpisodesActivity
-import feature.rickyAndMortyModule
+import feature.ricky.rickyAndMortyModule
 import feature.commons.utils.navigateTo
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules

@@ -1,4 +1,4 @@
-package feature
+package feature.ricky
 
 import feature.commons.constants.BaseUrl
 import feature.commons.constants.InjectionTag
