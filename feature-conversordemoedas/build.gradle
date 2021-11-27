@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: "../android-module.gradle"
+
+dependencies {
+
+    implementation project(path: ':feature-commons')
+
+    implementation Dependencies.room
+    implementation Dependencies.glide
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    kapt Dependencies.glideCompiler
+    implementation Dependencies.dataBindingCompiler
+    kapt "androidx.room:room-compiler:$Versions.roomCompilerVersion"
+    AndroidModule.main.forEach {implementation it }
+    DiModule.main.forEach {implementation it }
+    NetworkDepModule.withCoroutines.forEach {implementation it }
+
+    TestModule.main.forEach {testImplementation it }
+    AndroidTestModule.main.forEach {androidTestImplementation it }
+}
