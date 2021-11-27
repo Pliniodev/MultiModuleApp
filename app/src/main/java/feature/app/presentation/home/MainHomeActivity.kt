@@ -2,14 +2,15 @@ package feature.app.presentation.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import feature.commons.utils.navigateTo
-import feature.examples.presentation.home.ExampleSplashActivity
-import feature.multimoduleapp.databinding.ActivityMainHomeBinding
 import feature.app.FeatureFlag
 import feature.app.FeatureFlag.EXAMPLES
 import feature.app.FeatureFlag.RICKY_AND_MORTY
 import feature.app.FeaturePresentation
 import feature.app.HomeAdapter
+import feature.app.presentation.UnderConstructionFeatActivity
+import feature.commons.utils.navigateTo
+import feature.examples.presentation.home.ExampleSplashActivity
+import feature.multimoduleapp.databinding.ActivityMainHomeBinding
 import feature.ricky.presentation.home.DogsHomeActivity
 import feature.ricky.presentation.home.RickyHomeActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -55,10 +56,10 @@ class MainHomeActivity : AppCompatActivity() {
     private fun startNavigation(featureFlag: FeatureFlag) = when (featureFlag) {
         RICKY_AND_MORTY -> navigateTo<RickyHomeActivity>()
         EXAMPLES -> navigateTo<ExampleSplashActivity>()
-        FeatureFlag.BOOKS -> TODO()
-        FeatureFlag.NEWS -> TODO()
-        FeatureFlag.GAS_CALCULATOR -> TODO()
+        FeatureFlag.BOOKS -> navigateTo<UnderConstructionFeatActivity>()
+        FeatureFlag.NEWS -> navigateTo<UnderConstructionFeatActivity>()
+        FeatureFlag.GAS_CALCULATOR -> navigateTo<UnderConstructionFeatActivity>()
         FeatureFlag.DOGS -> navigateTo<DogsHomeActivity>()
-        FeatureFlag.BILLS_TO_PAY -> TODO()
+        FeatureFlag.BILLS_TO_PAY -> navigateTo<UnderConstructionFeatActivity>()
     }
 }

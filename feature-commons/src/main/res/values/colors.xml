@@ -7,4 +7,6 @@
     <color name="ricky_and_morty_recycler_stroke">#C497F1</color>
     <color name="dogs_recycler_background">#C7D1ED</color>
     <color name="dogs_recycler_stroke">#51639A</color>
+    <color name="medium_black">#0E0F10</color>
+    <color name="buttom_primary_bg">#040491</color>
 </resources>
