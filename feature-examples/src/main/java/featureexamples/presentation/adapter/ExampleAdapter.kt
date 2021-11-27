@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.feature_examples.databinding.ItemExampleRecyclerBinding
+import featureexamples.presentation.adapter.listener.ExampleClickListener
 import featureexamples.presentation.model.ExampleModel
-import featureexamples.utils.ExampleClickListener
 /**
  * This class has the responsibility to recycler our views from a list. Every time that we do
  * a scroll in the screen, the recyclerView "recycle" the views.
