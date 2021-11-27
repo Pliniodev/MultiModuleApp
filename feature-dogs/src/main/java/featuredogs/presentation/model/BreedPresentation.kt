@@ -1,5 +1,7 @@
 package featuredogs.presentation.model
 
+import java.io.Serializable
+
 internal data class BreedPresentation(
     val altNames: String? = null,
     val id: Int? = null,
@@ -20,21 +22,21 @@ internal data class BreedPresentation(
     val weight: WeightPresentation? = null,
     val height: HeightPresentation? = null,
     val image: ImagePresentation? = null
-)
+) : Serializable
 
 internal data class WeightPresentation(
     val imperial: String? = null,
     val metric: String? = null
-)
+) : Serializable
 
 internal data class HeightPresentation(
     val imperial: String? = null,
     val metric: String? = null
-)
+) : Serializable
 
 internal data class ImagePresentation(
     val height: Int? = null,
     val id: String? = null,
     val url: String? = null,
     val width: String? = null
-)
+) : Serializable

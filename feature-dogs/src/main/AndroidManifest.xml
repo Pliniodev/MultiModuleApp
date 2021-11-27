@@ -3,6 +3,9 @@
     package="feature.feature_dogs">
 
     <application>
+        <activity
+            android:name="featuredogs.presentation.details.DogDetailActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
