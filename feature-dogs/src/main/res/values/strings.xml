@@ -1,1 +1,3 @@
-<resources></resources>
+<resources>
+    <string name="dog_details_hight_title">Altura: %1$s</string>
+</resources>

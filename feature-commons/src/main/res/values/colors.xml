@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="ricky_and_morty_recycler_background">#EEE4F3</color>
     <color name="black">#000000</color>
     <color name="light_grey">#CCCCCC</color>
+    <color name="ricky_and_morty_recycler_stroke">#C497F1</color>
+    <color name="dogs_recycler_background">#C7D1ED</color>
+    <color name="dogs_recycler_stroke">#51639A</color>
 </resources>

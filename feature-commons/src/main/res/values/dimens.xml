@@ -6,6 +6,7 @@
     <dimen name="button_horizontal_margin_24dp">24dp</dimen>
     <dimen name="recyclerview_padding_16dp">16dp</dimen>
     <dimen name="cardview_elevation_2dp">2dp</dimen>
+    <dimen name="cardview_cornerradius_8dp">8dp</dimen>
     <dimen name="cardview_strokewidth_2dp">2dp</dimen>
     <dimen name="cardview_radius_2dp">6dp</dimen>
 
@@ -16,4 +17,9 @@
 
     <!-- dimens for images sizes   -->
     <dimen name="medium_size_150dp">150dp</dimen>
+    <dimen name="imageview_on_recycler_width_68dp">68dp</dimen>
+    <dimen name="imageview_on_recycler_heigth_68dp">68dp</dimen>
+    <dimen name="textview_on_recycler_margin_start_8dp">8dp</dimen>
+
+    <dimen name="layout_padding_8dp">8dp</dimen>
 </resources>
