@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.feature_examples.databinding.ActivityExamplesHomeBinding
 import featureexamples.exampleModule
 import featureexamples.presentation.adapter.ExampleAdapter
+import featureexamples.presentation.adapter.listener.ExampleClickListener
 import featureexamples.presentation.viewmodel.ExampleViewModel
-import featureexamples.utils.ExampleClickListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
