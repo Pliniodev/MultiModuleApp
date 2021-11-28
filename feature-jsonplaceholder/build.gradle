@@ -5,8 +5,11 @@ apply from: "../android-module.gradle"
 
 dependencies {
     implementation project(path: ':feature-commons')
-
+    implementation project(path: ':feature-network')
     implementation Dependencies.glide
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
 
     //Why use kapt https://kotlinlang.org/docs/kapt.html#keeping-java-compiler-s-annotation-processors
     kapt Dependencies.glideCompiler
