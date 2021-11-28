@@ -1,5 +1,6 @@
 package feature.dogs.data.remoteDataSource
 
+import feature.commons.test_utils.CoroutineTestRule
 import feature.dogs.data.api.DogsApiService
 import feature.dogs.data.response.BreedResponse
 import feature.dogs.data.response.HeightResponse
@@ -9,7 +10,6 @@ import feature.dogs.domain.model.BreedDomain
 import feature.dogs.domain.model.HeightDomain
 import feature.dogs.domain.model.ImageDomain
 import feature.dogs.domain.model.WeightDomain
-import feature.dogs.test_utils.CoroutineTestRule
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
