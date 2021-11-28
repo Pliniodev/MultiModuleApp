@@ -3,8 +3,14 @@ package feature.app.presentation.home
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import feature.app.FeatureFlag
+import feature.app.FeatureFlag.BILLS_TO_PAY
+import feature.app.FeatureFlag.BOOKS
 import feature.app.FeatureFlag.COIN_CONVERSION
+import feature.app.FeatureFlag.DOGS
 import feature.app.FeatureFlag.EXAMPLES
+import feature.app.FeatureFlag.GAS_CALCULATOR
+import feature.app.FeatureFlag.JSON_PLACE_HOLDER
+import feature.app.FeatureFlag.NEWS
 import feature.app.FeatureFlag.RICKY_AND_MORTY
 import feature.app.FeaturePresentation
 import feature.app.HomeAdapter
@@ -14,6 +20,7 @@ import feature.conversordemoedas.CoinConversionActivity
 import feature.dogs.presentation.home.DogsHomeActivity
 import feature.examples.presentation.home.ExampleSplashActivity
 import feature.gas_calculator.GasCalculatorHomeActivity
+import feature.jsonplaceholder.presentation.home.JsonPlaceHolderHomeActivity
 import feature.multimoduleapp.databinding.ActivityMainHomeBinding
 import feature.ricky.presentation.home.RickyHomeActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -60,10 +67,11 @@ class MainHomeActivity : AppCompatActivity() {
         RICKY_AND_MORTY -> navigateTo<RickyHomeActivity>()
         EXAMPLES -> navigateTo<ExampleSplashActivity>()
         COIN_CONVERSION -> navigateTo<CoinConversionActivity>()
-        FeatureFlag.BOOKS -> navigateTo<UnderConstructionFeatActivity>()
-        FeatureFlag.NEWS -> navigateTo<UnderConstructionFeatActivity>()
-        FeatureFlag.GAS_CALCULATOR -> navigateTo<GasCalculatorHomeActivity>()
-        FeatureFlag.DOGS -> navigateTo<DogsHomeActivity>()
-        FeatureFlag.BILLS_TO_PAY -> navigateTo<UnderConstructionFeatActivity>()
+        BOOKS -> navigateTo<UnderConstructionFeatActivity>()
+        NEWS -> navigateTo<UnderConstructionFeatActivity>()
+        GAS_CALCULATOR -> navigateTo<GasCalculatorHomeActivity>()
+        DOGS -> navigateTo<DogsHomeActivity>()
+        BILLS_TO_PAY -> navigateTo<UnderConstructionFeatActivity>()
+        JSON_PLACE_HOLDER -> navigateTo<JsonPlaceHolderHomeActivity>()
     }
 }

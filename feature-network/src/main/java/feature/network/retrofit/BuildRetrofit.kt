@@ -1,4 +1,4 @@
-package feature.commons.retrofit
+package feature.network.retrofit
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
