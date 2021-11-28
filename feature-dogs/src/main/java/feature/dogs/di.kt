@@ -27,7 +27,11 @@ val dogsModule = module {
         createApi<DogsApiService>(get(named(InjectionTag.RETROFIT_RICKY)))
     }
 
-    single<RemoteDataSource> { RemoteDataSourceImpl(api = get(named(InjectionTag.API_RICKY))) }
+    single<RemoteDataSource> {
+        RemoteDataSourceImpl(
+            api = get(named(InjectionTag.API_RICKY))
+        )
+    }
 
     single<DogsApiRepository> { DogsApiRepositoryImpl(remoteDataSource = get()) }
 

@@ -23,6 +23,8 @@ object Versions {
     const val espressoVersion = "3.4.0"
     const val glideVersion = "4.12.0"
     const val glideCompilerVersion = "4.12.0"
+    const val mockkVersion = "1.12.1"
+    const val assertjVersion = "3.21.0"
 }
 
 object ConfigData {
@@ -62,9 +64,13 @@ object Dependencies {
     val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glideCompilerVersion}"
     val dataBindingCompiler = "com.android.databinding:compiler:${Versions.dataBindingCompilerVersion}"
     val jUnit = "junit:junit:${Versions.jUnitVersionVersion}"
+    val mockk = "io.mockk:mockk:${Versions.mockkVersion}"
+    val mockkAndroid = "io.mockk:mockk-android:${Versions.mockkVersion}"
 
     val androidJUnit = "androidx.test.ext:junit:${Versions.androidJUnitVersion}"
     val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoVersion}"
+    val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesVersion}"
+    val assertj = "org.assertj:assertj-core:${Versions.assertjVersion}"
 }
 
 object AndroidModule {
@@ -124,13 +130,17 @@ object NetworkModule {
 
 object TestModule {
     val main = listOf(
-        Dependencies.jUnit
+        Dependencies.jUnit,
+        Dependencies.mockk,
+        Dependencies.coroutinesTest,
+        Dependencies.assertj
     )
 }
 
 object AndroidTestModule {
     val main = listOf(
         Dependencies.androidJUnit,
-        Dependencies.espresso
+        Dependencies.espresso,
+        Dependencies.mockkAndroid
     )
 }
