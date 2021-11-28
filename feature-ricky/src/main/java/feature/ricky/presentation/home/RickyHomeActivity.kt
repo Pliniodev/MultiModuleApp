@@ -18,7 +18,7 @@ class RickyHomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeRickyBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        loadKoinModules(listOf( rickyAndMortyModule))
+        loadKoinModules(listOf(rickyAndMortyModule))
 
         onEnterActivity()
         viewModel.getEpisodes()

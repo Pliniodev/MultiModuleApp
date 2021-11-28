@@ -29,7 +29,6 @@ internal data class FeaturePresentation(
                 FeatureFlag.JSON_PLACE_HOLDER -> {
                     R.string.home_dashboard_presentation_title_json_place_holder
                 }
-
             }
     }
 }

@@ -1,10 +1,10 @@
 package feature.ricky
 
+import feature.commons.utils.createApi
 import feature.network.constants.BaseUrl
 import feature.network.constants.InjectionTag
 import feature.network.retrofit.BuildRetrofit
 import feature.network.retrofit.provideOkHttpClient
-import feature.commons.utils.createApi
 import feature.ricky.data.remote.api.ApiService
 import feature.ricky.data.remote.remotedatasource.RemoteDataSourceRicky
 import feature.ricky.data.remote.remotedatasource.RemoteDatasourceImpl
