@@ -1,5 +1,4 @@
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
@@ -14,11 +13,11 @@ android {
         versionName(ConfigData.versionName)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        kapt {
-            arguments {
-                arg("room.schemaLocation", "$projectDir/schemas")
-            }
-        }
+//        kapt {
+//            arguments {
+//                arg("room.schemaLocation", "$projectDir/schemas")
+//            }
+//        }
         consumerProguardFiles "consumer-rules.pro"
     }
 

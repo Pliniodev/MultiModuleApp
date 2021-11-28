@@ -51,6 +51,7 @@ object Dependencies {
     val okHttpLogging = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpLoggingVersion}"
     val room = "androidx.room:room-runtime:${Versions.roomRuntimeVersion}"
     val roomCompiler = "androidx.room:room-compiler:${Versions.roomCompilerVersion}"
+    val roomForCoroutines = "androidx.room:room-ktx:${Versions.roomRuntimeVersion}"
     val rxAndroid = "io.reactivex.rxjava3:rxandroid:${Versions.rxJavaVersion}"
     val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}"
     val androidXCore = "androidx.core:core-ktx:${Versions.androidXCoreVersion}"
@@ -74,6 +75,7 @@ object AndroidModule {
         Dependencies.appCompat,
         Dependencies.material,
         Dependencies.constraintLayout,
+        Dependencies.dataBindingCompiler
     )
 }
 
@@ -85,7 +87,22 @@ object DiModule {
     )
 }
 
-object NetworkDepModule {
+object AnnotationProcessorsModule{
+    val main = listOf(
+        Dependencies.roomCompiler,
+        Dependencies.glideCompiler,
+
+    )
+}
+
+object RoomModule {
+    val main = listOf(
+        Dependencies.room,
+        Dependencies.roomForCoroutines
+    )
+}
+
+object NetworkModule {
     val withCoroutines = listOf(
         Dependencies.coroutines,
         Dependencies.gson,

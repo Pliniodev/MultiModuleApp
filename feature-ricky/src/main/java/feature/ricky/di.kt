@@ -5,10 +5,6 @@ import feature.commons.constants.InjectionTag
 import feature.commons.retrofit.BuildRetrofit
 import feature.commons.retrofit.provideOkHttpClient
 import feature.commons.utils.createApi
-import feature.ricky.data.local.localdatasource.LocalDataSource
-import feature.ricky.data.local.localdatasource.LocalDataSourceImpl
-import feature.ricky.data.local.provideDB
-import feature.ricky.data.local.provideStepDAO
 import feature.ricky.data.remote.api.ApiService
 import feature.ricky.data.remote.remotedatasource.RemoteDataSourceRicky
 import feature.ricky.data.remote.remotedatasource.RemoteDatasourceImpl
@@ -40,13 +36,4 @@ val networkRickyAndMortyModule = module {
 val dataRickyAndMortyModule = module {
     single<RemoteDataSourceRicky> { RemoteDatasourceImpl(api = get(named(InjectionTag.API_RICKY))) }
     single<ApiRepository> { ApiRepositoryImpl(remoteDataSource = get()) }
-}
-
-val databaseModule = module {
-    single { provideDB(application = get()) }
-    single { provideStepDAO(database = get()) }
-}
-
-val dataModule = module {
-    factory<LocalDataSource> { LocalDataSourceImpl(db = get()) }
 }
