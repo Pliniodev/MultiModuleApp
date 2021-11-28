@@ -63,6 +63,7 @@ dependencies {
     implementation project(path: ':feature-currency-conversion')
 
     implementation Dependencies.glide
+    implementation project(path: ':feature-gas-calculator')
     kapt Dependencies.glideCompiler
 
     AndroidModule.main.forEach {implementation it }

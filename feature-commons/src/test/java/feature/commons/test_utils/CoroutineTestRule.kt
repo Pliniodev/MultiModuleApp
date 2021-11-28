@@ -1,4 +1,4 @@
-package feature.dogs.test_utils
+package feature.commons.test_utils
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -9,8 +9,9 @@ import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 
 @ExperimentalCoroutinesApi
-class CoroutineTestRule(private val dispatcher: TestCoroutineDispatcher = TestCoroutineDispatcher()) :
-    TestWatcher() {
+class CoroutineTestRule(
+    private val dispatcher: TestCoroutineDispatcher = TestCoroutineDispatcher()
+) : TestWatcher() {
 
     override fun starting(description: Description?) {
         super.starting(description)
