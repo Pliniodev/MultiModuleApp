@@ -13,6 +13,7 @@ import feature.commons.utils.navigateTo
 import feature.conversordemoedas.CoinConversionActivity
 import feature.dogs.presentation.home.DogsHomeActivity
 import feature.examples.presentation.home.ExampleSplashActivity
+import feature.gas_calculator.GasCalculatorHomeActivity
 import feature.multimoduleapp.databinding.ActivityMainHomeBinding
 import feature.ricky.presentation.home.RickyHomeActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -61,7 +62,7 @@ class MainHomeActivity : AppCompatActivity() {
         COIN_CONVERSION -> navigateTo<CoinConversionActivity>()
         FeatureFlag.BOOKS -> navigateTo<UnderConstructionFeatActivity>()
         FeatureFlag.NEWS -> navigateTo<UnderConstructionFeatActivity>()
-        FeatureFlag.GAS_CALCULATOR -> navigateTo<UnderConstructionFeatActivity>()
+        FeatureFlag.GAS_CALCULATOR -> navigateTo<GasCalculatorHomeActivity>()
         FeatureFlag.DOGS -> navigateTo<DogsHomeActivity>()
         FeatureFlag.BILLS_TO_PAY -> navigateTo<UnderConstructionFeatActivity>()
     }
