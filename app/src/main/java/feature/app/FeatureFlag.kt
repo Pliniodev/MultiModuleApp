@@ -11,5 +11,6 @@ internal enum class FeatureFlag {
     BILLS_TO_PAY,
     GAS_CALCULATOR,
     EXAMPLES,
-    COIN_CONVERSION
+    COIN_CONVERSION,
+    JSON_PLACE_HOLDER
 }

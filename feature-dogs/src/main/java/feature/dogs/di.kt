@@ -1,9 +1,9 @@
 package feature.dogs
 
-import feature.commons.constants.BaseUrl
-import feature.commons.constants.InjectionTag
-import feature.commons.retrofit.BuildRetrofit
-import feature.commons.retrofit.provideOkHttpClientAuthDogs
+import feature.network.constants.BaseUrl
+import feature.network.constants.InjectionTag
+import feature.network.retrofit.BuildRetrofit
+import feature.network.retrofit.provideOkHttpClientAuthDogs
 import feature.commons.utils.createApi
 import feature.dogs.data.api.DogsApiService
 import feature.dogs.data.remoteDataSource.RemoteDataSource
