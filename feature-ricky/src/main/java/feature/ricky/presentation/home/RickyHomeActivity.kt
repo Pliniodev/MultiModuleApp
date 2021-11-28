@@ -4,8 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import feature.commons.utils.navigateTo
 import feature.feature_ricky.databinding.ActivityHomeRickyBinding
-import feature.ricky.dataRickyAndMortyModule
-import feature.ricky.networkRickyAndMortyModule
 import feature.ricky.presentation.episodes.EpisodesActivity
 import feature.ricky.rickyAndMortyModule
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -20,7 +18,7 @@ class RickyHomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeRickyBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        loadModules()
+        loadKoinModules(listOf( rickyAndMortyModule))
 
         onEnterActivity()
         viewModel.getEpisodes()
@@ -36,24 +34,8 @@ class RickyHomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadModules() {
-        loadKoinModules(
-            listOf(
-                rickyAndMortyModule,
-                networkRickyAndMortyModule,
-                dataRickyAndMortyModule,
-            )
-        )
-    }
-
     override fun onDestroy() {
         super.onDestroy()
-        unloadKoinModules(
-            listOf(
-                rickyAndMortyModule,
-                networkRickyAndMortyModule,
-                dataRickyAndMortyModule,
-            )
-        )
+        unloadKoinModules(listOf(rickyAndMortyModule))
     }
 }
