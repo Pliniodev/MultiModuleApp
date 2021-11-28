@@ -1,0 +1,13 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: "../android-module.gradle"
+
+dependencies {
+
+    AndroidModule.main.forEach {implementation it }
+    DiModule.main.forEach {implementation it }
+    NetworkModule.withCoroutines.forEach {implementation it }
+    TestModule.main.forEach {testImplementation it }
+    AndroidTestModule.main.forEach {androidTestImplementation it }
+}

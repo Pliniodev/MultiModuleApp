@@ -1,6 +1,6 @@
-package feature.commons.retrofit
+package feature.network.retrofit
 
-import feature.commons.constants.Authorization
+import feature.network.constants.Authorization
 import okhttp3.Interceptor
 import okhttp3.Response
 
