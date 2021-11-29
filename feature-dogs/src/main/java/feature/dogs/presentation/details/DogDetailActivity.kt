@@ -3,6 +3,7 @@ package feature.dogs.presentation.details
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import feature.commons.utils.Aggregator
 import feature.dogs.presentation.model.BreedPresentation
 import feature.feature_dogs.R
 import feature.feature_dogs.databinding.ActivityDogDetailBinding
@@ -37,8 +38,13 @@ internal class DogDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun retrieveDogDetails() =
-        intent.getSerializableExtra(BREED_PRESENTATION) as? BreedPresentation
+    private fun retrieveDogDetails(): BreedPresentation?  {
+        val intent = intent.getSerializableExtra(BREED_PRESENTATION)as? Aggregator
+        return intent?.let {
+            it.data as BreedPresentation
+        }
+    }
+
 
     private companion object {
         const val BREED_PRESENTATION = "breed_presentation"
