@@ -33,7 +33,7 @@ class DogsHomeActivity : AppCompatActivity() {
     private fun observers() {
         viewModel.breeds.observe(
             this,
-            { breedPresentations -> breedPresentations?.let { setAdapter(it) } }
+            { breedPresentations -> breedPresentations?.let(::setAdapter) }
         )
     }
 
@@ -47,10 +47,9 @@ class DogsHomeActivity : AppCompatActivity() {
     }
 
     private fun aggregateAndGoToDetails(breedPresentation: BreedPresentation) {
-        navigateToAndAggregate<DogDetailActivity>(BREED_PRESENTATION, breedPresentation)
-//        val intent = Intent(this, DogDetailActivity::class.java)
-//        intent.putExtra(BREED_PRESENTATION, breedPresentation)
-//        startActivity(intent)
+        navigateToAndAggregate<DogDetailActivity> {
+            this.putExtra(BREED_PRESENTATION, breedPresentation)
+        }
     }
 
     override fun onDestroy() {
