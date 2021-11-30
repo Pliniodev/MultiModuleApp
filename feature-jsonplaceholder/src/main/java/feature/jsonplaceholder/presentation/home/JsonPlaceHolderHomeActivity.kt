@@ -27,14 +27,7 @@ class JsonPlaceHolderHomeActivity : AppCompatActivity() {
     }
 
     private fun observers() {
-        viewModel.posts.observe(
-            this,
-            { posts ->
-                posts?.let {
-                    populateViews(posts)
-                }
-            }
-        )
+        viewModel.posts.observe(this, { it?.let(::populateViews) })
     }
 
     private fun populateViews(posts: List<Post>) {
