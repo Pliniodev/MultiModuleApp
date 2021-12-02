@@ -22,6 +22,9 @@ android {
             }
         }
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.0.5"
+    }
 
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
@@ -50,6 +53,7 @@ android {
     }
     buildFeatures{
         viewBinding true
+        compose true
     }
 }
 
@@ -67,12 +71,12 @@ dependencies {
     implementation project(path: ':feature-newsapi')
 
     implementation Dependencies.glide
+    implementation project(path: ':feature-composing')
     kapt Dependencies.glideCompiler
     AndroidModule.main.forEach {implementation it }
     TestModule.main.forEach {testImplementation it }
     AndroidTestModule.main.forEach {androidTestImplementation it }
     DiModule.main.forEach { implementation it }
     NetworkModule.withCoroutines.forEach { implementation it }
-
-
+    Compose.main.forEach {implementation it}
 }

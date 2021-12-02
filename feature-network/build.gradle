@@ -11,4 +11,5 @@ dependencies {
     NetworkModule.withRx.forEach {implementation it }
     TestModule.main.forEach {testImplementation it }
     AndroidTestModule.main.forEach {androidTestImplementation it }
+    Compose.main.forEach {implementation it}
 }
