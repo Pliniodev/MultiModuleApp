@@ -27,6 +27,14 @@ object Versions {
     const val glideCompilerVersion = "4.12.0"
     const val mockkVersion = "1.12.1"
     const val assertjVersion = "3.21.0"
+    //Compose
+    const val activityComposeVersion = "1.3.1"
+    const val composeMaterialVersion = "1.0.5"
+    const val composeAnimationsVersion = "1.0.5"
+    const val composeUiToolingVersion = "1.0.5"
+    const val composeViewModelLifeCycleVersion = "1.0.0-alpha07"
+    const val composeThemeAdapterVersion = "1.0.5"
+
 }
 
 object ConfigData {
@@ -77,6 +85,13 @@ object Dependencies {
     val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoVersion}"
     val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesVersion}"
     val assertj = "org.assertj:assertj-core:${Versions.assertjVersion}"
+    //Compose
+    val activityCompose = "androidx.activity:activity-compose:${Versions.activityComposeVersion}"
+    val composeMaterial = "androidx.compose.material:material:${Versions.composeMaterialVersion}"
+    val composeAnimations = "androidx.compose.animation:animation:${Versions.composeAnimationsVersion}"
+    val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.composeUiToolingVersion}"
+    val composeViewModelLifeCycle = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.composeViewModelLifeCycleVersion}"
+    val composeThemeAdapter = "com.google.android.material:compose-theme-adapter:${Versions.composeThemeAdapterVersion}"
 }
 
 object AndroidModule {
@@ -135,6 +150,17 @@ object NetworkModule {
         Dependencies.retrofit,
         Dependencies.okHttp,
         Dependencies.okHttpLogging
+    )
+}
+
+object Compose {
+    val main = listOf(
+        Dependencies.activityCompose,
+        Dependencies.composeMaterial,
+        Dependencies.composeAnimations,
+        Dependencies.composeUiTooling,
+        Dependencies.composeViewModelLifeCycle,
+        Dependencies.composeThemeAdapter,
     )
 }
 
