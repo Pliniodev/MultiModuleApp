@@ -1,4 +1,4 @@
-package feature.commons.test_utils
+package feature.dogs.test_utils
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
