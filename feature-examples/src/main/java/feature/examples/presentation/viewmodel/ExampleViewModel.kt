@@ -33,7 +33,7 @@ class ExampleViewModel : ViewModel() {
          *  Just an example list
          */
         _exampleList.value = listOf(
-            ExampleModel("example 1"),
+            ExampleModel("Usando o Navigator"),
             ExampleModel("example 2"),
             ExampleModel("example 3"),
         )

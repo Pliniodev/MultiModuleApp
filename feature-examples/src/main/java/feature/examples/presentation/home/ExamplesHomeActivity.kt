@@ -4,10 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.feature_examples.databinding.ActivityExamplesHomeBinding
+import feature.commons.utils.navigateTo
 import feature.examples.exampleModule
 import feature.examples.presentation.adapter.ExampleAdapter
 import feature.examples.presentation.adapter.listener.ExampleClickListener
 import feature.examples.presentation.viewmodel.ExampleViewModel
+import feature.examples.screensnavigation.ScreensNavigationFirstActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -90,9 +92,13 @@ class ExamplesHomeActivity : AppCompatActivity() {
         if (mAdapter.data().isNotEmpty()) {
             val item = mAdapter.data()[position]
             item.let { modelExample ->
-                val intent = Intent(this, ExampleDetailsActivity::class.java)
-                intent.putExtra(INTENT_DETAILS, modelExample.title)
-                startActivity(intent)
+                if (modelExample.title?.equals("Usando o Navigator") == true) {
+                    navigateTo<ScreensNavigationFirstActivity>()
+                } else {
+                    val intent = Intent(this, ExampleDetailsActivity::class.java)
+                    intent.putExtra(INTENT_DETAILS, modelExample.title)
+                    startActivity(intent)
+                }
             }
         }
     }
