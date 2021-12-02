@@ -6,6 +6,7 @@ import feature.app.FeatureFlag
 import feature.app.FeatureFlag.BILLS_TO_PAY
 import feature.app.FeatureFlag.BOOKS
 import feature.app.FeatureFlag.COIN_CONVERSION
+import feature.app.FeatureFlag.COMPOSING
 import feature.app.FeatureFlag.DOGS
 import feature.app.FeatureFlag.EXAMPLES
 import feature.app.FeatureFlag.GAS_CALCULATOR
@@ -17,6 +18,7 @@ import feature.app.presentation.FeaturePresentation
 import feature.app.presentation.HomeAdapter
 import feature.app.presentation.UnderConstructionFeatActivity
 import feature.commons.utils.navigateTo
+import feature.composing.ComposingHomeActivity
 import feature.conversordemoedas.CoinConversionActivity
 import feature.dogs.presentation.home.DogsHomeActivity
 import feature.examples.recyclerview.presentation.home.ExampleSplashActivity
@@ -77,5 +79,6 @@ internal class MainHomeActivity : AppCompatActivity() {
         BILLS_TO_PAY -> navigateTo<UnderConstructionFeatActivity>()
         JSON_PLACE_HOLDER -> navigateTo<JsonPlaceHolderHomeActivity>()
         MARVEL_API -> navigateTo<MarvelHomeActivity>()
+        COMPOSING -> navigateTo<ComposingHomeActivity>()
     }
 }

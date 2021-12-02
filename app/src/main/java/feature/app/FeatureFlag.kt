@@ -4,6 +4,7 @@ package feature.app
  * Feature flag of each feature module
  */
 internal enum class FeatureFlag {
+    COMPOSING,
     RICKY_AND_MORTY,
     BOOKS,
     NEWS,
