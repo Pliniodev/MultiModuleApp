@@ -28,11 +28,12 @@ object Versions {
     const val mockkVersion = "1.12.1"
     const val assertjVersion = "3.21.0"
     //Compose
+    const val composeRuntimeVersion = "1.0.5"
     const val activityComposeVersion = "1.3.1"
     const val composeMaterialVersion = "1.0.5"
     const val composeAnimationsVersion = "1.0.5"
     const val composeUiToolingVersion = "1.0.5"
-    const val composeViewModelLifeCycleVersion = "1.0.0-alpha07"
+    const val composeViewModelLifeCycleVersion = "2.4.0"
     const val composeThemeAdapterVersion = "1.0.5"
 
 }
@@ -86,6 +87,7 @@ object Dependencies {
     val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesVersion}"
     val assertj = "org.assertj:assertj-core:${Versions.assertjVersion}"
     //Compose
+    val composeRuntime = "androidx.compose.runtime:runtime:${Versions.composeRuntimeVersion}"
     val activityCompose = "androidx.activity:activity-compose:${Versions.activityComposeVersion}"
     val composeMaterial = "androidx.compose.material:material:${Versions.composeMaterialVersion}"
     val composeAnimations = "androidx.compose.animation:animation:${Versions.composeAnimationsVersion}"
@@ -155,6 +157,7 @@ object NetworkModule {
 
 object Compose {
     val main = listOf(
+        Dependencies.composeRuntime,
         Dependencies.activityCompose,
         Dependencies.composeMaterial,
         Dependencies.composeAnimations,
