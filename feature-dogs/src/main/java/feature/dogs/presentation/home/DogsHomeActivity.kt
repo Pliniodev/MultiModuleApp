@@ -2,7 +2,7 @@ package feature.dogs.presentation.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import feature.commons.utils.navigateToAndAggregate
+import feature.commons.utils.navigateAndAggregate
 import feature.dogs.dogsModule
 import feature.dogs.presentation.adapter.DogsAdapter
 import feature.dogs.presentation.details.DogDetailActivity
@@ -47,9 +47,10 @@ class DogsHomeActivity : AppCompatActivity() {
     }
 
     private fun aggregateAndGoToDetails(breedPresentation: BreedPresentation) {
-        navigateToAndAggregate<DogDetailActivity> {
-            this.putExtra(BREED_PRESENTATION, breedPresentation)
-        }
+        navigateAndAggregate<DogDetailActivity, BreedPresentation>(
+            intentName = BREED_PRESENTATION,
+            send = breedPresentation
+        )
     }
 
     override fun onDestroy() {
