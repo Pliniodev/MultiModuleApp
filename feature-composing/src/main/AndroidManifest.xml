@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name=".ComposingHomeActivity"
+            android:name=".composeTutorial.ComposingHomeActivity"
             android:exported="false" />
     </application>
 

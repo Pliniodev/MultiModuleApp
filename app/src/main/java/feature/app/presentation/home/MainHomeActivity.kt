@@ -18,7 +18,7 @@ import feature.app.presentation.FeaturePresentation
 import feature.app.presentation.HomeAdapter
 import feature.app.presentation.UnderConstructionFeatActivity
 import feature.commons.utils.navigateTo
-import feature.composing.ComposingHomeActivity
+import feature.composing.composeTutorial.ComposingHomeActivity
 import feature.conversordemoedas.CoinConversionActivity
 import feature.dogs.presentation.home.DogsHomeActivity
 import feature.examples.recyclerview.presentation.home.ExampleSplashActivity
