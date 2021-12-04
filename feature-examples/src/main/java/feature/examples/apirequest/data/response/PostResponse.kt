@@ -1,8 +1,8 @@
-package feature.jsonplaceholder.data.response
+package feature.examples.apirequest.data.response
 
 import com.google.gson.annotations.SerializedName
 
-internal data class PostResponse(
+data class PostResponse(
     val body: String? = null,
     val id: Int? = null,
     val title: String? = null,
