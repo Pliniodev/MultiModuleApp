@@ -33,8 +33,8 @@ internal class ExampleRecyclerViewModel : ViewModel() {
          *  Just an example list
          */
         _exampleList.value = listOf(
-            ExampleModel("Usando o Navigator"),
-            ExampleModel("Requisição a uma api"),
+            ExampleModel("example 1"),
+            ExampleModel("example 2"),
             ExampleModel("example 3"),
         )
     }

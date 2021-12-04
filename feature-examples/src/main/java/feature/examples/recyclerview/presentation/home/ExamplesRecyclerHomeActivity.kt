@@ -4,15 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.feature_examples.databinding.ActivityRecyclerExampleBinding
-import feature.commons.utils.navigateTo
-import feature.examples.exampleModule
 import feature.examples.recyclerview.presentation.adapter.RecyclerExampleAdapter
 import feature.examples.recyclerview.presentation.adapter.listener.ExampleClickListener
 import feature.examples.recyclerview.presentation.viewmodel.ExampleRecyclerViewModel
-import feature.examples.screensnavigation.ScreensNavigationFirstActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.context.loadKoinModules
-import org.koin.core.context.unloadKoinModules
 
 internal class ExamplesRecyclerHomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecyclerExampleBinding
@@ -91,13 +86,9 @@ internal class ExamplesRecyclerHomeActivity : AppCompatActivity() {
         if (mAdapterRecycler.data().isNotEmpty()) {
             val item = mAdapterRecycler.data()[position]
             item.let { modelExample ->
-                if (modelExample.title?.equals("Usando o Navigator") == true) {
-                    navigateTo<ScreensNavigationFirstActivity>()
-                } else {
-                    val intent = Intent(this, ExampleRecyclerDetailsActivity::class.java)
-                    intent.putExtra(INTENT_DETAILS, modelExample.title)
-                    startActivity(intent)
-                }
+                val intent = Intent(this, ExampleRecyclerDetailsActivity::class.java)
+                intent.putExtra(INTENT_DETAILS, modelExample.title)
+                startActivity(intent)
             }
         }
     }
