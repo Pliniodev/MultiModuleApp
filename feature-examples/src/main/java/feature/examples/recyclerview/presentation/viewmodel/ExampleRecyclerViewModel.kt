@@ -13,7 +13,7 @@ import feature.examples.recyclerview.presentation.model.ExampleModel
 
 /**
  * ATTENTION - Using the koin for dependency injection, you need to declare your viewModel in the
- * koin module, currently localized in: app-home -> java -> feature -> di -> di.kt
+ * koin module, currently localized in: app-home -> java -> feature -> di -> di
  */
 internal class ExampleRecyclerViewModel : ViewModel() {
     /**

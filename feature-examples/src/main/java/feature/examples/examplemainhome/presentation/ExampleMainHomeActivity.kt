@@ -6,7 +6,12 @@ import com.example.feature_examples.databinding.ActivityExampleMainHomeBinding
 import feature.commons.utils.navigateTo
 import feature.examples.exampleModule
 import feature.examples.examplemainhome.ExampleFlag
+import feature.examples.examplemainhome.ExampleFlag.API_REQUEST
+import feature.examples.examplemainhome.ExampleFlag.SCREENS_NAVIGATION
+import feature.examples.examplemainhome.ExampleFlag.SIMPLE_RECYCLER_VIEW
 import feature.examples.examplemainhome.ExamplesMainPresentation
+import feature.examples.apiRequestJsonPlaceHolderModule
+import feature.examples.apirequest.presentation.home.ExampleApiRequestActivity
 import feature.examples.recyclerview.presentation.home.ExamplesRecyclerHomeActivity
 import feature.examples.screensnavigation.ScreensNavigationFirstActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel // this must be imported manually
@@ -21,7 +26,7 @@ internal class ExampleMainHomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityExampleMainHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        loadKoinModules(exampleModule)
+        loadKoinModules(listOf(exampleModule, apiRequestJsonPlaceHolderModule))
 
         onEnterActivity()
     }
@@ -49,9 +54,9 @@ internal class ExampleMainHomeActivity : AppCompatActivity() {
     }
 
     private fun startNavigation(exampleFlag: ExampleFlag) = when (exampleFlag) {
-        ExampleFlag.SIMPLE_RECYCLER_VIEW -> navigateTo<ExamplesRecyclerHomeActivity>()
-        ExampleFlag.SCREENS_NAVIGATION -> navigateTo<ScreensNavigationFirstActivity>()
-        ExampleFlag.API_REQUEST -> TODO()
+        SIMPLE_RECYCLER_VIEW -> navigateTo<ExamplesRecyclerHomeActivity>()
+        SCREENS_NAVIGATION -> navigateTo<ScreensNavigationFirstActivity>()
+        API_REQUEST -> navigateTo<ExampleApiRequestActivity>()
     }
 
     private fun populateViews() {
@@ -60,6 +65,6 @@ internal class ExampleMainHomeActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        unloadKoinModules(exampleModule)
+        unloadKoinModules(listOf(exampleModule, apiRequestJsonPlaceHolderModule))
     }
 }

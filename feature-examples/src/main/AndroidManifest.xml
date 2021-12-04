@@ -15,6 +15,9 @@
         <activity
             android:name="feature.examples.recyclerview.presentation.home.ExampleSplashActivity"
             android:exported="true" />
+        <activity
+            android:name="feature.examples.apirequest.presentation.home.ExampleApiRequestActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
