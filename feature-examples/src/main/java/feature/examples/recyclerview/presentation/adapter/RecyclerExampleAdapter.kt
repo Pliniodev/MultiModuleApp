@@ -15,7 +15,7 @@ import feature.examples.recyclerview.presentation.model.ExampleModel
  * - An ViewHolder(The inner class);
  * - An view to inflate every time that a new element appears in the list(item_example_recycler.xml).
  */
-class RecyclerExampleAdapter : RecyclerView.Adapter<RecyclerExampleAdapter.ViewHolder>() {
+internal class RecyclerExampleAdapter : RecyclerView.Adapter<RecyclerExampleAdapter.ViewHolder>() {
 
     /**
      * This variable (mListener) is responsible for make every view clickable.

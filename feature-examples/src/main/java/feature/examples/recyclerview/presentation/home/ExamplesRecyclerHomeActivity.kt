@@ -14,7 +14,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 
-class ExamplesRecyclerHomeActivity : AppCompatActivity() {
+internal class ExamplesRecyclerHomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecyclerExampleBinding
     private lateinit var mListener: ExampleClickListener
     private val mAdapterRecycler: RecyclerExampleAdapter = RecyclerExampleAdapter()
@@ -29,7 +29,6 @@ class ExamplesRecyclerHomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRecyclerExampleBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        loadModules()
         /**
          * In this onCreate method, it's a good practice just instantiate your methods to configure
          * your screen.
@@ -101,15 +100,6 @@ class ExamplesRecyclerHomeActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    private fun loadModules() {
-        loadKoinModules(listOf(exampleModule))
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        unloadKoinModules(exampleModule)
     }
 
     /**

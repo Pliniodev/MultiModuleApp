@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.example.feature_examples.R
 import com.example.feature_examples.databinding.ActivityExampleSplashBinding
+import feature.examples.examplemainhome.presentation.ExampleMainHomeActivity
 
 /**
  * Responsible just for make a splash activity (presentation screen to the user)
@@ -43,7 +44,7 @@ class ExampleSplashActivity : AppCompatActivity() {
          */
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                startActivity(Intent(this, ExamplesRecyclerHomeActivity::class.java)) // mudar a home aqui
+                startActivity(Intent(this, ExampleMainHomeActivity::class.java))
                 finish()
             },
             SPLASH_DURATION

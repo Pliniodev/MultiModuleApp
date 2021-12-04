@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.feature_examples.databinding.ActivityRecyclerExampleDetailsBinding
 
-class ExampleRecyclerDetailsActivity : AppCompatActivity() {
+internal class ExampleRecyclerDetailsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRecyclerExampleDetailsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
