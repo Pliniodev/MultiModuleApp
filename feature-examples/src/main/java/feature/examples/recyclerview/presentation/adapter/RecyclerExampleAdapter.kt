@@ -1,11 +1,11 @@
-package feature.examples.presentation.adapter
+package feature.examples.recyclerview.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.feature_examples.databinding.ItemExampleRecyclerBinding
-import feature.examples.presentation.adapter.listener.ExampleClickListener
-import feature.examples.presentation.model.ExampleModel
+import feature.examples.recyclerview.presentation.adapter.listener.ExampleClickListener
+import feature.examples.recyclerview.presentation.model.ExampleModel
 /**
  * This class has the responsibility to recycler our views from a list. Every time that we do
  * a scroll in the screen, the recyclerView "recycle" the views.
@@ -15,7 +15,7 @@ import feature.examples.presentation.model.ExampleModel
  * - An ViewHolder(The inner class);
  * - An view to inflate every time that a new element appears in the list(item_example_recycler.xml).
  */
-class ExampleAdapter() : RecyclerView.Adapter<ExampleAdapter.ViewHolder>() {
+class RecyclerExampleAdapter : RecyclerView.Adapter<RecyclerExampleAdapter.ViewHolder>() {
 
     /**
      * This variable (mListener) is responsible for make every view clickable.

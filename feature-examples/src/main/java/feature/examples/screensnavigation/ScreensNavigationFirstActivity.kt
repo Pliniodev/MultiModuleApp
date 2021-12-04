@@ -11,7 +11,7 @@ import feature.examples.screensnavigation.model.Address
 import feature.examples.screensnavigation.model.StrangePerson
 
 /**
- * Using -> navigateTo
+ * Using -> navigateTo<>()
  * We simply pass the activity to go in <>. Ex:
  * navigateTo<ActivityToGo>()
  *

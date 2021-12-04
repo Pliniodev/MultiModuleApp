@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="feature.examples.presentation.home.ExampleSplashActivity">
+    tools:context="feature.examples.recyclerview.presentation.home.ExampleSplashActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mainContent"

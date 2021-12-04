@@ -1,6 +1,7 @@
-package feature.app
+package feature.app.presentation
 
 import androidx.annotation.StringRes
+import feature.app.FeatureFlag
 import feature.multimoduleapp.R
 
 internal data class FeaturePresentation(
@@ -14,8 +15,8 @@ internal data class FeaturePresentation(
                 featureFlag = flag
             )
 
-        private fun defineTitle(tag: FeatureFlag) =
-            when (tag) {
+        private fun defineTitle(flag: FeatureFlag) =
+            when (flag) {
                 FeatureFlag.RICKY_AND_MORTY -> R.string.home_rickyAndMorty_presentation_title_ricky_and_morty
                 FeatureFlag.BOOKS -> R.string.home_rickyAndMorty_presentation_title_books
                 FeatureFlag.NEWS -> R.string.home_rickyAndMorty_presentation_title_news

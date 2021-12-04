@@ -10,7 +10,7 @@
             android:name="feature.examples.screensnavigation.ScreensNavigationFirstActivity"
             android:exported="false" />
         <activity
-            android:name="feature.examples.presentation.home.ExampleSplashActivity"
+            android:name="feature.examples.recyclerview.presentation.home.ExampleSplashActivity"
             android:exported="true" />
     </application>
 

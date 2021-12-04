@@ -1,4 +1,4 @@
-package feature.examples.presentation.adapter.listener
+package feature.examples.recyclerview.presentation.adapter.listener
 
 /**
  * This just a simple interface that we are gonna implement a method to have the position of the
