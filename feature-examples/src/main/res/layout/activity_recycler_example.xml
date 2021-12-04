@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="feature.examples.presentation.home.ExampleDetailsActivity"
-    android:background="@color/light_grey"
-    >
+    tools:context="feature.examples.recyclerview.presentation.home.ExamplesRecyclerHomeActivity">
 
-    <TextView
-        android:id="@+id/mainTitle"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="@color/black"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_example_recycler"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

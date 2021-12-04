@@ -39,7 +39,6 @@ class DogsHomeActivity : AppCompatActivity() {
 
     private fun setAdapter(breedPresentations: List<BreedPresentation>) {
         val adapter = DogsAdapter(
-            context = this,
             breedPresentations = breedPresentations,
             action = { breed -> aggregateAndGoToDetails(breed) }
         )

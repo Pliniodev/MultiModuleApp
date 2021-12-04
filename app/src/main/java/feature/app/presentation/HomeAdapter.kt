@@ -1,8 +1,9 @@
-package feature.app
+package feature.app.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import feature.app.FeatureFlag
 import feature.multimoduleapp.databinding.ItemHomeFeatureBinding
 
 internal class HomeAdapter(

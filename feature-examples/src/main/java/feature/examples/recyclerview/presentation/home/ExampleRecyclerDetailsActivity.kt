@@ -1,15 +1,15 @@
-package feature.examples.presentation.home
+package feature.examples.recyclerview.presentation.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.feature_examples.databinding.ActivityExampleDetailsBinding
+import com.example.feature_examples.databinding.ActivityRecyclerExampleDetailsBinding
 
-class ExampleDetailsActivity : AppCompatActivity() {
+internal class ExampleRecyclerDetailsActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityExampleDetailsBinding
+    private lateinit var binding: ActivityRecyclerExampleDetailsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityExampleDetailsBinding.inflate(layoutInflater)
+        binding = ActivityRecyclerExampleDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         putExtras()

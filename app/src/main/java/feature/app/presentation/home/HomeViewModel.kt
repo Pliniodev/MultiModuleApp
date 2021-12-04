@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import feature.app.FeatureFlag
-import feature.app.FeaturePresentation
+import feature.app.presentation.FeaturePresentation
 
 internal class HomeViewModel : ViewModel() {
     private val _featureList = MutableLiveData<List<FeaturePresentation>>()

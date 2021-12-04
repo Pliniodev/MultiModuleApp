@@ -1,4 +1,4 @@
-package feature.examples.presentation.home
+package feature.examples.recyclerview.presentation.home
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,7 +8,8 @@ import android.os.Looper
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.example.feature_examples.R
-import com.example.feature_examples.databinding.ActivitySplashBinding
+import com.example.feature_examples.databinding.ActivityExampleSplashBinding
+import feature.examples.examplemainhome.presentation.ExampleMainHomeActivity
 
 /**
  * Responsible just for make a splash activity (presentation screen to the user)
@@ -16,11 +17,11 @@ import com.example.feature_examples.databinding.ActivitySplashBinding
 @SuppressLint("CustomSplashScreen")
 class ExampleSplashActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySplashBinding
+    private lateinit var binding: ActivityExampleSplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySplashBinding.inflate(layoutInflater)
+        binding = ActivityExampleSplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         /**
@@ -43,7 +44,7 @@ class ExampleSplashActivity : AppCompatActivity() {
          */
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                startActivity(Intent(this, ExamplesHomeActivity::class.java))
+                startActivity(Intent(this, ExampleMainHomeActivity::class.java))
                 finish()
             },
             SPLASH_DURATION
