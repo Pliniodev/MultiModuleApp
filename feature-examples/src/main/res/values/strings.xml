@@ -1,4 +1,7 @@
 <resources>
     <string name="example_string">Exemplo</string>
     <string name="splash_example_text">Bem vindo a seção de exemplos!</string>
+    <string name="example_flag_simple_recycler_view">Simples recycler view</string>
+    <string name="example_flag_screens_navigation">Navegação entre telas</string>
+    <string name="example_flag_api_request">Requisição a uma api</string>
 </resources>

@@ -4,6 +4,9 @@
 
     <application>
         <activity
+            android:name="feature.examples.examplemainhome.presentation.ExampleMainHomeActivity"
+            android:exported="false" />
+        <activity
             android:name="feature.examples.screensnavigation.ScreenNavigationSecondActivity"
             android:exported="false" />
         <activity

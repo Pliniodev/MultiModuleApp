@@ -25,7 +25,7 @@ import feature.multimoduleapp.databinding.ActivityMainHomeBinding
 import feature.ricky.presentation.home.RickyHomeActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainHomeActivity : AppCompatActivity() {
+internal class MainHomeActivity : AppCompatActivity() {
     private val viewModel: HomeViewModel by viewModel()
     private lateinit var binding: ActivityMainHomeBinding
 

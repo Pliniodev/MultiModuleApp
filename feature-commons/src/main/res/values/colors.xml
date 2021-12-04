@@ -9,4 +9,5 @@
     <color name="dogs_recycler_stroke">#51639A</color>
     <color name="medium_black">#0E0F10</color>
     <color name="buttom_primary_bg">#040491</color>
+    <color name="example_item_main_home_bg">#B2DFDB</color>
 </resources>
