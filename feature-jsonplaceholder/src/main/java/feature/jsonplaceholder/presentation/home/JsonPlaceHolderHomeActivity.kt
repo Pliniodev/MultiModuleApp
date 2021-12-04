@@ -2,6 +2,7 @@ package feature.jsonplaceholder.presentation.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import feature.commons.utils.StateMachine
 import feature.jsonplaceholder.databinding.ActivityJsonPlaceHolderHomeBinding
 import feature.jsonplaceholder.domain.Post
 import feature.jsonplaceholder.jsonPlaceHolderModule
@@ -22,12 +23,15 @@ class JsonPlaceHolderHomeActivity : AppCompatActivity() {
     }
 
     private fun onEnterActivity() {
-        viewModel.getPosts()
-        observers()
-    }
-
-    private fun observers() {
-        viewModel.posts.observe(this, { it?.let(::populateViews) })
+        viewModel.getPosts().observe(this) { event ->
+            when (event) {
+                is StateMachine.Loading -> TODO()
+                is StateMachine.ApiError -> TODO()
+                is StateMachine.ConnectionError -> TODO()
+                is StateMachine.ServerError -> TODO()
+                is StateMachine.Success -> populateViews(event.value)
+            }
+        }
     }
 
     private fun populateViews(posts: List<Post>) {

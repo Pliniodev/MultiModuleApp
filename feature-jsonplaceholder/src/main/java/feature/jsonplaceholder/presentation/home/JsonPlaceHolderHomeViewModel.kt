@@ -1,30 +1,17 @@
 package feature.jsonplaceholder.presentation.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import feature.jsonplaceholder.domain.Post
+import androidx.lifecycle.*
+import feature.commons.utils.safeRequest
 import feature.jsonplaceholder.domain.service.JsonPlaceHolderService
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers.IO
 
 internal class JsonPlaceHolderHomeViewModel(
-    private val service: JsonPlaceHolderService
+    private val service: JsonPlaceHolderService,
+    private val dispatcher: CoroutineDispatcher = IO
 ) : ViewModel() {
-    private val _posts = MutableLiveData<List<Post>>()
-    val posts: LiveData<List<Post>> = _posts
 
-    private val _errorMsg = MutableLiveData<String>()
-    val errorMsg: LiveData<String> = _errorMsg
-
-    fun getPosts() {
-        viewModelScope.launch(Dispatchers.IO) {
-            runCatching {
-                service.getPosts()
-            }.onSuccess {
-                _posts.postValue(it)
-            }.onFailure { exception -> _errorMsg.postValue(exception.message) }
-        }
+    fun getPosts() = liveData {
+        emit(safeRequest(dispatcher) { service.getPosts() })
     }
 }

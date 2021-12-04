@@ -1,6 +1,7 @@
 object Versions {
     const val lifecycleExtensionsVersion = "2.2.0"
     const val lifecycleViewModelVersion = "2.3.1"
+    const val lifecycleLiveDataVersion = "2.4.0"
     const val coroutinesVersion = "1.4.3"
     const val koinVersion = "3.0.2"
     const val retrofitVersion = "2.9.0"
@@ -43,6 +44,7 @@ object BuildPlugins {
 object Dependencies {
     val lifecycleExtensions =  "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleExtensionsVersion}"
     val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleViewModelVersion}"
+    val lifecycleLiveData =  "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleLiveDataVersion}"
     val koin = "io.insert-koin:koin-android:${Versions.koinVersion}"
     val koinExt = "io.insert-koin:koin-android-ext:${Versions.koinVersion}"
     val koinWorkManager = "io.insert-koin:koin-androidx-workmanager:${Versions.koinVersion}"
@@ -77,6 +79,7 @@ object AndroidModule {
     val main = listOf(
         Dependencies.lifecycleExtensions,
         Dependencies.lifecycleViewModel,
+        Dependencies.lifecycleLiveData,
         Dependencies.androidXCore,
         Dependencies.appCompat,
         Dependencies.material,

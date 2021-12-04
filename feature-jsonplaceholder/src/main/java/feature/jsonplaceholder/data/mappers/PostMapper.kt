@@ -4,13 +4,18 @@ import feature.jsonplaceholder.data.response.PostResponse
 import feature.jsonplaceholder.domain.Post
 
 internal object PostMapper {
-    fun toDomain(response: List<PostResponse>): List<Post> =
-        response.map { postResponse ->
-            Post(
-                body = postResponse.body,
-                id = postResponse.id,
-                title = postResponse.title,
-                userId = postResponse.userId
-            )
+
+    fun toDomain(response: List<PostResponse>): List<Post> {
+        return response.map { postResponse ->
+            with(postResponse){
+                Post(
+                    body = body,
+                    id = id,
+                    title = title,
+                    userId = userId
+                )
+            }
         }
+    }
 }
+
