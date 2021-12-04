@@ -23,19 +23,30 @@ class JsonPlaceHolderHomeActivity : AppCompatActivity() {
     }
 
     private fun onEnterActivity() {
+        retrievePosts()
+    }
+
+    private fun retrievePosts() {
         viewModel.getPosts().observe(this) { event ->
             when (event) {
-                is StateMachine.Loading -> TODO()
-                is StateMachine.ApiError -> TODO()
-                is StateMachine.ConnectionError -> TODO()
-                is StateMachine.ServerError -> TODO()
+                is StateMachine.Loading -> showLoading(true)
                 is StateMachine.Success -> populateViews(event.value)
+                is StateMachine.Failure -> handleError(event.error.message)
+                is StateMachine.Finish -> showLoading(false)
             }
         }
     }
 
+    private fun showLoading(isLoading: Boolean) {
+        binding.viewFlipper.displayedChild = if (isLoading) 1 else 0
+    }
+
     private fun populateViews(posts: List<Post>) {
         binding.title.text = posts[1].body.toString()
+    }
+
+    private fun handleError(errorMsg: String?) {
+        binding.title.text = errorMsg
     }
 
     override fun onDestroy() {

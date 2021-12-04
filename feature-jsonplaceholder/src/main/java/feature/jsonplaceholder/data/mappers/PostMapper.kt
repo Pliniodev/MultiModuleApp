@@ -7,7 +7,7 @@ internal object PostMapper {
 
     fun toDomain(response: List<PostResponse>): List<Post> {
         return response.map { postResponse ->
-            with(postResponse){
+            with(postResponse) {
                 Post(
                     body = body,
                     id = id,
@@ -18,4 +18,3 @@ internal object PostMapper {
         }
     }
 }
-
