@@ -3,7 +3,7 @@ package feature.examples.apirequest.presentation.home
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.feature_examples.databinding.ActivityExampleApiRequestBinding
-import feature.examples.apirequest.domain.Post
+import feature.examples.apirequest.domain.model.Post
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 internal class ExampleApiRequestActivity : AppCompatActivity() {

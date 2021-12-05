@@ -1,4 +1,4 @@
-package feature.examples.apirequest.domain
+package feature.examples.apirequest.domain.model
 
 internal data class Post(
     val body: String?,

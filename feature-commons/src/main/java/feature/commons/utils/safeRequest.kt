@@ -3,6 +3,10 @@ package feature.commons.utils
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
+/**
+ * To understand inline, noinline e crossinline visit
+ * https://medium.com/android-news/inline-noinline-crossinline-what-do-they-mean-b13f48e113c2
+ */
 suspend inline fun <T> safeRequest(
     dispatcher: CoroutineDispatcher,
     crossinline apiCall: suspend () -> T

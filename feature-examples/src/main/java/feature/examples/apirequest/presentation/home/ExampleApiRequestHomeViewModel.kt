@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import feature.examples.apirequest.domain.Post
+import feature.examples.apirequest.domain.model.Post
 import feature.examples.apirequest.domain.service.JsonPlaceHolderService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

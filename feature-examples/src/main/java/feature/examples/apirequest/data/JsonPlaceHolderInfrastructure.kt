@@ -1,7 +1,7 @@
 package feature.examples.apirequest.data
 
 import feature.examples.apirequest.data.mappers.PostMapper
-import feature.examples.apirequest.domain.Post
+import feature.examples.apirequest.domain.model.Post
 import feature.examples.apirequest.domain.service.JsonPlaceHolderService
 
 internal class JsonPlaceHolderInfrastructure(

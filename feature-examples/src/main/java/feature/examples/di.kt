@@ -1,12 +1,12 @@
 package feature.examples
 
 import feature.commons.utils.createApi
-import feature.examples.examplemainhome.presentation.ExampleMainHomeViewModel
-import feature.examples.recyclerview.presentation.viewmodel.ExampleRecyclerViewModel
 import feature.examples.apirequest.data.JsonPlaceHolderGateway
 import feature.examples.apirequest.data.JsonPlaceHolderInfrastructure
 import feature.examples.apirequest.domain.service.JsonPlaceHolderService
 import feature.examples.apirequest.presentation.home.ExampleApiRequestHomeViewModel
+import feature.examples.examplemainhome.presentation.ExampleMainHomeViewModel
+import feature.examples.recyclerview.presentation.viewmodel.ExampleRecyclerViewModel
 import feature.network.constants.BaseUrl
 import feature.network.constants.InjectionTag
 import feature.network.retrofit.BuildRetrofit

@@ -4,14 +4,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.feature_examples.databinding.ActivityExampleMainHomeBinding
 import feature.commons.utils.navigateTo
+import feature.examples.apiRequestJsonPlaceHolderModule
+import feature.examples.apirequest.presentation.home.ExampleApiRequestActivity
 import feature.examples.exampleModule
 import feature.examples.examplemainhome.ExampleFlag
 import feature.examples.examplemainhome.ExampleFlag.API_REQUEST
 import feature.examples.examplemainhome.ExampleFlag.SCREENS_NAVIGATION
 import feature.examples.examplemainhome.ExampleFlag.SIMPLE_RECYCLER_VIEW
 import feature.examples.examplemainhome.ExamplesMainPresentation
-import feature.examples.apiRequestJsonPlaceHolderModule
-import feature.examples.apirequest.presentation.home.ExampleApiRequestActivity
 import feature.examples.recyclerview.presentation.home.ExamplesRecyclerHomeActivity
 import feature.examples.screensnavigation.ScreensNavigationFirstActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel // this must be imported manually
