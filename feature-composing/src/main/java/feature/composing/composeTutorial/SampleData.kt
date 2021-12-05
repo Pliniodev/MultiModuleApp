@@ -1,5 +1,7 @@
 package feature.composing.composeTutorial
 
+import feature.composing.composeTutorial.model.Message
+
 object SampleData {
     // Sample conversation data
     val conversationSample = listOf(
