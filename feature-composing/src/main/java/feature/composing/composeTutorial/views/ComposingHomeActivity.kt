@@ -47,21 +47,6 @@ class ComposingHomeActivity : AppCompatActivity() {
     }
 }
 
-// @Preview(name = "Light Mode")
-// @Preview(
-//    uiMode = Configuration.UI_MODE_NIGHT_YES,
-//    showBackground = true,
-//    name = "Dark Mode"
-// )
-
-// @Preview
-// @Composable
-// fun PreviewMessageCard() {
-//    MaterialTheme {
-//        MessageCard(msg = Message("Fulaninha da Silva", "Eai blz! bla bla bla bla"))
-//    }
-// }
-
 @Preview
 @Composable
 fun PreviewConversation() {

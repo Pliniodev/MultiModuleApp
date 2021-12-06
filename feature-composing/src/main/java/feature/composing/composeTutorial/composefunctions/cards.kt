@@ -70,13 +70,14 @@ fun MessageCard(msg: Message) {
         }
     }
 }
- @Preview
- @Composable
- fun PreviewMessageCard() {
+
+@Preview
+@Composable
+fun PreviewMessageCard() {
     MaterialTheme {
         CardItemInformation(msg = Message("Raça do cachorro", "Infos do cachorro"))
     }
- }
+}
 
 @Composable
 fun CardItemInformation(msg: Message) {
@@ -102,6 +103,7 @@ fun CardItemInformation(msg: Message) {
             }
         )
 
+
         Column(modifier = Modifier.clickable { isExpanded = !isExpanded }) {
             Text(
                 text = msg.author,
@@ -126,15 +128,28 @@ fun CardItemInformation(msg: Message) {
             }
             MoreInfoText(
                 isVisible = isExpanded,
-                text = "mains infos",
+                dog = msg,
             )
         }
     }
 }
 
 @Composable
-fun MoreInfoText(isVisible: Boolean = false, text: String) {
-    if (isVisible){
-        Text(text = text)
+fun MoreInfoText(isVisible: Boolean = false, dog: Message) {
+    if (isVisible) {
+        Surface(
+            shape = MaterialTheme.shapes.medium,
+            elevation = 1.dp,
+            color = MaterialTheme.colors.onPrimary,
+            modifier = Modifier
+                .animateContentSize()
+                .padding(1.dp)
+        ) {
+            Text(
+                text = dog.author,
+                modifier = Modifier.padding(all = 4.dp),
+                style = MaterialTheme.typography.body2
+            )
+        }
     }
 }
