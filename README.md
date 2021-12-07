@@ -5,15 +5,26 @@ App multimódulos para estudos
 Aqui existem vários apps simples (1 em cada módulo) e está sendo construído por:
 
 <div align="center">
+  
+<a href="https://github.com/Pliniodev">
 <img width="380em" src="https://github-readme-stats.vercel.app/api?username=pliniodev&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
-  
+</a>
+    
+<a href="https://github.com/paulovsborges/paulovsborges">
 <img width="380em" src="https://github-readme-stats.vercel.app/api?username=paulovsborges&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+</a>
 
+<a href="https://github.com/Douglasvfreitas/Douglasvfreitas">  
 <img width="380em" src="https://github-readme-stats.vercel.app/api?username=douglasvfreitas&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+</a>  
   
+<a href="">   
 <img width="380em" src="https://github-readme-stats.vercel.app/api?username=gil-dev27&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>  
-  
+</a>  
+ 
+<a href="https://github.com/clauber-cmd/clauber-cmd">   
 <img width="380em" src="https://github-readme-stats.vercel.app/api?username=clauber-cmd&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>  
+</a> 
   
 </div>
 
