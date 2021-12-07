@@ -11,4 +11,3 @@ internal class JsonPlaceHolderInfrastructure(
         PostMapper.toDomain(api.getPostResponses())
     }
 }
-

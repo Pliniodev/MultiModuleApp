@@ -18,5 +18,3 @@ inline fun <T> liveResponse(
         emit(result)
         emit(StateMachine.Finish)
     }
-
-

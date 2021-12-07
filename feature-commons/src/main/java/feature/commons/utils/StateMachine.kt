@@ -12,7 +12,7 @@ sealed class StateMachine<out R> {
     data class ApiError(
         val statusCode: Int,
         val error: ErrorResponse? = null
-        ) : StateMachine<Nothing>()
+    ) : StateMachine<Nothing>()
     object UnknownError : StateMachine<Nothing>()
     object Finish : StateMachine<Nothing>()
     object Loading : StateMachine<Nothing>()

@@ -10,7 +10,7 @@ suspend fun <T> safeRequest(
 ): StateMachine<T> {
     return withContext(Dispatchers.IO) {
         runCatching { StateMachine.Success(apiCall()) }.getOrElse { throwable ->
-            when(throwable){
+            when (throwable) {
                 is HttpException -> {
                     val code = throwable.code()
                     val errorResponse = convertErrorBody(throwable)
