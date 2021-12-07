@@ -12,3 +12,9 @@ internal fun convertErrorBody(throwable: HttpException): ErrorResponse? {
     }
     return ErrorResponse.EMPTY_API_ERROR
 }
+
+data class ErrorResponse(val code: Int, val message: String?) {
+    companion object {
+        val EMPTY_API_ERROR = ErrorResponse(-1, null)
+    }
+}

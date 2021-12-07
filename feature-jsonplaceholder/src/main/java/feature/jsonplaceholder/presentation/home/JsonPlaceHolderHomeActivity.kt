@@ -1,10 +1,9 @@
 package feature.jsonplaceholder.presentation.home
 
 import android.os.Bundle
-import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import feature.commons.utils.StateMachine
-import feature.commons.utils.saferequest.onGenericApiError
+import feature.commons.utils.saferequest.onApiError
 import feature.jsonplaceholder.R
 import feature.jsonplaceholder.databinding.ActivityJsonPlaceHolderHomeBinding
 import feature.jsonplaceholder.domain.Post
@@ -21,7 +20,7 @@ class JsonPlaceHolderHomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityJsonPlaceHolderHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        loadKoinModules(listOf(jsonPlaceHolderModule))
+        loadKoinModules(jsonPlaceHolderModule)
         onEnterActivity()
     }
 
@@ -34,9 +33,9 @@ class JsonPlaceHolderHomeActivity : AppCompatActivity() {
             when (event) {
                 is StateMachine.Loading -> showLoading(true)
                 is StateMachine.Success -> populateViews(event.value)
-                is StateMachine.ApiError -> handleError(onGenericApiError(event.statusCode))
+                is StateMachine.ApiError -> handleError(onApiError(this, event.error))
                 is StateMachine.Finish -> showLoading(false)
-                is StateMachine.UnknownError -> handleError(R.string.unknown_error)
+                is StateMachine.UnknownError -> handleError(getString(R.string.unknown_error))
             }
         }
     }
@@ -49,12 +48,12 @@ class JsonPlaceHolderHomeActivity : AppCompatActivity() {
         binding.title.text = posts[1].body.toString()
     }
 
-    private fun handleError(@StringRes errorMsg: Int) {
-        binding.title.text = getString(errorMsg)
+    private fun handleError(errorMsg: String) {
+        binding.title.text = errorMsg
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        unloadKoinModules(listOf(jsonPlaceHolderModule))
+        unloadKoinModules(jsonPlaceHolderModule)
     }
 }
