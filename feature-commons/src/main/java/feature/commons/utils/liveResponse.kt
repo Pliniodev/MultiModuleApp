@@ -7,6 +7,7 @@ import kotlinx.coroutines.Dispatchers.IO
 /**
  * To understand inline, noinline e crossinline visit
  * https://medium.com/android-news/inline-noinline-crossinline-what-do-they-mean-b13f48e113c2
+ * We can use "dispatcher" for tests
  */
 inline fun <T> liveResponse(
     dispatcher: CoroutineDispatcher = IO,

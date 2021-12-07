@@ -1,14 +1,19 @@
 package feature.commons.utils.saferequest
 
 import feature.commons.utils.StateMachine
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 
+/**
+ * We can use "dispatcher" for tests
+ */
 suspend fun <T> safeRequest(
+    dispatcher: CoroutineDispatcher = IO,
     apiCall: suspend () -> T
 ): StateMachine<T> {
-    return withContext(Dispatchers.IO) {
+    return withContext(dispatcher) {
         runCatching { StateMachine.Success(apiCall()) }.getOrElse { throwable ->
             when (throwable) {
                 is HttpException -> {
