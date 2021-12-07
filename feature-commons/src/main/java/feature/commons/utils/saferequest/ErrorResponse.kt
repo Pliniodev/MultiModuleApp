@@ -1,4 +1,4 @@
-package feature.commons.utils
+package feature.commons.utils.saferequest
 
 data class ErrorResponse(val code: Int, val message: String?) {
     companion object {
