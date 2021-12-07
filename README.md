@@ -65,15 +65,18 @@ Mostrar o nosso nível técnico atual nas tecnologias utilizadas no projeto.
 - [ ] Api Ricky and morty 
 
      - [x] infra ok 
+     - [ ] layout
      
 - [ ] Api Dogs 
 
      - [x] infra ok 
+     - [ ] layout
      
 - [ ] Api slip
 - [ ] Api Json Place Holder
 
      - [x] infra ok 
+     - [ ] layout
      
 - [x] Simple State machine
 - [x] Safe request com tratamento de erros para HttpException 
