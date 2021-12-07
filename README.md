@@ -100,9 +100,10 @@ Mostrar o nosso nível técnico atual nas tecnologias utilizadas no projeto.
 - [ ] Contas a pagar
 - [ ] Calculadora de combustível
 - [ ] Exemplos de implementação
-    [x] Simple Recycler view
-    [x] Api request
-    [x] Screen navigation with custom navigator
+
+    - [x] Simple Recycler view
+    - [x] Api request
+    - [x] Screen navigation with custom navigator
 
 ### Testes
 
