@@ -62,6 +62,10 @@ Mostrar o nosso nível técnico atual nas tecnologias utilizadas no projeto.
 </p>
 
 ### Progresso da implementação das features
+- [ ] Api Dogs
+
+     - [x] infra ok 
+     - [ ] layout
 
 - [ ] Api Ricky and morty 
 
