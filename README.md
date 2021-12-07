@@ -18,10 +18,11 @@ Aqui existem vários apps simples (1 em cada módulo) e está sendo construído 
 </div>
 
 # App multi módulos
-- Consumo de Api com Retrofit, Injeção de dependências com Koin e chamadas assíncronas com Coroutine.
-- Organização de dependências (gradle) usando buildSrc e arquivo kotlin.
-- Uso de ktlint para limpeza do código.
-- Clean arquitecture em todos os módulos.
+- Jetpack Compose - Experimentação, ainda na branch - [feat/compose](https://github.com/Pliniodev/MultiModuleApp/tree/feat/compose)
+- Consumo de Api com Retrofit, Injeção de dependências com *Koin* e chamadas assíncronas com *Coroutines*.
+- Organização de dependências (gradle) usando *buildSrc* e arquivo kotlin.
+- Uso de *ktlint* para limpeza do código.
+- *Clean arquitecture* em todos os módulos. - Essa é a idéia
 - Vários exemplos de implementações de componentes na feature-examples
 - Consumo de apis distintas.
 
