@@ -57,6 +57,8 @@ object Dependencies {
     val roomCompiler = "androidx.room:room-compiler:${Versions.roomCompilerVersion}"
     val roomForCoroutines = "androidx.room:room-ktx:${Versions.roomRuntimeVersion}"
     val rxAndroid = "io.reactivex.rxjava3:rxandroid:${Versions.rxJavaVersion}"
+    val rxJava = "io.reactivex.rxjava3:rxjava:${Versions.rxJavaVersion}"
+    val rxAdapter = "com.github.akarnokd:rxjava3-retrofit-adapter:${Versions.rxJavaVersion}"
     val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}"
     val androidXCore = "androidx.core:core-ktx:${Versions.androidXCoreVersion}"
     val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
@@ -123,6 +125,8 @@ object NetworkModule {
 
     val withRx = listOf(
         Dependencies.rxAndroid,
+        Dependencies.rxJava,
+        Dependencies.rxAdapter,
         Dependencies.gson,
         Dependencies.gsonConverter,
         Dependencies.retrofit,

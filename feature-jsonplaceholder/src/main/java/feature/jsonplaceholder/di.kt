@@ -9,6 +9,7 @@ import feature.network.constants.BaseUrl
 import feature.network.constants.InjectionTag
 import feature.network.retrofit.BuildRetrofit
 import feature.network.retrofit.provideOkHttpClient
+import kotlinx.coroutines.Dispatchers
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
