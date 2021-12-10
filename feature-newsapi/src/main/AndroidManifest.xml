@@ -2,4 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.feature_newsapi">
 
+    <application>
+        <activity
+            android:name="feature.newsapi.presentation.NewsApiHomeActivity"
+            android:exported="false" />
+    </application>
+
 </manifest>
