@@ -1,4 +1,4 @@
-package feature.jsonplaceholder.data.mappers
+package feature.jsonplaceholder.data.mapper
 
 import feature.jsonplaceholder.data.response.PostResponse
 import feature.jsonplaceholder.domain.Post
