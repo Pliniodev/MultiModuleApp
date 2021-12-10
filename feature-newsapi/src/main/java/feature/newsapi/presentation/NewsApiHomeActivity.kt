@@ -26,16 +26,27 @@ class NewsApiHomeActivity : AppCompatActivity() {
     }
 
     private fun observers() {
-        viewModel.newsByEverything.observe(
+        viewModel.isLoading.observe(this, { showLoading(it) })
+        viewModel.articles.observe(
             this,
             {
-                binding.title.text = it.articles.toString()
+                binding.viewFlipper.displayedChild = 1
+                binding.title.text = it.toString()
             }
         )
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.viewFlipper.displayedChild = if (isLoading) LOADING else ARTICLES
     }
 
     override fun onDestroy() {
         super.onDestroy()
         unloadKoinModules(newsApiModule)
+    }
+
+    companion object{
+        const val LOADING = 1
+        const val ARTICLES = 0
     }
 }
