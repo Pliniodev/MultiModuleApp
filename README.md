@@ -53,7 +53,7 @@ Aqui existem vários apps simples (1 em cada módulo) e está sendo construído 
 * [Koin]()
 * [Retrofit]()
 * [Coroutines]()
-* [RxJava]() - em breve
+* [RxJava]() 
 
 
 
@@ -83,7 +83,7 @@ Mostrar o nosso nível técnico atual nas tecnologias utilizadas no projeto.
      - [x] infra ok 
      - [ ] layout
      
-- [ ] Api Dogs 
+- [ ] Api News 
 
      - [x] infra ok 
      - [ ] layout
