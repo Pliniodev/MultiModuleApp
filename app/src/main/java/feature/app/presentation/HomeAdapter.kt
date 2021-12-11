@@ -3,7 +3,9 @@ package feature.app.presentation
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import feature.app.FeatureFlag
+import feature.feature_dogs.R
 import feature.multimoduleapp.databinding.ItemHomeFeatureBinding
 
 internal class HomeAdapter(
@@ -33,6 +35,12 @@ internal class HomeAdapter(
                 with(root.context) {
                     title.text = getString(featurePresentation.title)
                     root.setOnClickListener { onClick(featurePresentation.featureFlag) }
+                    if (featurePresentation.featureUrlImage != null) {
+                        Glide.with(root.context)
+                            .load(featurePresentation.featureUrlImage)
+                            .placeholder(R.drawable.ic_baseline_portrait_24)
+                            .into(binding.exampleImage)
+                    }
                 }
             }
         }
