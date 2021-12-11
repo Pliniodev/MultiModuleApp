@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import feature.marvelapi.databinding.MainRecyclerBinding
-import feature.marvelapi.presentation.model.MainPresentation
 import feature.marvelapi.presentation.model.SomePresentation
 
 class MainMarvelAdapter :
