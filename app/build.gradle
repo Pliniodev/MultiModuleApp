@@ -63,6 +63,7 @@ dependencies {
     implementation project(path: ':feature-currency-conversion')
     implementation project(path: ':feature-gas-calculator')
     implementation project(path: ':feature-network')
+    implementation project(path: ':feature-marvelapi')
 
     implementation Dependencies.glide
     implementation project(path: ':feature-newsapi')

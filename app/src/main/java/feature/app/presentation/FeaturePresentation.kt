@@ -28,6 +28,7 @@ internal data class FeaturePresentation(
                 FeatureFlag.EXAMPLES -> EXAMPLES_FEATURE_IMAGE
                 FeatureFlag.COIN_CONVERSION -> COIN_CONVERSION_FEATURE_IMAGE
                 FeatureFlag.JSON_PLACE_HOLDER -> JSON_PLACE_HOLDER_FEATURE_IMAGE
+                FeatureFlag.MARVEL_API -> JSON_PLACE_HOLDER_FEATURE_IMAGE
             }
         }
 
@@ -46,6 +47,7 @@ internal data class FeaturePresentation(
                 FeatureFlag.JSON_PLACE_HOLDER -> {
                     R.string.home_dashboard_presentation_title_json_place_holder
                 }
+                FeatureFlag.MARVEL_API -> R.string.home_dashboard_presentation_title_marvel_api
             }
 
         private const val RICKY_FEATURE_IMAGE = "https://images.tcdn.com.br/img/img_prod/697730" +

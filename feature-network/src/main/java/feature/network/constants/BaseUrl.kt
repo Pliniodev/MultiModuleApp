@@ -6,4 +6,5 @@ object BaseUrl {
     const val adviceSlip = "https://api.adviceslip.com/advice"
     const val jsonPlaceHolder = "https://jsonplaceholder.typicode.com/"
     const val newsApi = "https://newsapi.org/"
+    const val marvelApi = "http(s)://gateway.marvel.com/"
 }
