@@ -4,7 +4,10 @@
 
     <application>
         <activity
-            android:name="feature.newsapi.presentation.NewsApiHomeActivity"
+            android:name="feature.newsapi.presentation.articledetails.ArticleDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name="feature.newsapi.presentation.home.NewsApiHomeActivity"
             android:exported="false" />
     </application>
 

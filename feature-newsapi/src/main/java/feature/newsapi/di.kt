@@ -8,7 +8,7 @@ import feature.network.retrofit.provideOkHttpClientAuthNewsApi
 import feature.newsapi.data.NewsApiGateway
 import feature.newsapi.data.NewsApiInfrastructure
 import feature.newsapi.domain.NewsApiService
-import feature.newsapi.presentation.NewsApiHomeViewModel
+import feature.newsapi.presentation.home.NewsApiHomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module

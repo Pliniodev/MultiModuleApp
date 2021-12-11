@@ -22,7 +22,7 @@ import feature.examples.recyclerview.presentation.home.ExampleSplashActivity
 import feature.gas_calculator.GasCalculatorHomeActivity
 import feature.jsonplaceholder.presentation.home.JsonPlaceHolderHomeActivity
 import feature.multimoduleapp.databinding.ActivityMainHomeBinding
-import feature.newsapi.presentation.NewsApiHomeActivity
+import feature.newsapi.presentation.home.NewsApiHomeActivity
 import feature.ricky.presentation.home.RickyHomeActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
