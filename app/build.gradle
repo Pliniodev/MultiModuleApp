@@ -65,6 +65,7 @@ dependencies {
     implementation project(path: ':feature-network')
 
     implementation Dependencies.glide
+    implementation project(path: ':feature-newsapi')
     kapt Dependencies.glideCompiler
 
     AndroidModule.main.forEach {implementation it }

@@ -1,7 +1,7 @@
 package feature.jsonplaceholder.data
 
 import feature.commons.utils.saferequest.safeRequest
-import feature.jsonplaceholder.data.mappers.PostMapper
+import feature.jsonplaceholder.data.mapper.PostMapper
 import feature.jsonplaceholder.domain.service.JsonPlaceHolderService
 
 internal class JsonPlaceHolderInfrastructure(

@@ -11,3 +11,11 @@ internal class DogsInterceptor : Interceptor {
         return chain.proceed(requestBuilder.build())
     }
 }
+
+internal class NewsApiInterceptor : Interceptor {
+    override fun intercept(chain: Interceptor.Chain): Response {
+        val requestBuilder = chain.request().newBuilder()
+        requestBuilder.addHeader("Authorization", Authorization.newsApiAuth)
+        return chain.proceed(requestBuilder.build())
+    }
+}
