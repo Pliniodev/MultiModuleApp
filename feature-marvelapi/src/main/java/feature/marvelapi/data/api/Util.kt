@@ -11,10 +11,10 @@ internal object Util {
 
     private val timestamp = Calendar.getInstance().timeInMillis / 1000
     val ts = timestamp.toString()
-    val hash = Criptografia.md5(ts + privateKey + publicKey)
+    val hash = Cryptography.md5(ts + privateKey + publicKey)
 }
 
-internal class Criptografia {
+internal class Cryptography {
     companion object {
         private val HEXCHARS = charArrayOf('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f')
 
@@ -32,9 +32,6 @@ internal class Criptografia {
             return String(result)
         }
 
-        /**
-         * Cria um hash MD5 par enviarmos a API da marvel
-         */
         fun md5(s: String): String {
             try { // Create MD5 Hash
                 val digest = MessageDigest.getInstance("MD5")
@@ -45,6 +42,5 @@ internal class Criptografia {
             }
             return ""
         }
-
     }
 }
