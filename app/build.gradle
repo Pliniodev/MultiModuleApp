@@ -64,11 +64,10 @@ dependencies {
     implementation project(path: ':feature-gas-calculator')
     implementation project(path: ':feature-network')
     implementation project(path: ':feature-marvelapi')
+    implementation project(path: ':feature-newsapi')
 
     implementation Dependencies.glide
-    implementation project(path: ':feature-newsapi')
     kapt Dependencies.glideCompiler
-
     AndroidModule.main.forEach {implementation it }
     TestModule.main.forEach {testImplementation it }
     AndroidTestModule.main.forEach {androidTestImplementation it }

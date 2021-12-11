@@ -1,8 +1,8 @@
 package feature.marvelapi.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import feature.marvelapi.R
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
 import feature.marvelapi.marvelModule
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -20,6 +20,11 @@ class MarvelHomeActivity : AppCompatActivity() {
         binding = ActivityMarvelHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         loadKoinModules(marvelModule)
+
+        viewModel.error.observe(this, {
+            Toast.makeText(this, "${it.message}", Toast.LENGTH_SHORT).show()
+            onBackPressed()
+        })
 
         viewModel.test.observe(this, {
             binding.mainText.text = it.name
