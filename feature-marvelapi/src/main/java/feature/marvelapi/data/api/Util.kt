@@ -16,7 +16,7 @@ internal object Util {
 
 internal class Cryptography {
     companion object {
-        private val HEXCHARS = charArrayOf('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f')
+        private val HEX_CHARS = charArrayOf('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f')
 
         private fun hexEncode(bytes: ByteArray): String {
             val result = CharArray(bytes.size * 2)
@@ -25,15 +25,15 @@ internal class Cryptography {
             var j = 0
             while (i < bytes.size) {
                 b = bytes[i].toInt() and 0xff
-                result[j++] = HEXCHARS[b shr 4]
-                result[j++] = HEXCHARS[b and 0xf]
+                result[j++] = HEX_CHARS[b shr 4]
+                result[j++] = HEX_CHARS[b and 0xf]
                 i++
             }
             return String(result)
         }
 
         fun md5(s: String): String {
-            try { // Create MD5 Hash
+            try {
                 val digest = MessageDigest.getInstance("MD5")
                 digest.update(s.toByteArray())
                 return hexEncode(digest.digest())
