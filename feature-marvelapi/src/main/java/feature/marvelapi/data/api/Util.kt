@@ -5,7 +5,6 @@ import java.security.MessageDigest
 
 internal object Util {
 
-
     val publicKey = "a8e89960ad1d172d104fbc9b152bba87"
     val privateKey = "779fdd0b62e089b94fa09ffbced0c543b0e1c937"
 

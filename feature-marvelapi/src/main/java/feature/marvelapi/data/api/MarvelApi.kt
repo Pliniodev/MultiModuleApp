@@ -4,7 +4,7 @@ import feature.marvelapi.data.model.Someeeee
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-internal interface MarvelApi {
+interface MarvelApi {
 
     @GET("Characters")
     suspend fun test(
@@ -12,4 +12,7 @@ internal interface MarvelApi {
         @Query("ts") ts: String = Util.ts,
         @Query("hash") hash : String = Util.hash
     ): Someeeee
+//
+//    @GET("Characters")
+//    suspend fun test(): Someeeee
 }
