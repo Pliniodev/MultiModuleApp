@@ -73,7 +73,7 @@ class NewsApiHomeActivity : AppCompatActivity() {
         unloadKoinModules(newsApiModule)
     }
 
-    companion object{
+    companion object {
         const val LOADING = 1
         const val ARTICLE_RV = 0
     }

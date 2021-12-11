@@ -1,5 +1,5 @@
 package feature.newsapi.presentation
 
-internal object NewsApiIntents{
+internal object NewsApiIntents {
     const val ARTICLE = "newsapi.article"
 }
