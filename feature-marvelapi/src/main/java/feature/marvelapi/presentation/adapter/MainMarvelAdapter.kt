@@ -25,15 +25,13 @@ class MainMarvelAdapter :
     class ViewHolder(private val binding: MainRecyclerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-            fun bind(item : SomePresentation){
-                binding.name.text = item.name
-            }
+        fun bind(item: SomePresentation) {
+            binding.name.text = item.name
+        }
     }
 
     companion object {
-
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<SomePresentation>() {
-
             override fun areItemsTheSame(
                 oldItem: SomePresentation,
                 newItem: SomePresentation
