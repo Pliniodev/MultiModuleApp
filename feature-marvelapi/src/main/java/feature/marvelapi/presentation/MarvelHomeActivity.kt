@@ -3,6 +3,7 @@ package feature.marvelapi.presentation
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
 import feature.marvelapi.marvelModule
 import feature.marvelapi.presentation.adapter.MainMarvelAdapter
@@ -24,6 +25,7 @@ class MarvelHomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         loadKoinModules(marvelModule)
 
+        setTheme(R.style.MarvelThemes)
         binding.homeRecycler.apply {
             adapter = mAdapter
             setHasFixedSize(true)
