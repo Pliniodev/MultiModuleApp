@@ -71,7 +71,7 @@ fun MessageCard(msg: Message) {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun PreviewMessageCard() {
     MaterialTheme {
