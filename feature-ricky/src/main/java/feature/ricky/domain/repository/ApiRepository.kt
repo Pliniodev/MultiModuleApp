@@ -1,7 +1,7 @@
 package feature.ricky.domain.repository
 
-import feature.ricky.presentation.model.EpisodeInfoPresentation
+import feature.ricky.presentation.model.EpisodePresentation
 
 internal interface ApiRepository {
-    suspend fun getEpisodeInfo(): EpisodeInfoPresentation
+    suspend fun getEpisode(): EpisodePresentation
 }
