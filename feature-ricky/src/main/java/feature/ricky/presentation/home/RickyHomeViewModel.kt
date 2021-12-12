@@ -9,7 +9,7 @@ import feature.ricky.presentation.model.InfoPresentation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class RickyHomeViewModel(
+internal class RickyHomeViewModel(
     private val api: ApiRepository
 ) : ViewModel() {
 

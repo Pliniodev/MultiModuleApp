@@ -5,7 +5,7 @@ import feature.ricky.domain.mapper.EpisodeDomainMapper
 import feature.ricky.domain.repository.ApiRepository
 import feature.ricky.presentation.model.EpisodeInfoPresentation
 
-class ApiRepositoryImpl(
+internal class ApiRepositoryImpl(
     private val remoteDataSource: RemoteDataSourceRicky
 ) : ApiRepository {
 
