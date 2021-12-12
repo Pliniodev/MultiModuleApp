@@ -1,5 +1,5 @@
 package feature.ricky.presentation
 
-interface ClickListener {
+internal interface ClickListener {
     fun onClick(position: Int)
 }

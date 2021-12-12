@@ -27,7 +27,7 @@ import feature.ricky.presentation.home.RickyHomeActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 internal class MainHomeActivity : AppCompatActivity() {
-    private val viewModel: HomeViewModel by viewModel()
+    private val viewModel: MainHomeViewModel by viewModel()
     private lateinit var binding: ActivityMainHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

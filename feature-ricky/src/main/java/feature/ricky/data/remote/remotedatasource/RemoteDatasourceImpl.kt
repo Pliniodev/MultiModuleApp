@@ -4,7 +4,7 @@ import feature.ricky.data.remote.api.ApiService
 import feature.ricky.data.remote.mapper.EpisodeMapper
 import feature.ricky.domain.model.EpisodeInfoDomain
 
-class RemoteDatasourceImpl(
+internal class RemoteDatasourceImpl(
     private val api: ApiService
 ) : RemoteDataSourceRicky {
 

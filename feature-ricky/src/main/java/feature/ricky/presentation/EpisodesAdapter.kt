@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import feature.feature_ricky.databinding.ItemEpisodesBinding
 
-class EpisodesAdapter() : RecyclerView.Adapter<EpisodesAdapter.ViewHolder>() {
+internal class EpisodesAdapter : RecyclerView.Adapter<EpisodesAdapter.ViewHolder>() {
 
     private lateinit var mListener: ClickListener
     private var episodes: List<EpisodeModel> = mutableListOf()

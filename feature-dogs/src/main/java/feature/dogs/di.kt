@@ -16,20 +16,20 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 val dogsModule = module {
-    single(named(InjectionTag.RETROFIT_RICKY)) {
+    single(named(InjectionTag.RETROFIT_DOGS)) {
         BuildRetrofit(
             apiBaseUrl = BaseUrl.dogs,
             okHttpClient = provideOkHttpClientAuthDogs()
         )
     }
 
-    single(named(InjectionTag.API_RICKY)) {
-        createApi<DogsApiService>(get(named(InjectionTag.RETROFIT_RICKY)))
+    single(named(InjectionTag.API_DOGS)) {
+        createApi<DogsApiService>(get(named(InjectionTag.RETROFIT_DOGS)))
     }
 
     single<RemoteDataSource> {
         RemoteDataSourceImpl(
-            api = get(named(InjectionTag.API_RICKY))
+            api = get(named(InjectionTag.API_DOGS))
         )
     }
 
