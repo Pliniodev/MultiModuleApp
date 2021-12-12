@@ -1,8 +1,10 @@
 package feature.marvelapi.data.mapper
 
+import feature.marvelapi.data.model.CharactersResponse
 import feature.marvelapi.data.model.MainResponse
-import feature.marvelapi.domain.model.MainDomain
+import feature.marvelapi.data.model.SubResponse
 import feature.marvelapi.domain.model.CharactersDomain
+import feature.marvelapi.domain.model.MainDomain
 import feature.marvelapi.domain.model.SubResponseDomain
 
 object CharactersResponseToDomain {
@@ -15,14 +17,30 @@ object CharactersResponseToDomain {
             attributionText = source.attributionText,
             attributionHTML = source.attributionHTML,
             eTag = source.eTag,
-            data = SubResponseDomain(
-                offset = source.data.offset,
-                limit = source.data.limit,
-                total = source.data.total,
-                count = source.data.count,
-                results = source.data.results.map { response ->
-                    CharactersDomain(name = response.name)
-                }
-            )
+            data = subResponseToDomain(source.data)
         )
+
+    private fun subResponseToDomain(source: SubResponse): SubResponseDomain {
+
+        with(source) {
+            return SubResponseDomain(
+                offset = offset,
+                limit = limit,
+                total = total,
+                count = count,
+                results = charactersToDomain(results)
+            )
+        }
+    }
+
+    private fun charactersToDomain(source: List<CharactersResponse>): List<CharactersDomain> =
+
+        source.map { character ->
+            with(character) {
+                CharactersDomain(
+                    name = name
+                )
+            }
+        }
+
 }

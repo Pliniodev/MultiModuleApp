@@ -1,8 +1,10 @@
 package feature.marvelapi.domain.mapper
 
+import feature.marvelapi.domain.model.CharactersDomain
 import feature.marvelapi.domain.model.MainDomain
-import feature.marvelapi.presentation.model.MainPresentation
+import feature.marvelapi.domain.model.SubResponseDomain
 import feature.marvelapi.presentation.model.CharactersPresentation
+import feature.marvelapi.presentation.model.MainPresentation
 import feature.marvelapi.presentation.model.SubResponsePresentation
 
 object CharactersDomainToPresentation {
@@ -15,14 +17,28 @@ object CharactersDomainToPresentation {
             attributionText = source.attributionText,
             attributionHTML = source.attributionHTML,
             eTag = source.eTag,
-            data = SubResponsePresentation(
-                offset = source.data.offset,
-                limit = source.data.limit,
-                total = source.data.total,
-                count = source.data.count,
-                results = source.data.results.map { response ->
-                    CharactersPresentation(response.name ?: "algo")
-                }
-            )
+            data = subDomainToPresentation(source.data)
         )
+
+    private fun subDomainToPresentation(source: SubResponseDomain): SubResponsePresentation {
+        with(source) {
+            return SubResponsePresentation(
+                offset = offset,
+                limit = limit,
+                total = total,
+                count = count,
+                results = characterDomainToPresentation(results)
+            )
+        }
+    }
+
+    private fun characterDomainToPresentation(source: List<CharactersDomain>): List<CharactersPresentation> =
+        source.map { character ->
+            with(character) {
+                CharactersPresentation(
+                    name = name
+                )
+            }
+        }
+
 }
