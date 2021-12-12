@@ -1,9 +1,8 @@
 package feature.marvelapi.data.remotedatasource
 
 import feature.marvelapi.domain.model.MainDomain
-import feature.marvelapi.domain.model.SomeDomain
 
 interface RemoteDataSource {
 
-    suspend fun getSome(): MainDomain
+    suspend fun getCharactersDomain(): MainDomain
 }

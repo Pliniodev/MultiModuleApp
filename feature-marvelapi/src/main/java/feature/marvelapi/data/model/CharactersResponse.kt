@@ -20,10 +20,10 @@ data class SubResponse(
     val limit: Int,
     val total: Int,
     val count: Int,
-    val results: List<Someeeee>
+    val results: List<CharactersResponse>
 )
 
-data class Someeeee(
+data class CharactersResponse(
     @SerializedName("name")
     val name: String?,
 )

@@ -16,9 +16,9 @@ data class SubResponseDomain(
     val limit: Int,
     val total: Int,
     val count: Int,
-    val results: List<SomeDomain>
+    val results: List<CharactersDomain>
 )
 
-data class SomeDomain(
+data class CharactersDomain(
     val name: String
 )

@@ -1,14 +1,13 @@
 package feature.marvelapi.data.mapper
 
 import feature.marvelapi.data.model.MainResponse
-import feature.marvelapi.data.model.Someeeee
 import feature.marvelapi.domain.model.MainDomain
-import feature.marvelapi.domain.model.SomeDomain
+import feature.marvelapi.domain.model.CharactersDomain
 import feature.marvelapi.domain.model.SubResponseDomain
 
-object TestMapper {
+object CharactersResponseToDomain {
 
-    fun remoteToDomain(source: MainResponse): MainDomain =
+    fun responseToDomain(source: MainResponse): MainDomain =
         MainDomain(
             code = source.code,
             status = source.status,
@@ -22,7 +21,7 @@ object TestMapper {
                 total = source.data.total,
                 count = source.data.count,
                 results = source.data.results.map { response ->
-                    SomeDomain(response.name ?: "algo")
+                    CharactersDomain(response.name ?: "algo")
                 }
             )
         )
