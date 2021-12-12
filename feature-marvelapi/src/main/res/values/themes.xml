@@ -1,16 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
     <style name="MarvelThemes" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
         <item name="colorPrimary">#6D0202</item>
-        <item name="colorPrimaryVariant">#B80000</item>
+        <item name="colorPrimaryVariant">@color/red_500</item>
         <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">#7A7A7A</item>
-        <item name="colorSecondaryVariant">#3A3A3A</item>
+        <item name="colorSecondary">@color/black_200</item>
+        <item name="colorSecondaryVariant">@color/black_500</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
     </style>
 </resources>
