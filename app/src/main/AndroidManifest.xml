@@ -18,7 +18,7 @@
         <activity android:name="feature.examples.recyclerview.presentation.home.ExamplesRecyclerHomeActivity" />
         <activity android:name="feature.examples.recyclerview.presentation.home.ExampleRecyclerDetailsActivity" />
         <activity android:name="feature.dogs.presentation.home.DogsHomeActivity" />
-        <activity android:name="feature.marvelapi.presentation.MarvelHomeActivity" tools:replace="android:theme" android:theme="@style/MarvelThemes"/>
+        <activity android:name="feature.marvelapi.presentation.home.activity.MarvelHomeActivity" tools:replace="android:theme" android:theme="@style/MarvelThemes"/>
 
         <activity
             android:name="feature.app.presentation.home.MainHomeActivity"

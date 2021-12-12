@@ -1,4 +1,4 @@
-package feature.marvelapi.presentation
+package feature.marvelapi.presentation.home.activity
 
 import android.os.Bundle
 import android.widget.Toast
@@ -6,7 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
 import feature.marvelapi.marvelModule
-import feature.marvelapi.presentation.adapter.MainMarvelAdapter
+import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
+import feature.marvelapi.presentation.home.adapter.MainMarvelAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -31,7 +32,7 @@ class MarvelHomeActivity : AppCompatActivity() {
             setHasFixedSize(true)
         }
 
-        viewModel.test.observe(this, {
+        viewModel.success.observe(this, {
             mAdapter.submitList(it.data.results)
         })
 

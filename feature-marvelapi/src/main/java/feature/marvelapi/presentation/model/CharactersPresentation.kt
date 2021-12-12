@@ -16,9 +16,9 @@ data class SubResponsePresentation(
     val limit: Int,
     val total: Int,
     val count: Int,
-    val results: List<SomePresentation>
+    val results: List<CharactersPresentation>
 )
 
-data class SomePresentation(
+data class CharactersPresentation(
     val name: String
 )

@@ -1,4 +1,4 @@
-package feature.marvelapi.presentation
+package feature.marvelapi.presentation.home.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,18 +9,18 @@ import kotlinx.coroutines.launch
 
 class MarvelHomeViewModel(private val repository: MarvelRepository) : ViewModel() {
 
-    val test = MutableLiveData<MainPresentation>()
+    val success = MutableLiveData<MainPresentation>()
 
     val error = MutableLiveData<Exception>()
 
     init {
-        test()
+        getCharacters()
     }
 
-    private fun test() {
+    private fun getCharacters() {
         viewModelScope.launch {
             try {
-                test.value = repository.getCharacters()
+                success.value = repository.getCharacters()
             } catch (e: Exception) {
                 error.value = e
             }

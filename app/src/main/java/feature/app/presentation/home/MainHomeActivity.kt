@@ -13,7 +13,7 @@ import feature.dogs.presentation.home.DogsHomeActivity
 import feature.examples.recyclerview.presentation.home.ExampleSplashActivity
 import feature.gas_calculator.GasCalculatorHomeActivity
 import feature.jsonplaceholder.presentation.home.JsonPlaceHolderHomeActivity
-import feature.marvelapi.presentation.MarvelHomeActivity
+import feature.marvelapi.presentation.home.activity.MarvelHomeActivity
 import feature.multimoduleapp.databinding.ActivityMainHomeBinding
 import feature.newsapi.presentation.home.NewsApiHomeActivity
 import feature.ricky.presentation.home.RickyHomeActivity

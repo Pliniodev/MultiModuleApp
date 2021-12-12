@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name=".presentation.MarvelHomeActivity"
+            android:name=".presentation.home.activity.MarvelHomeActivity"
             android:exported="false" />
     </application>
 

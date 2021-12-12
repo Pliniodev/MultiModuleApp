@@ -6,7 +6,7 @@ import feature.marvelapi.data.remotedatasource.RemoteDataSource
 import feature.marvelapi.data.remotedatasource.RemoteDataSourceImpl
 import feature.marvelapi.data.repository.MarvelRepositoryImpl
 import feature.marvelapi.domain.repository.MarvelRepository
-import feature.marvelapi.presentation.MarvelHomeViewModel
+import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
 import feature.network.constants.BaseUrl
 import feature.network.constants.InjectionTag
 import feature.network.retrofit.BuildRetrofit

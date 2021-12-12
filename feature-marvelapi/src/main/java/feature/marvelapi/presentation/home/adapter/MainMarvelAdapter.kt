@@ -1,14 +1,14 @@
-package feature.marvelapi.presentation.adapter
+package feature.marvelapi.presentation.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import feature.marvelapi.databinding.MainRecyclerBinding
-import feature.marvelapi.presentation.model.SomePresentation
+import feature.marvelapi.presentation.model.CharactersPresentation
 
 class MainMarvelAdapter :
-    androidx.recyclerview.widget.ListAdapter<SomePresentation, MainMarvelAdapter.ViewHolder>(
+    androidx.recyclerview.widget.ListAdapter<CharactersPresentation, MainMarvelAdapter.ViewHolder>(
         DIFF_CALLBACK
     ) {
 
@@ -25,23 +25,23 @@ class MainMarvelAdapter :
     class ViewHolder(private val binding: MainRecyclerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: SomePresentation) {
+        fun bind(item: CharactersPresentation) {
             binding.name.text = item.name
         }
     }
 
     companion object {
-        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<SomePresentation>() {
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<CharactersPresentation>() {
             override fun areItemsTheSame(
-                oldItem: SomePresentation,
-                newItem: SomePresentation
+                oldItem: CharactersPresentation,
+                newItem: CharactersPresentation
             ): Boolean {
                 return oldItem.name == newItem.name
             }
 
             override fun areContentsTheSame(
-                oldItem: SomePresentation,
-                newItem: SomePresentation
+                oldItem: CharactersPresentation,
+                newItem: CharactersPresentation
             ): Boolean {
                 return oldItem == newItem
             }
