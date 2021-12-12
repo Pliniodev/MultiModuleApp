@@ -24,6 +24,5 @@ data class SubResponse(
 )
 
 data class CharactersResponse(
-    @SerializedName("name")
-    val name: String?,
+    val name: String,
 )

@@ -21,7 +21,7 @@ object CharactersResponseToDomain {
                 total = source.data.total,
                 count = source.data.count,
                 results = source.data.results.map { response ->
-                    CharactersDomain(response.name ?: "algo")
+                    CharactersDomain(name = response.name)
                 }
             )
         )
