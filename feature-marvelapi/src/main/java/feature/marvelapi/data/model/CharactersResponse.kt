@@ -2,7 +2,6 @@ package feature.marvelapi.data.model
 
 import com.google.gson.annotations.SerializedName
 
-
 data class MainResponse(
     val code: Int,
     val status: String,
@@ -24,5 +23,14 @@ data class SubResponse(
 )
 
 data class CharactersResponse(
+    val id: Int,
     val name: String,
+    val description : String,
+    val thumbnail : ImagesResponse
+
+)
+
+data class ImagesResponse(
+    val path: String,
+    val extension: String
 )

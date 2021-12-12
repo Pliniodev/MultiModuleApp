@@ -1,9 +1,11 @@
 package feature.marvelapi.domain.mapper
 
 import feature.marvelapi.domain.model.CharactersDomain
+import feature.marvelapi.domain.model.ImagesDomain
 import feature.marvelapi.domain.model.MainDomain
 import feature.marvelapi.domain.model.SubResponseDomain
 import feature.marvelapi.presentation.model.CharactersPresentation
+import feature.marvelapi.presentation.model.ImagesPresentation
 import feature.marvelapi.presentation.model.MainPresentation
 import feature.marvelapi.presentation.model.SubResponsePresentation
 
@@ -36,9 +38,18 @@ object CharactersDomainToPresentation {
         source.map { character ->
             with(character) {
                 CharactersPresentation(
-                    name = name
+                    id = id,
+                    name = name,
+                    description = description,
+                    thumbnail = thumbnailDomainToPresentation(thumbnail)
                 )
             }
         }
+
+    private fun thumbnailDomainToPresentation(source: ImagesDomain): ImagesPresentation =
+        ImagesPresentation(
+            path = source.path,
+            extension = source.extension
+        )
 
 }

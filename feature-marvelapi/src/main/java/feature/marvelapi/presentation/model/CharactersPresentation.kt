@@ -20,5 +20,13 @@ data class SubResponsePresentation(
 )
 
 data class CharactersPresentation(
-    val name: String
+    val id: Int,
+    val name: String,
+    val description : String,
+    val thumbnail : ImagesPresentation
+)
+
+data class ImagesPresentation(
+    val path: String,
+    val extension: String
 )
