@@ -22,7 +22,7 @@ Aqui existem vários apps simples (1 em cada módulo) e está sendo construído 
 <img width="380em" src="https://github-readme-stats.vercel.app/api?username=gil-dev27&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>  
 </a>  
  
-<a href="https://github.com/clauber-cmd/clauber-cmd">   
+<a href="https://github.com/clauber-cmd/clauber-dev">   
 <img width="380em" src="https://github-readme-stats.vercel.app/api?username=clauber-cmd&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>  
 </a> 
   
