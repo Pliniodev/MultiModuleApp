@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="feature.marvelapi">
 
-    <application>
+    <application android:usesCleartextTraffic="true">
         <activity
             android:name=".presentation.home.activity.MarvelHomeActivity"
             android:exported="false" />
