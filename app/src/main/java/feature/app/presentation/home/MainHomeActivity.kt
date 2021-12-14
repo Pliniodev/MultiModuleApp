@@ -12,21 +12,22 @@ import feature.app.FeatureFlag.GAS_CALCULATOR
 import feature.app.FeatureFlag.JSON_PLACE_HOLDER
 import feature.app.FeatureFlag.NEWS
 import feature.app.FeatureFlag.RICKY_AND_MORTY
-import feature.app.FeaturePresentation
-import feature.app.HomeAdapter
+import feature.app.presentation.FeaturePresentation
+import feature.app.presentation.HomeAdapter
 import feature.app.presentation.UnderConstructionFeatActivity
 import feature.commons.utils.navigateTo
 import feature.conversordemoedas.CoinConversionActivity
 import feature.dogs.presentation.home.DogsHomeActivity
-import feature.examples.presentation.home.ExampleSplashActivity
+import feature.examples.recyclerview.presentation.home.ExampleSplashActivity
 import feature.gas_calculator.GasCalculatorHomeActivity
 import feature.jsonplaceholder.presentation.home.JsonPlaceHolderHomeActivity
 import feature.multimoduleapp.databinding.ActivityMainHomeBinding
+import feature.newsapi.presentation.home.NewsApiHomeActivity
 import feature.ricky.presentation.home.RickyHomeActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainHomeActivity : AppCompatActivity() {
-    private val viewModel: HomeViewModel by viewModel()
+internal class MainHomeActivity : AppCompatActivity() {
+    private val viewModel: MainHomeViewModel by viewModel()
     private lateinit var binding: ActivityMainHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,7 +69,7 @@ class MainHomeActivity : AppCompatActivity() {
         EXAMPLES -> navigateTo<ExampleSplashActivity>()
         COIN_CONVERSION -> navigateTo<CoinConversionActivity>()
         BOOKS -> navigateTo<UnderConstructionFeatActivity>()
-        NEWS -> navigateTo<UnderConstructionFeatActivity>()
+        NEWS -> navigateTo<NewsApiHomeActivity>()
         GAS_CALCULATOR -> navigateTo<GasCalculatorHomeActivity>()
         DOGS -> navigateTo<DogsHomeActivity>()
         BILLS_TO_PAY -> navigateTo<UnderConstructionFeatActivity>()

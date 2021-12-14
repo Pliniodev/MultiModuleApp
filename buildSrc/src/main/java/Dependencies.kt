@@ -1,6 +1,7 @@
 object Versions {
     const val lifecycleExtensionsVersion = "2.2.0"
     const val lifecycleViewModelVersion = "2.3.1"
+    const val lifecycleLiveDataVersion = "2.4.0"
     const val coroutinesVersion = "1.4.3"
     const val koinVersion = "3.0.2"
     const val retrofitVersion = "2.9.0"
@@ -12,6 +13,7 @@ object Versions {
     const val roomCompilerVersion = "2.3.0"
     const val dataBindingCompilerVersion = "3.1.4"
     const val rxJavaVersion = "3.0.0"
+    const val rxKotlinVersion = "3.0.0"
     const val gradleVersion = "7.0.3"
     const val kotlinVersion = "1.5.31"
     const val androidXCoreVersion = "1.6.0"
@@ -43,6 +45,7 @@ object BuildPlugins {
 object Dependencies {
     val lifecycleExtensions =  "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleExtensionsVersion}"
     val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleViewModelVersion}"
+    val lifecycleLiveData =  "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleLiveDataVersion}"
     val koin = "io.insert-koin:koin-android:${Versions.koinVersion}"
     val koinExt = "io.insert-koin:koin-android-ext:${Versions.koinVersion}"
     val koinWorkManager = "io.insert-koin:koin-androidx-workmanager:${Versions.koinVersion}"
@@ -55,6 +58,9 @@ object Dependencies {
     val roomCompiler = "androidx.room:room-compiler:${Versions.roomCompilerVersion}"
     val roomForCoroutines = "androidx.room:room-ktx:${Versions.roomRuntimeVersion}"
     val rxAndroid = "io.reactivex.rxjava3:rxandroid:${Versions.rxJavaVersion}"
+    val rxJava = "io.reactivex.rxjava3:rxjava:${Versions.rxJavaVersion}"
+    val rxKotlin = "io.reactivex.rxjava3:rxkotlin:${Versions.rxKotlinVersion}"
+    val rxAdapter = "com.github.akarnokd:rxjava3-retrofit-adapter:${Versions.rxJavaVersion}"
     val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}"
     val androidXCore = "androidx.core:core-ktx:${Versions.androidXCoreVersion}"
     val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
@@ -77,6 +83,7 @@ object AndroidModule {
     val main = listOf(
         Dependencies.lifecycleExtensions,
         Dependencies.lifecycleViewModel,
+        Dependencies.lifecycleLiveData,
         Dependencies.androidXCore,
         Dependencies.appCompat,
         Dependencies.material,
@@ -120,6 +127,9 @@ object NetworkModule {
 
     val withRx = listOf(
         Dependencies.rxAndroid,
+        Dependencies.rxJava,
+        Dependencies.rxKotlin,
+        Dependencies.rxAdapter,
         Dependencies.gson,
         Dependencies.gsonConverter,
         Dependencies.retrofit,

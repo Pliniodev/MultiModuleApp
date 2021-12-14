@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 internal interface JsonPlaceHolderGateway {
     @GET("/posts")
-    suspend fun getPosts(): List<PostResponse>
+    suspend fun getPostResponses(): List<PostResponse>
 }

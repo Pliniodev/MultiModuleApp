@@ -18,7 +18,7 @@
         android:padding="@dimen/layout_padding_8dp">
 
         <ImageView
-            android:id="@+id/featureImage"
+            android:id="@+id/exampleImage"
             android:layout_width="@dimen/imageview_on_recycler_width_68dp"
             android:layout_height="@dimen/imageview_on_recycler_heigth_68dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,10 +30,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/textview_on_recycler_margin_start_8dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/featureImage"
+            app:layout_constraintBottom_toBottomOf="@id/exampleImage"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/featureImage"
-            app:layout_constraintTop_toTopOf="@id/featureImage"
+            app:layout_constraintStart_toEndOf="@id/exampleImage"
+            app:layout_constraintTop_toTopOf="@id/exampleImage"
             tools:text="Titulo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

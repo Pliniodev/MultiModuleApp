@@ -1,6 +1,5 @@
 package feature.dogs.presentation.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +9,6 @@ import feature.feature_dogs.R
 import feature.feature_dogs.databinding.ItemDogsFeatureBinding
 
 internal class DogsAdapter(
-    private val context: Context,
     private val breedPresentations: List<BreedPresentation> = mutableListOf(),
     val action: (BreedPresentation) -> Unit
 ) : RecyclerView.Adapter<DogsAdapter.DogsViewHolder>() {
@@ -35,7 +33,7 @@ internal class DogsAdapter(
             binding.apply {
                 title.text = breedPresentation.name
                 root.setOnClickListener { onClick(breedPresentation) }
-                Glide.with(context)
+                Glide.with(root.context)
                     .load(breedPresentation.image?.url)
                     .placeholder(R.drawable.ic_baseline_portrait_24)
                     .into(binding.dogsImage)

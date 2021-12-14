@@ -18,10 +18,7 @@ class App : Application() {
             androidLogger(Level.NONE)
             androidContext(this@App)
 
-            modules(
-                domainModule,
-                homeModule
-            )
+            modules(mainHomeModule)
         }
     }
 }

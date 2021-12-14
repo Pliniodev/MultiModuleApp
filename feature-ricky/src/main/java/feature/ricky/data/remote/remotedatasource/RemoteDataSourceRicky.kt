@@ -1,7 +1,7 @@
 package feature.ricky.data.remote.remotedatasource
 
-import feature.ricky.domain.model.EpisodeInfoDomain
+import feature.ricky.domain.model.EpisodeDomain
 
-interface RemoteDataSourceRicky {
-    suspend fun getEpisode(): EpisodeInfoDomain
+internal interface RemoteDataSourceRicky {
+    suspend fun getEpisode(): EpisodeDomain
 }

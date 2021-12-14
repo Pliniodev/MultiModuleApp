@@ -32,3 +32,17 @@ fun provideOkHttpClient(): OkHttpClient {
 
     return client.build()
 }
+
+fun provideOkHttpClientAuthNewsApi(): OkHttpClient {
+    val interceptor = HttpLoggingInterceptor()
+    interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+
+    val client = OkHttpClient.Builder()
+        .connectTimeout(CONNECTION_TIMEOUT, TimeUnit.MILLISECONDS)
+        .readTimeout(CONNECTION_TIMEOUT, TimeUnit.MILLISECONDS)
+        .addNetworkInterceptor(interceptor)
+        .addInterceptor(interceptor)
+        .addInterceptor(NewsApiInterceptor())
+
+    return client.build()
+}

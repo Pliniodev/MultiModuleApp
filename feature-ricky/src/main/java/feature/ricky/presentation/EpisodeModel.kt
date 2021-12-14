@@ -1,5 +1,5 @@
 package feature.ricky.presentation
 
-class EpisodeModel(
+internal class EpisodeModel(
     val title: String? = null
 )

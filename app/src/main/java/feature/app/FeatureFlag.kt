@@ -1,7 +1,7 @@
 package feature.app
 
 /**
- * Aqui ficam as flags relacionadas a cada módulo/Feature
+ * Feature flag of each feature module
  */
 internal enum class FeatureFlag {
     RICKY_AND_MORTY,

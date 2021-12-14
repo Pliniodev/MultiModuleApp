@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_400">Erro 400: Not found</string>
+    <string name="error_500">Erro 500: Internal server error</string>
+    <string name="unknown_error">Algo de errado não está certo ¯\_(ツ)_/¯</string>
+</resources>

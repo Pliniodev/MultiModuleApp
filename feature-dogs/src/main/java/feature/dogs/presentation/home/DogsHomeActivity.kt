@@ -1,8 +1,8 @@
 package feature.dogs.presentation.home
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import feature.commons.utils.navigateAndAggregate
 import feature.dogs.dogsModule
 import feature.dogs.presentation.adapter.DogsAdapter
 import feature.dogs.presentation.details.DogDetailActivity
@@ -33,13 +33,12 @@ class DogsHomeActivity : AppCompatActivity() {
     private fun observers() {
         viewModel.breeds.observe(
             this,
-            { breedPresentations -> breedPresentations?.let { setAdapter(it) } }
+            { breedPresentations -> breedPresentations?.let(::setAdapter) }
         )
     }
 
     private fun setAdapter(breedPresentations: List<BreedPresentation>) {
         val adapter = DogsAdapter(
-            context = this,
             breedPresentations = breedPresentations,
             action = { breed -> aggregateAndGoToDetails(breed) }
         )
@@ -47,9 +46,10 @@ class DogsHomeActivity : AppCompatActivity() {
     }
 
     private fun aggregateAndGoToDetails(breedPresentation: BreedPresentation) {
-        val intent = Intent(this, DogDetailActivity::class.java)
-        intent.putExtra(BREED_PRESENTATION, breedPresentation)
-        startActivity(intent)
+        navigateAndAggregate<DogDetailActivity, BreedPresentation>(
+            intentName = BREED_PRESENTATION,
+            send = breedPresentation
+        )
     }
 
     override fun onDestroy() {
