@@ -51,5 +51,4 @@ object CharactersDomainToPresentation {
             path = source.path,
             extension = source.extension
         )
-
 }

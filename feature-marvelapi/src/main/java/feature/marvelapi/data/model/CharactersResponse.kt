@@ -25,8 +25,8 @@ data class SubResponse(
 data class CharactersResponse(
     val id: Int,
     val name: String,
-    val description : String,
-    val thumbnail : ImagesResponse
+    val description: String,
+    val thumbnail: ImagesResponse
 
 )
 

@@ -27,10 +27,9 @@ val marvelModule = module {
         createApi<MarvelApi>(get(named(InjectionTag.RETROFIT_MARVEL_API)))
     }
 
-    single<RemoteDataSource>{RemoteDataSourceImpl(api = get(named(InjectionTag.API_MARVEL_API)))}
+    single<RemoteDataSource> { RemoteDataSourceImpl(api = get(named(InjectionTag.API_MARVEL_API))) }
 
-    single<MarvelRepository> {MarvelRepositoryImpl(remoteDataSource = get())  }
+    single<MarvelRepository> { MarvelRepositoryImpl(remoteDataSource = get()) }
 
     viewModel { MarvelHomeViewModel(repository = get()) }
-
 }

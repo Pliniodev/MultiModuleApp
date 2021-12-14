@@ -69,7 +69,7 @@ internal data class FeaturePresentation(
             "png-transparent-finance-currency-converter-bank-money-bank-orange-payment-logo.png"
         private const val JSON_PLACE_HOLDER_FEATURE_IMAGE = "https://studiovisual.com.br/wp-c" +
             "ontent/uploads/2021/08/o_que_e_post_Prancheta-1-copia-4-1024x400-1.jpg"
-        private const val MARVEL_API_FEATURE_IMAGE = "https://upload.wikimedia.org/wikipedia"+
-                "/commons/thumb/b/b9/Marvel_Logo.svg/800px-Marvel_Logo.svg.png"
+        private const val MARVEL_API_FEATURE_IMAGE = "https://upload.wikimedia.org/wikipedia" +
+            "/commons/thumb/b/b9/Marvel_Logo.svg/800px-Marvel_Logo.svg.png"
     }
 }

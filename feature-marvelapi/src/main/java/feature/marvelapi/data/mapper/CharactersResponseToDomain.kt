@@ -53,5 +53,4 @@ object CharactersResponseToDomain {
             path = source.path,
             extension = source.extension
         )
-
 }

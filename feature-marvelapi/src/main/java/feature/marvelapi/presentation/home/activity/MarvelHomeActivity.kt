@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
 import feature.marvelapi.marvelModule
-import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
 import feature.marvelapi.presentation.home.adapter.MainMarvelAdapter
+import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -32,14 +32,20 @@ class MarvelHomeActivity : AppCompatActivity() {
             setHasFixedSize(true)
         }
 
-        viewModel.success.observe(this, {
-            mAdapter.submitList(it.data.results)
-        })
+        viewModel.success.observe(
+            this,
+            {
+                mAdapter.submitList(it.data.results)
+            }
+        )
 
-        viewModel.error.observe(this, {
-            Toast.makeText(this, "${it.message}", Toast.LENGTH_SHORT).show()
-            onBackPressed()
-        })
+        viewModel.error.observe(
+            this,
+            {
+                Toast.makeText(this, "${it.message}", Toast.LENGTH_SHORT).show()
+                onBackPressed()
+            }
+        )
     }
 
     override fun onDestroy() {

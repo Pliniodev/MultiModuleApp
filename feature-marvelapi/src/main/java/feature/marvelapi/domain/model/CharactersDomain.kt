@@ -22,8 +22,8 @@ data class SubResponseDomain(
 data class CharactersDomain(
     val id: Int,
     val name: String,
-    val description : String,
-    val thumbnail : ImagesDomain
+    val description: String,
+    val thumbnail: ImagesDomain
 )
 
 data class ImagesDomain(

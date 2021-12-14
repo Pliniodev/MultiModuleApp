@@ -10,6 +10,6 @@ interface MarvelApi {
     suspend fun getCharacters(
         @Query("apikey") apiKey: String = Util.publicKey,
         @Query("ts") ts: String = Util.ts,
-        @Query("hash") hash : String = Util.hash
+        @Query("hash") hash: String = Util.hash
     ): MainResponse
 }

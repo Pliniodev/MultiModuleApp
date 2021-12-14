@@ -2,7 +2,7 @@ package feature.marvelapi.data.api
 
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
-import java.util.*
+import java.util.Calendar
 
 internal object Util {
 
