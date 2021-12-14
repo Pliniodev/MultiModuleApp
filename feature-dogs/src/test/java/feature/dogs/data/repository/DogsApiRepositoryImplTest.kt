@@ -10,7 +10,7 @@ import feature.dogs.presentation.model.BreedPresentation
 import feature.dogs.presentation.model.HeightPresentation
 import feature.dogs.presentation.model.ImagePresentation
 import feature.dogs.presentation.model.WeightPresentation
-import feature.dogs.utils.CoroutinesTestRule
+import feature.dogs.test_utils.CoroutineTestRule
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -25,7 +25,7 @@ import org.junit.Test
 class DogsApiRepositoryImplTest {
 
     @get:Rule
-    val coroutineTestRule = CoroutinesTestRule()
+    val coroutineTestRule = CoroutineTestRule()
 
     private lateinit var repository: DogsApiRepository
     private val remoteDataSource = mockk<RemoteDataSource>(relaxed = true)
