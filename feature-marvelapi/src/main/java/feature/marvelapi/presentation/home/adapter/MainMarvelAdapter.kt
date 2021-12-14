@@ -40,31 +40,8 @@ class MainMarvelAdapter :
                 Glide.with(binding.root)
                     .load("${item.thumbnail.path}.${item.thumbnail.extension}")
                     .placeholder(R.drawable.ic_baseline_portrait_24)
-                    .listener(object : RequestListener<Drawable>{
-                        override fun onLoadFailed(
-                            e: GlideException?,
-                            model: Any?,
-                            target: Target<Drawable>?,
-                            isFirstResource: Boolean
-                        ): Boolean {
-
-                            Log.d("Glideeeeee", "onLoadFailed: ${e?.localizedMessage}")
-
-                            return true
-                        }
-
-                        override fun onResourceReady(
-                            resource: Drawable?,
-                            model: Any?,
-                            target: Target<Drawable>?,
-                            dataSource: DataSource?,
-                            isFirstResource: Boolean
-                        ): Boolean {
-                            return false
-                        }
-                    })
+                    .centerCrop()
                     .into(characterImage)
-
             }
         }
     }
