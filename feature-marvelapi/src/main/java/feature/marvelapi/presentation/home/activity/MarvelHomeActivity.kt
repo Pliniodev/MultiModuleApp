@@ -15,9 +15,7 @@ import org.koin.core.context.unloadKoinModules
 class MarvelHomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMarvelHomeBinding
-
     private val viewModel: MarvelHomeViewModel by viewModel()
-
     private val mAdapter = MainMarvelAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,12 +24,22 @@ class MarvelHomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         loadKoinModules(marvelModule)
 
-        setTheme(R.style.MarvelThemes)
+        onEnterActivity()
+    }
+
+    private fun onEnterActivity() {
+        initObservers()
+        initAdapter()
+    }
+
+    private fun initAdapter(){
         binding.homeRecycler.apply {
             adapter = mAdapter
             setHasFixedSize(true)
         }
+    }
 
+    private fun initObservers() {
         viewModel.success.observe(
             this,
             {
