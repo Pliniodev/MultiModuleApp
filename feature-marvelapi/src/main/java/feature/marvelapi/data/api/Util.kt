@@ -1,5 +1,6 @@
 package feature.marvelapi.data.api
 
+import java.math.BigInteger
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 import java.util.Calendar
@@ -11,36 +12,9 @@ internal object Util {
 
     private val timestamp = Calendar.getInstance().timeInMillis / 1000
     val ts = timestamp.toString()
-    val hash = Cryptography.md5(ts + privateKey + publicKey)
-}
+    val hash = "$ts$privateKey$publicKey".md5()
 
-internal class Cryptography {
-    companion object {
-        private val HEX_CHARS = charArrayOf('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f')
-
-        private fun hexEncode(bytes: ByteArray): String {
-            val result = CharArray(bytes.size * 2)
-            var b: Int
-            var i = 0
-            var j = 0
-            while (i < bytes.size) {
-                b = bytes[i].toInt() and 0xff
-                result[j++] = HEX_CHARS[b shr 4]
-                result[j++] = HEX_CHARS[b and 0xf]
-                i++
-            }
-            return String(result)
-        }
-
-        fun md5(s: String): String {
-            try {
-                val digest = MessageDigest.getInstance("MD5")
-                digest.update(s.toByteArray())
-                return hexEncode(digest.digest())
-            } catch (e: NoSuchAlgorithmException) {
-                e.printStackTrace()
-            }
-            return ""
-        }
-    }
+    private fun String.md5(): String =
+        BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray()))
+            .toString(16).padStart(32, '0')
 }
