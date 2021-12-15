@@ -4,7 +4,7 @@ import feature.commons.utils.createApi
 import feature.marvelapi.data.api.MarvelApi
 import feature.marvelapi.data.remotedatasource.RemoteDataSource
 import feature.marvelapi.data.remotedatasource.RemoteDataSourceImpl
-import feature.marvelapi.data.repository.MarvelRepositoryImpl
+import feature.marvelapi.domain.repository.MarvelRepositoryImpl
 import feature.marvelapi.domain.repository.MarvelRepository
 import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
 import feature.network.constants.BaseUrl

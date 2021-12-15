@@ -9,18 +9,21 @@ import feature.marvelapi.presentation.model.ImagesPresentation
 import feature.marvelapi.presentation.model.MainPresentation
 import feature.marvelapi.presentation.model.SubResponsePresentation
 
-internal object CharactersDomainToPresentation {
+internal object MapperCharactersDomain {
 
-    fun domainToPresentation(source: MainDomain): MainPresentation =
-        MainPresentation(
-            code = source.code,
-            status = source.status,
-            copyright = source.copyright,
-            attributionText = source.attributionText,
-            attributionHTML = source.attributionHTML,
-            eTag = source.eTag,
-            data = subDomainToPresentation(source.data)
-        )
+    fun toPresentation(source: MainDomain): MainPresentation =
+        with(source) {
+            MainPresentation(
+                code = code,
+                status = status,
+                copyright = copyright,
+                attributionText = attributionText,
+                attributionHTML = attributionHTML,
+                eTag = eTag,
+                data = subDomainToPresentation(data)
+
+            )
+        }
 
     private fun subDomainToPresentation(source: SubResponseDomain): SubResponsePresentation {
         with(source) {

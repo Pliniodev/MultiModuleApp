@@ -9,21 +9,22 @@ import feature.marvelapi.domain.model.ImagesDomain
 import feature.marvelapi.domain.model.MainDomain
 import feature.marvelapi.domain.model.SubResponseDomain
 
-internal object CharactersResponseToDomain {
+internal object MapperCharactersResponse {
 
-    fun responseToDomain(source: MainResponse): MainDomain =
-        MainDomain(
-            code = source.code,
-            status = source.status,
-            copyright = source.copyright,
-            attributionText = source.attributionText,
-            attributionHTML = source.attributionHTML,
-            eTag = source.eTag,
-            data = subResponseToDomain(source.data)
-        )
+    fun toDomain(source: MainResponse): MainDomain =
+        with(source) {
+            MainDomain(
+                code = code,
+                status = status,
+                copyright = copyright,
+                attributionText = attributionText,
+                attributionHTML = attributionHTML,
+                eTag = eTag,
+                data = subResponseToDomain(data)
+            )
+        }
 
     private fun subResponseToDomain(source: SubResponse): SubResponseDomain {
-
         with(source) {
             return SubResponseDomain(
                 offset = offset,
@@ -36,7 +37,6 @@ internal object CharactersResponseToDomain {
     }
 
     private fun charactersToDomain(source: List<CharactersResponse>): List<CharactersDomain> =
-
         source.map { character ->
             with(character) {
                 CharactersDomain(
