@@ -2,7 +2,6 @@ package feature.marvelapi.presentation.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import feature.commons.utils.BaseItemCallBack

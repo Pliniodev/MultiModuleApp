@@ -3,10 +3,6 @@ package feature.app.presentation.home
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import feature.app.FeatureFlag
-import feature.app.presentation.FeaturePresentation
-import feature.app.presentation.HomeAdapter
-import feature.app.presentation.UnderConstructionFeatActivity
-import feature.commons.utils.navigateTo
 import feature.app.FeatureFlag.BILLS_TO_PAY
 import feature.app.FeatureFlag.BOOKS
 import feature.app.FeatureFlag.COIN_CONVERSION
@@ -14,9 +10,13 @@ import feature.app.FeatureFlag.DOGS
 import feature.app.FeatureFlag.EXAMPLES
 import feature.app.FeatureFlag.GAS_CALCULATOR
 import feature.app.FeatureFlag.JSON_PLACE_HOLDER
+import feature.app.FeatureFlag.MARVEL_API
 import feature.app.FeatureFlag.NEWS
 import feature.app.FeatureFlag.RICKY_AND_MORTY
-import feature.app.FeatureFlag.MARVEL_API
+import feature.app.presentation.FeaturePresentation
+import feature.app.presentation.HomeAdapter
+import feature.app.presentation.UnderConstructionFeatActivity
+import feature.commons.utils.navigateTo
 import feature.conversordemoedas.CoinConversionActivity
 import feature.dogs.presentation.home.DogsHomeActivity
 import feature.examples.recyclerview.presentation.home.ExampleSplashActivity

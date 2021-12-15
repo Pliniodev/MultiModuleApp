@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import feature.commons.utils.StateMachine
-import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
 import feature.marvelapi.marvelModule
 import feature.marvelapi.presentation.home.adapter.MainMarvelAdapter
@@ -33,7 +32,7 @@ class MarvelHomeActivity : AppCompatActivity() {
         initAdapter()
     }
 
-    private fun initAdapter(){
+    private fun initAdapter() {
         binding.homeRecycler.apply {
             adapter = mAdapter
             setHasFixedSize(true)
@@ -42,19 +41,22 @@ class MarvelHomeActivity : AppCompatActivity() {
 
     private fun initObservers() {
 
-        viewModel.getCharacters().observe(this,{event ->
+        viewModel.getCharacters().observe(
+            this,
+            { event ->
 
-            when(event){
-                is StateMachine.Loading -> doNothingForNow()
-                is StateMachine.Success -> mAdapter.submitList(event.value.data.results)
-                is StateMachine.ApiError -> Toast.makeText(this, "${event.error}", Toast.LENGTH_SHORT).show()
-                is StateMachine.UnknownError -> doNothingForNow()
-                else -> doNothingForNow()
+                when (event) {
+                    is StateMachine.Loading -> doNothingForNow()
+                    is StateMachine.Success -> mAdapter.submitList(event.value.data.results)
+                    is StateMachine.ApiError -> Toast.makeText(this, "${event.error}", Toast.LENGTH_SHORT).show()
+                    is StateMachine.UnknownError -> doNothingForNow()
+                    else -> doNothingForNow()
+                }
             }
-        })
+        )
     }
 
-    private fun doNothingForNow(){}
+    private fun doNothingForNow() {}
 
     override fun onDestroy() {
         super.onDestroy()
