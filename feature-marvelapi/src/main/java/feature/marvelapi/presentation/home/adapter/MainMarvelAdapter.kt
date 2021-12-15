@@ -10,7 +10,7 @@ import feature.marvelapi.R
 import feature.marvelapi.databinding.MainRecyclerBinding
 import feature.marvelapi.presentation.model.CharactersPresentation
 
-class MainMarvelAdapter :
+internal class MainMarvelAdapter :
     androidx.recyclerview.widget.ListAdapter<CharactersPresentation, MainMarvelAdapter.ViewHolder>(
         BaseItemCallBack<CharactersPresentation>()
     ) {

@@ -9,7 +9,7 @@ import feature.marvelapi.presentation.model.ImagesPresentation
 import feature.marvelapi.presentation.model.MainPresentation
 import feature.marvelapi.presentation.model.SubResponsePresentation
 
-object CharactersDomainToPresentation {
+internal object CharactersDomainToPresentation {
 
     fun domainToPresentation(source: MainDomain): MainPresentation =
         MainPresentation(

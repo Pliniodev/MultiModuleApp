@@ -12,19 +12,9 @@ import feature.marvelapi.presentation.model.MainPresentation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MarvelHomeViewModel(private val repository: MarvelRepository) : ViewModel() {
+internal class MarvelHomeViewModel(private val repository: MarvelRepository) : ViewModel() {
 
     fun getCharacters(): LiveData<StateMachine<MainPresentation>> = liveResponse {
         safeRequest { repository.getCharacters() }
     }
-
-//    private fun getCharacters() {
-//        viewModelScope.launch {
-//            try {
-//                success.value = repository.getCharacters()
-//            } catch (e: Exception) {
-//                error.value = e
-//            }
-//        }
-//    }
 }

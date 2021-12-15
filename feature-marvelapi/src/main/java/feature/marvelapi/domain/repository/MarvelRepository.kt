@@ -2,7 +2,7 @@ package feature.marvelapi.domain.repository
 
 import feature.marvelapi.presentation.model.MainPresentation
 
-interface MarvelRepository {
+internal interface MarvelRepository {
 
     suspend fun getCharacters(): MainPresentation
 }

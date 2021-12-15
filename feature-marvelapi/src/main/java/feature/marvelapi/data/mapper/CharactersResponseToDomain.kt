@@ -9,7 +9,7 @@ import feature.marvelapi.domain.model.ImagesDomain
 import feature.marvelapi.domain.model.MainDomain
 import feature.marvelapi.domain.model.SubResponseDomain
 
-object CharactersResponseToDomain {
+internal object CharactersResponseToDomain {
 
     fun responseToDomain(source: MainResponse): MainDomain =
         MainDomain(

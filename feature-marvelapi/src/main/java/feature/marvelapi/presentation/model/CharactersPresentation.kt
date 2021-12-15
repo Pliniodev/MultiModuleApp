@@ -1,6 +1,6 @@
 package feature.marvelapi.presentation.model
 
-data class MainPresentation(
+internal data class MainPresentation(
     val code: Int,
     val status: String,
     val copyright: String,
@@ -11,7 +11,7 @@ data class MainPresentation(
 
 )
 
-data class SubResponsePresentation(
+internal data class SubResponsePresentation(
     val offset: Int,
     val limit: Int,
     val total: Int,
@@ -19,14 +19,14 @@ data class SubResponsePresentation(
     val results: List<CharactersPresentation>
 )
 
-data class CharactersPresentation(
+internal data class CharactersPresentation(
     val id: Int,
     val name: String,
     val description: String,
     val thumbnail: ImagesPresentation
 )
 
-data class ImagesPresentation(
+internal data class ImagesPresentation(
     val path: String,
     val extension: String
 )
