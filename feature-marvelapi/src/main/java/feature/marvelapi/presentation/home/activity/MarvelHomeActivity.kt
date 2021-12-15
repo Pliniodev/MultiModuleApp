@@ -41,19 +41,19 @@ class MarvelHomeActivity : AppCompatActivity() {
 
     private fun initObservers() {
 
-        viewModel.getCharacters().observe(
-            this,
-            { event ->
-
-                when (event) {
-                    is StateMachine.Loading -> doNothingForNow()
-                    is StateMachine.Success -> mAdapter.submitList(event.value.data.results)
-                    is StateMachine.ApiError -> Toast.makeText(this, "${event.error}", Toast.LENGTH_SHORT).show()
-                    is StateMachine.UnknownError -> doNothingForNow()
-                    else -> doNothingForNow()
-                }
+        viewModel.getCharacters().observe(this) { event ->
+            when (event) {
+                is StateMachine.Loading -> doNothingForNow()
+                is StateMachine.Success -> mAdapter.submitList(event.value.data.results)
+                is StateMachine.ApiError -> Toast.makeText(
+                    this,
+                    "${event.error}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                is StateMachine.UnknownError -> doNothingForNow()
+                else -> doNothingForNow()
             }
-        )
+        }
     }
 
     private fun doNothingForNow() {}
