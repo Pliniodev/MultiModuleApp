@@ -2,6 +2,7 @@ package feature.marvelapi.presentation.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import feature.commons.utils.BaseItemCallBack
@@ -30,7 +31,8 @@ internal class MainMarvelAdapter :
         fun bind(item: CharactersPresentation) {
 
             binding.apply {
-                name.text = item.name
+                characterName.text = item.name
+                binding.characterDescription.text = item.description.ifEmpty { "No Description" }
                 Glide.with(binding.root)
                     .load("${item.thumbnail.path}.${item.thumbnail.extension}")
                     .placeholder(R.drawable.ic_baseline_portrait_24)
