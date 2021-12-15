@@ -7,6 +7,16 @@ import feature.app.presentation.FeaturePresentation
 import feature.app.presentation.HomeAdapter
 import feature.app.presentation.UnderConstructionFeatActivity
 import feature.commons.utils.navigateTo
+import feature.app.FeatureFlag.BILLS_TO_PAY
+import feature.app.FeatureFlag.BOOKS
+import feature.app.FeatureFlag.COIN_CONVERSION
+import feature.app.FeatureFlag.DOGS
+import feature.app.FeatureFlag.EXAMPLES
+import feature.app.FeatureFlag.GAS_CALCULATOR
+import feature.app.FeatureFlag.JSON_PLACE_HOLDER
+import feature.app.FeatureFlag.NEWS
+import feature.app.FeatureFlag.RICKY_AND_MORTY
+import feature.app.FeatureFlag.MARVEL_API
 import feature.conversordemoedas.CoinConversionActivity
 import feature.dogs.presentation.home.DogsHomeActivity
 import feature.examples.recyclerview.presentation.home.ExampleSplashActivity
@@ -57,15 +67,15 @@ internal class MainHomeActivity : AppCompatActivity() {
     }
 
     private fun startNavigation(featureFlag: FeatureFlag) = when (featureFlag) {
-        FeatureFlag.RICKY_AND_MORTY -> navigateTo<RickyHomeActivity>()
-        FeatureFlag.EXAMPLES -> navigateTo<ExampleSplashActivity>()
-        FeatureFlag.COIN_CONVERSION -> navigateTo<CoinConversionActivity>()
-        FeatureFlag.BOOKS -> navigateTo<UnderConstructionFeatActivity>()
-        FeatureFlag.NEWS -> navigateTo<NewsApiHomeActivity>()
-        FeatureFlag.GAS_CALCULATOR -> navigateTo<GasCalculatorHomeActivity>()
-        FeatureFlag.DOGS -> navigateTo<DogsHomeActivity>()
-        FeatureFlag.BILLS_TO_PAY -> navigateTo<UnderConstructionFeatActivity>()
-        FeatureFlag.JSON_PLACE_HOLDER -> navigateTo<JsonPlaceHolderHomeActivity>()
-        FeatureFlag.MARVEL_API -> navigateTo<MarvelHomeActivity>()
+        RICKY_AND_MORTY -> navigateTo<RickyHomeActivity>()
+        EXAMPLES -> navigateTo<ExampleSplashActivity>()
+        COIN_CONVERSION -> navigateTo<CoinConversionActivity>()
+        BOOKS -> navigateTo<UnderConstructionFeatActivity>()
+        NEWS -> navigateTo<NewsApiHomeActivity>()
+        GAS_CALCULATOR -> navigateTo<GasCalculatorHomeActivity>()
+        DOGS -> navigateTo<DogsHomeActivity>()
+        BILLS_TO_PAY -> navigateTo<UnderConstructionFeatActivity>()
+        JSON_PLACE_HOLDER -> navigateTo<JsonPlaceHolderHomeActivity>()
+        MARVEL_API -> navigateTo<MarvelHomeActivity>()
     }
 }
