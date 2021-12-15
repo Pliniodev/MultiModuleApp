@@ -7,9 +7,5 @@ import retrofit2.http.Query
 internal interface MarvelApi {
 
     @GET("characters")
-    suspend fun getCharacters(
-        @Query("apikey") apiKey: String = Util.publicKey,
-        @Query("ts") ts: String = Util.ts,
-        @Query("hash") hash: String = Util.hash
-    ): MainResponse
+    suspend fun getCharacters(): MainResponse
 }

@@ -11,6 +11,7 @@ import feature.network.constants.BaseUrl
 import feature.network.constants.InjectionTag
 import feature.network.retrofit.BuildRetrofit
 import feature.network.retrofit.provideOkHttpClient
+import feature.network.retrofit.provideOkHttpClientMarvelApi
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -19,7 +20,7 @@ val marvelModule = module {
     single(named(InjectionTag.RETROFIT_MARVEL_API)) {
         BuildRetrofit(
             apiBaseUrl = BaseUrl.marvelApi,
-            okHttpClient = provideOkHttpClient()
+            okHttpClient = provideOkHttpClientMarvelApi()
         )
     }
 
