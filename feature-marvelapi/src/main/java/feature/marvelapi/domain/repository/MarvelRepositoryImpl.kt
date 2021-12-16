@@ -8,7 +8,7 @@ internal class MarvelRepositoryImpl(
     private val remoteDataSource: RemoteDataSource
 ) : MarvelRepository {
 
-    override suspend fun getCharacters(): MainPresentation {
-        return MapperCharactersDomain.toPresentation(remoteDataSource.getCharactersDomain())
+    override suspend fun getCharacters(offset : Int): MainPresentation {
+        return MapperCharactersDomain.toPresentation(remoteDataSource.getCharactersDomain(offset))
     }
 }
