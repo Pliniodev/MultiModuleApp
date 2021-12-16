@@ -1,38 +1,23 @@
 package feature.ricky.data.remote.model
 
-import com.google.gson.annotations.SerializedName
+internal data class EpisodeResponse(
+    val info: InfoResponse? = null,
+    val results: List<ResultResponse>? = null
+)
 
-data class EpisodeResponse(
-    @SerializedName("info")
-    val info: Info?,
-    @SerializedName("results")
-    val results: List<Result>?
-) {
-    data class Info(
-        @SerializedName("count")
-        val count: Int?,
-        @SerializedName("next")
-        val next: String?,
-        @SerializedName("pages")
-        val pages: Int?,
-        @SerializedName("prev")
-        val prev: String?
-    )
+internal data class InfoResponse(
+    val count: Int? = null,
+    val next: String? = null,
+    val pages: Int? = null,
+    val prev: String? = null
+)
 
-    data class Result(
-        @SerializedName("air_date")
-        val airDate: String?,
-        @SerializedName("characters")
-        val characters: List<String>?,
-        @SerializedName("created")
-        val created: String?,
-        @SerializedName("episode")
-        val episode: String?,
-        @SerializedName("id")
-        val id: Int?,
-        @SerializedName("name")
-        val name: String?,
-        @SerializedName("url")
-        val url: String?
-    )
-}
+internal data class ResultResponse(
+    val airDate: String? = null,
+    val characters: List<String>? = null,
+    val created: String? = null,
+    val episode: String? = null,
+    val id: Int? = null,
+    val name: String? = null,
+    val url: String? = null
+)

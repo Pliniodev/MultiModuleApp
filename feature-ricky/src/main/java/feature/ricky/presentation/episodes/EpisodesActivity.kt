@@ -6,7 +6,7 @@ import feature.feature_ricky.databinding.ActivityEpisodesBinding
 import feature.ricky.presentation.EpisodeModel
 import feature.ricky.presentation.EpisodesAdapter
 
-class EpisodesActivity : AppCompatActivity() {
+internal class EpisodesActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEpisodesBinding
     private val mAdapter = EpisodesAdapter()

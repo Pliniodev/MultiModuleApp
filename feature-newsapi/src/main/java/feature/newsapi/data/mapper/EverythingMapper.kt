@@ -23,7 +23,7 @@ internal object EverythingMapper {
                     content = content,
                     description = description,
                     publishedAt = publishedAt,
-                    source = toSourceDomain(source),
+                    source = source?.toSourceDomain(),
                     title = title,
                     url = url,
                     urlToImage = urlToImage
@@ -32,9 +32,9 @@ internal object EverythingMapper {
         }
     }
 
-    private fun toSourceDomain(source: SourceResponse?): Source =
+    private fun SourceResponse.toSourceDomain(): Source =
         Source(
-            id = source?.id,
-            name = source?.name
+            id = id,
+            name = name
         )
 }
