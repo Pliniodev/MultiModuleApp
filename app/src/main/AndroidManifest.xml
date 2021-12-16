@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="feature.multimoduleapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,6 +18,8 @@
         <activity android:name="feature.examples.recyclerview.presentation.home.ExamplesRecyclerHomeActivity" />
         <activity android:name="feature.examples.recyclerview.presentation.home.ExampleRecyclerDetailsActivity" />
         <activity android:name="feature.dogs.presentation.home.DogsHomeActivity" />
+        <activity android:name="feature.marvelapi.presentation.home.activity.MarvelHomeActivity" tools:replace="android:theme" android:theme="@style/MarvelThemes"/>
+
         <activity
             android:name="feature.app.presentation.home.MainHomeActivity"
             android:exported="true">

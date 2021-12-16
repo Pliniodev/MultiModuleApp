@@ -12,5 +12,6 @@ internal enum class FeatureFlag {
     GAS_CALCULATOR,
     EXAMPLES,
     COIN_CONVERSION,
-    JSON_PLACE_HOLDER
+    JSON_PLACE_HOLDER,
+    MARVEL_API
 }

@@ -11,6 +11,7 @@
     <string name="home_dashboard_presentation_title_bills_to_pay">Contas a pagar</string>
     <string name="home_dashboard_presentation_title_coin_conversion">Conversor de moedas</string>
     <string name="home_dashboard_presentation_title_json_place_holder">Posts</string>
+    <string name="home_dashboard_presentation_title_marvel_api">Marvel Api</string>
     <string name="under_construction">Em Costrução</string>
     <string name="back">Voltar</string>
 </resources>

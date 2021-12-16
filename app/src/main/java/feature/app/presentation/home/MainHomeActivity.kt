@@ -10,6 +10,7 @@ import feature.app.FeatureFlag.DOGS
 import feature.app.FeatureFlag.EXAMPLES
 import feature.app.FeatureFlag.GAS_CALCULATOR
 import feature.app.FeatureFlag.JSON_PLACE_HOLDER
+import feature.app.FeatureFlag.MARVEL_API
 import feature.app.FeatureFlag.NEWS
 import feature.app.FeatureFlag.RICKY_AND_MORTY
 import feature.app.presentation.FeaturePresentation
@@ -21,6 +22,7 @@ import feature.dogs.presentation.home.DogsHomeActivity
 import feature.examples.recyclerview.presentation.home.ExampleSplashActivity
 import feature.gas_calculator.GasCalculatorHomeActivity
 import feature.jsonplaceholder.presentation.home.JsonPlaceHolderHomeActivity
+import feature.marvelapi.presentation.home.activity.MarvelHomeActivity
 import feature.multimoduleapp.databinding.ActivityMainHomeBinding
 import feature.newsapi.presentation.home.NewsApiHomeActivity
 import feature.ricky.presentation.home.RickyHomeActivity
@@ -74,5 +76,6 @@ internal class MainHomeActivity : AppCompatActivity() {
         DOGS -> navigateTo<DogsHomeActivity>()
         BILLS_TO_PAY -> navigateTo<UnderConstructionFeatActivity>()
         JSON_PLACE_HOLDER -> navigateTo<JsonPlaceHolderHomeActivity>()
+        MARVEL_API -> navigateTo<MarvelHomeActivity>()
     }
 }

@@ -12,4 +12,7 @@ object InjectionTag {
 
     const val RETROFIT_NEWS_API = "retrofit.news.api"
     const val API_NEWS_API = "api.news.api"
+
+    const val RETROFIT_MARVEL_API = "retrofit.marvel.api"
+    const val API_MARVEL_API = "api.marvel.api"
 }

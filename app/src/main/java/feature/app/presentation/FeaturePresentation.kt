@@ -28,6 +28,7 @@ internal data class FeaturePresentation(
                 FeatureFlag.EXAMPLES -> EXAMPLES_FEATURE_IMAGE
                 FeatureFlag.COIN_CONVERSION -> COIN_CONVERSION_FEATURE_IMAGE
                 FeatureFlag.JSON_PLACE_HOLDER -> JSON_PLACE_HOLDER_FEATURE_IMAGE
+                FeatureFlag.MARVEL_API -> MARVEL_API_FEATURE_IMAGE
             }
         }
 
@@ -46,6 +47,7 @@ internal data class FeaturePresentation(
                 FeatureFlag.JSON_PLACE_HOLDER -> {
                     R.string.home_dashboard_presentation_title_json_place_holder
                 }
+                FeatureFlag.MARVEL_API -> R.string.home_dashboard_presentation_title_marvel_api
             }
 
         private const val RICKY_FEATURE_IMAGE = "https://images.tcdn.com.br/img/img_prod/697730" +
@@ -67,5 +69,7 @@ internal data class FeaturePresentation(
             "png-transparent-finance-currency-converter-bank-money-bank-orange-payment-logo.png"
         private const val JSON_PLACE_HOLDER_FEATURE_IMAGE = "https://studiovisual.com.br/wp-c" +
             "ontent/uploads/2021/08/o_que_e_post_Prancheta-1-copia-4-1024x400-1.jpg"
+        private const val MARVEL_API_FEATURE_IMAGE = "https://upload.wikimedia.org/wikipedia" +
+            "/commons/thumb/b/b9/Marvel_Logo.svg/800px-Marvel_Logo.svg.png"
     }
 }
