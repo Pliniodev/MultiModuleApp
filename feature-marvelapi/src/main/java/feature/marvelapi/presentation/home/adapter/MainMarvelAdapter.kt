@@ -32,7 +32,6 @@ internal class MainMarvelAdapter :
 
             binding.apply {
                 characterName.text = item.name
-                binding.characterDescription.text = item.description.ifEmpty { "No Description" }
                 Glide.with(binding.root)
                     .load("${item.thumbnail.path}.${item.thumbnail.extension}")
                     .placeholder(R.drawable.ic_baseline_portrait_24)

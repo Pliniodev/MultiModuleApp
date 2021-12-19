@@ -10,9 +10,7 @@ import feature.marvelapi.presentation.model.MainPresentation
 
 internal class MarvelHomeViewModel(private val repository: MarvelRepository) : ViewModel() {
 
-    var offset = 50
-
-    fun getCharacters(): LiveData<StateMachine<MainPresentation>> = liveResponse {
-        safeRequest { repository.getCharacters(offset) }
+    fun getCharacters(offSet: Int): LiveData<StateMachine<MainPresentation>> = liveResponse {
+        safeRequest { repository.getCharacters(offSet) }
     }
 }
