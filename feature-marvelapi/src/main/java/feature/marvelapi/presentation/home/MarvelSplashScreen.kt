@@ -30,7 +30,8 @@ class MarvelSplashScreen : AppCompatActivity() {
             {
                 startActivity(Intent(this, MarvelHomeActivity::class.java))
                 finish()
-            }, SPLASH_DURATION
+            },
+            SPLASH_DURATION
         )
     }
 

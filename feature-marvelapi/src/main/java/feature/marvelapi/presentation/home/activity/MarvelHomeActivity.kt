@@ -72,7 +72,6 @@ class MarvelHomeActivity : AppCompatActivity() {
         binding.homeRecycler.apply {
             adapter = mAdapter
             setHasFixedSize(true)
-
         }
     }
 
@@ -81,21 +80,24 @@ class MarvelHomeActivity : AppCompatActivity() {
         mAdapter.submitList(list)
 
         binding.homeRecycler.addOnScrollListener(object :
-            PaginationListener(binding.homeRecycler.layoutManager as LinearLayoutManager) {
+                PaginationListener(binding.homeRecycler.layoutManager as LinearLayoutManager) {
 
-            override fun loadMoreItems() {
-                isLoading = true
-                offset += PAGINATION_OFFSET
+                override fun loadMoreItems() {
+                    isLoading = true
+                    offset += PAGINATION_OFFSET
 
-                Handler(Looper.myLooper()!!).postDelayed({
-                    initObservers(offset)
-                }, 1000)
-            }
+                    Handler(Looper.myLooper()!!).postDelayed(
+                        {
+                            initObservers(offset)
+                        },
+                        1000
+                    )
+                }
 
-            override fun isLoading(): Boolean {
-                return isLoading
-            }
-        })
+                override fun isLoading(): Boolean {
+                    return isLoading
+                }
+            })
     }
 
     override fun onDestroy() {
