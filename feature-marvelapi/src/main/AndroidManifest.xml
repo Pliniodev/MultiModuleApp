@@ -4,6 +4,11 @@
 
     <application android:usesCleartextTraffic="true">
         <activity
+            android:theme="@style/MarvelThemes"
+            android:name=".presentation.home.MarvelSplashScreen"
+            android:exported="false" />
+        <activity
+            android:theme="@style/MarvelThemes"
             android:name=".presentation.home.activity.MarvelHomeActivity"
             android:exported="false" />
     </application>
