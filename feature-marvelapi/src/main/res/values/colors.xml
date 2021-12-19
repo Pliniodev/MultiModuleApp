@@ -8,6 +8,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_500">#EFEFEF</color>
     <color name="chocolate_cosmos">#4D1518</color>
     <color name="vivid_auburn">#951E22</color>
     <color name="fire_engine_red">#C72523</color>

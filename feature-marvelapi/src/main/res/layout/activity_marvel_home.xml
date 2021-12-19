@@ -4,8 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white_500"
     tools:context=".presentation.home.activity.MarvelHomeActivity">
+
+    <View
+        android:id="@+id/replaceView"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/mainProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/recyclerview_padding_16dp"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toTopOf="@id/homeRecycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/replaceView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeRecycler"
@@ -16,17 +34,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mainProgressBar"
         tools:itemCount="3"
         tools:listitem="@layout/main_recycler" />
 
-    <com.google.android.material.progressindicator.LinearProgressIndicator
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/mainProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

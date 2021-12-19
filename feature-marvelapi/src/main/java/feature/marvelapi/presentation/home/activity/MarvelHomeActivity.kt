@@ -3,19 +3,19 @@ package feature.marvelapi.presentation.home.activity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import feature.commons.utils.StateMachine
 import feature.commons.utils.gone
 import feature.commons.utils.visible
+import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
 import feature.marvelapi.marvelModule
 import feature.marvelapi.presentation.home.adapter.MainMarvelAdapter
 import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
 import feature.marvelapi.presentation.model.CharactersPresentation
-import kotlinx.coroutines.delay
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -46,23 +46,23 @@ class MarvelHomeActivity : AppCompatActivity() {
 
         viewModel.getCharacters(offSet).observe(this) { event ->
             when (event) {
-                is StateMachine.Loading -> binding.mainProgressBar.visible()
+                is StateMachine.Loading -> showLoading()
                 is StateMachine.Success -> {
-                    binding.mainProgressBar.gone()
+                    hideLoading()
                     setList(event.value.data.results)
                     isLoading = false
                 }
                 is StateMachine.ApiError -> {
-
+                    hideLoading()
                     Toast.makeText(
                         this,
                         "${event.error}",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-                is StateMachine.UnknownError -> binding.mainProgressBar.gone()
+                is StateMachine.UnknownError -> hideLoading()
 
-                else -> binding.mainProgressBar.gone()
+                else -> hideLoading()
             }
         }
     }
@@ -98,8 +98,6 @@ class MarvelHomeActivity : AppCompatActivity() {
         })
     }
 
-    private fun doNothingForNow() {}
-
     override fun onDestroy() {
         super.onDestroy()
         unloadKoinModules(listOf(marvelModule))
@@ -107,5 +105,19 @@ class MarvelHomeActivity : AppCompatActivity() {
 
     companion object {
         const val PAGINATION_OFFSET = 49
+    }
+
+    private fun showLoading() {
+        val slideDown = AnimationUtils.loadAnimation(this, R.anim.slide_down)
+        binding.mainProgressBar.startAnimation(slideDown)
+        binding.mainProgressBar.visible()
+        binding.mainProgressBar.show()
+    }
+
+    private fun hideLoading() {
+        val slideTop = AnimationUtils.loadAnimation(this, R.anim.slide_top)
+        binding.mainProgressBar.startAnimation(slideTop)
+        binding.mainProgressBar.gone()
+        binding.mainProgressBar.hide()
     }
 }
