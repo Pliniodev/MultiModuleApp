@@ -1,11 +1,12 @@
 package feature.commons.utils
 
 import android.view.View
+import androidx.core.view.isVisible
 
 fun View.visible() {
-    visibility = View.VISIBLE
+    this.isVisible = true
 }
 
 fun View.gone() {
-    visibility = View.GONE
+    this.isVisible = false
 }
