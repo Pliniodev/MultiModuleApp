@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/characterImage"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="@dimen/medium_size_130dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,7 @@
         <View
             android:id="@+id/divisor"
             android:layout_width="match_parent"
-            android:layout_height="6dp"
+            android:layout_height="@dimen/margin_small_6dp"
             android:background="@color/fire_engine_red"
             app:layout_constraintTop_toBottomOf="@id/characterImage" />
 
@@ -46,7 +46,7 @@
 
     <View
         android:layout_width="@dimen/padding_medium_10dp"
-        android:layout_height="5dp"
+        android:layout_height="@dimen/margin_small_5dp"
         android:background="@color/white_500"
         android:rotationX="30"
         android:rotationY="120"
