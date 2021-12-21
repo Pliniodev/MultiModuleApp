@@ -6,10 +6,9 @@ import android.os.Looper
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import feature.commons.utils.StateMachine
-import feature.commons.utils.gone
-import feature.commons.utils.visible
 import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
 import feature.marvelapi.marvelModule
@@ -112,14 +111,14 @@ class MarvelHomeActivity : AppCompatActivity() {
     private fun showLoading() {
         val slideDown = AnimationUtils.loadAnimation(this, R.anim.slide_down)
         binding.mainProgressBar.startAnimation(slideDown)
-        binding.mainProgressBar.visible()
+        binding.mainProgressBar.isVisible = true
         binding.mainProgressBar.show()
     }
 
     private fun hideLoading() {
         val slideTop = AnimationUtils.loadAnimation(this, R.anim.slide_top)
         binding.mainProgressBar.startAnimation(slideTop)
-        binding.mainProgressBar.gone()
+        binding.mainProgressBar.isVisible = false
         binding.mainProgressBar.hide()
     }
 }

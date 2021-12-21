@@ -7,7 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import feature.commons.utils.visible
+import androidx.core.view.isVisible
 import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelSplashScreenBinding
 import feature.marvelapi.presentation.home.activity.MarvelHomeActivity
@@ -22,7 +22,14 @@ class MarvelSplashScreen : AppCompatActivity() {
         binding = ActivityMarvelSplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.mainContent.visible()
+        onEnter()
+    }
+
+    private fun onEnter(){
+        initSplashScreen()
+    }
+
+    private fun initSplashScreen(){
 
         binding.mainContent.startAnimation(AnimationUtils.loadAnimation(this, R.anim.splash_fade))
 
