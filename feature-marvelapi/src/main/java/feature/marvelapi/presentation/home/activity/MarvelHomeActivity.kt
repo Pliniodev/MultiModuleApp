@@ -1,14 +1,12 @@
 package feature.marvelapi.presentation.home.activity
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.HandlerCompat.postDelayed
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
+import feature.commons.utils.PaginationListener
 import feature.commons.utils.StateMachine
 import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
@@ -130,6 +128,6 @@ class MarvelHomeActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val PAGINATION_OFFSET = 49
+        const val PAGINATION_OFFSET = 50
     }
 }

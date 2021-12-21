@@ -1,4 +1,4 @@
-package feature.marvelapi.presentation.home.activity
+package feature.commons.utils
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
