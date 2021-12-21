@@ -29,6 +29,7 @@ class MarvelHomeActivity : AppCompatActivity() {
     private val mAdapter = MainMarvelAdapter()
     private var offset = 0
     private var isLoading = false
+    private var mList = mutableListOf<CharactersPresentation>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +54,8 @@ class MarvelHomeActivity : AppCompatActivity() {
                 is StateMachine.Success -> {
                     isLoading = false
                     handleLoading(isLoading)
-                    setList(event.value.data.results)
+                    mList.addAll(event.value.data.results)
+                    setList()
                 }
                 is StateMachine.ApiError -> {
                     isLoading = false
@@ -79,14 +81,15 @@ class MarvelHomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun setList(list: List<CharactersPresentation>) {
+    private fun setList() {
 
-        mAdapter.submitList(list)
+        mAdapter.submitList(mList)
 
         binding.homeRecycler.addOnScrollListener(object :
             PaginationListener(binding.homeRecycler.layoutManager as LinearLayoutManager) {
 
             override fun loadMoreItems() {
+
                 isLoading = true
                 offset += PAGINATION_OFFSET
 
