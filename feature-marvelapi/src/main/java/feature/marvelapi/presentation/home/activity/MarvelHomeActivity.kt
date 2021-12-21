@@ -6,6 +6,7 @@ import android.os.Looper
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.HandlerCompat.postDelayed
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import feature.commons.utils.StateMachine
@@ -15,6 +16,8 @@ import feature.marvelapi.marvelModule
 import feature.marvelapi.presentation.home.adapter.MainMarvelAdapter
 import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
 import feature.marvelapi.presentation.model.CharactersPresentation
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -39,29 +42,31 @@ class MarvelHomeActivity : AppCompatActivity() {
     private fun onEnterActivity() {
         initObservers(offset)
         initAdapter()
+        isLoading = true
     }
 
     private fun initObservers(offSet: Int) {
 
         viewModel.getCharacters(offSet).observe(this) { event ->
             when (event) {
-                is StateMachine.Loading -> showLoading()
+                is StateMachine.Loading -> handleLoading(isLoading)
                 is StateMachine.Success -> {
-                    hideLoading()
-                    setList(event.value.data.results)
                     isLoading = false
+                    handleLoading(isLoading)
+                    setList(event.value.data.results)
                 }
                 is StateMachine.ApiError -> {
-                    hideLoading()
+                    isLoading = false
+                    handleLoading(isLoading)
                     Toast.makeText(
                         this,
                         "${event.error}",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-                is StateMachine.UnknownError -> hideLoading()
+                is StateMachine.UnknownError -> handleLoading(false)
 
-                else -> hideLoading()
+                else -> handleLoading(false)
             }
         }
     }
@@ -79,24 +84,22 @@ class MarvelHomeActivity : AppCompatActivity() {
         mAdapter.submitList(list)
 
         binding.homeRecycler.addOnScrollListener(object :
-                PaginationListener(binding.homeRecycler.layoutManager as LinearLayoutManager) {
+            PaginationListener(binding.homeRecycler.layoutManager as LinearLayoutManager) {
 
-                override fun loadMoreItems() {
-                    isLoading = true
-                    offset += PAGINATION_OFFSET
+            override fun loadMoreItems() {
+                isLoading = true
+                offset += PAGINATION_OFFSET
 
-                    Handler(Looper.myLooper()!!).postDelayed(
-                        {
-                            initObservers(offset)
-                        },
-                        1000
-                    )
+                runBlocking {
+                    delay(1000)
+                    initObservers(offset)
                 }
+            }
 
-                override fun isLoading(): Boolean {
-                    return isLoading
-                }
-            })
+            override fun isLoading(): Boolean {
+                return isLoading
+            }
+        })
     }
 
     override fun onDestroy() {
@@ -104,21 +107,26 @@ class MarvelHomeActivity : AppCompatActivity() {
         unloadKoinModules(listOf(marvelModule))
     }
 
+    private fun handleLoading(isLoading: Boolean) {
+        binding.mainProgressBar.apply {
+
+            if (isLoading) {
+                val slideDown =
+                    AnimationUtils.loadAnimation(this@MarvelHomeActivity, R.anim.slide_down)
+                startAnimation(slideDown)
+                isVisible = true
+                show()
+            } else {
+                val slideTop =
+                    AnimationUtils.loadAnimation(this@MarvelHomeActivity, R.anim.slide_top)
+                startAnimation(slideTop)
+                isVisible = false
+                hide()
+            }
+        }
+    }
+
     companion object {
         const val PAGINATION_OFFSET = 49
-    }
-
-    private fun showLoading() {
-        val slideDown = AnimationUtils.loadAnimation(this, R.anim.slide_down)
-        binding.mainProgressBar.startAnimation(slideDown)
-        binding.mainProgressBar.isVisible = true
-        binding.mainProgressBar.show()
-    }
-
-    private fun hideLoading() {
-        val slideTop = AnimationUtils.loadAnimation(this, R.anim.slide_top)
-        binding.mainProgressBar.startAnimation(slideTop)
-        binding.mainProgressBar.isVisible = false
-        binding.mainProgressBar.hide()
     }
 }
