@@ -10,6 +10,6 @@ internal interface MarvelApi {
     suspend fun getCharacters(
         @Query("offset") offset: Int,
         @Query("nameStartsWith") name: String? = null,
-        @Query("limit") limit: Int = 50
+        @Query("limit") limit: Int = 40
     ): MainResponse
 }
