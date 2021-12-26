@@ -26,6 +26,7 @@ class MarvelHomeActivity : AppCompatActivity() {
     private val viewModel: MarvelHomeViewModel by viewModel()
     private val mAdapter = MainMarvelAdapter()
     private var offset = 0
+    private var name : String? = null
     private var isLoading = false
     private var mList = mutableListOf<CharactersPresentation>()
 
@@ -44,9 +45,9 @@ class MarvelHomeActivity : AppCompatActivity() {
         isLoading = true
     }
 
-    private fun initObservers(offSet: Int) {
+    private fun initObservers(offSet: Int, name: String? = null) {
 
-        viewModel.getCharacters(offSet).observe(this) { event ->
+        viewModel.getCharacters(offSet, name).observe(this) { event ->
             when (event) {
                 is StateMachine.Loading -> handleLoading(isLoading)
                 is StateMachine.Success -> {

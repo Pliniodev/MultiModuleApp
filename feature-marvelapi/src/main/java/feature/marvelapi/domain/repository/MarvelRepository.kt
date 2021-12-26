@@ -4,5 +4,5 @@ import feature.marvelapi.presentation.model.MainPresentation
 
 internal interface MarvelRepository {
 
-    suspend fun getCharacters(offset: Int): MainPresentation
+    suspend fun getCharacters(offset: Int, name: String?): MainPresentation
 }

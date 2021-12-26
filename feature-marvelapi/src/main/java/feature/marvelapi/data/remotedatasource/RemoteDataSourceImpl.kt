@@ -8,7 +8,7 @@ internal class RemoteDataSourceImpl(
     private val api: MarvelApi
 ) : RemoteDataSource {
 
-    override suspend fun getCharactersDomain(offset: Int): MainDomain {
-        return MapperCharactersResponse.toDomain(api.getCharacters(offset))
+    override suspend fun getCharactersDomain(offset: Int, name: String?): MainDomain {
+        return MapperCharactersResponse.toDomain(api.getCharacters(offset, name))
     }
 }
