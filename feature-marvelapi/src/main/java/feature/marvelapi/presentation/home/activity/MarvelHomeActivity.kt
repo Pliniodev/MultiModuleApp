@@ -1,5 +1,6 @@
 package feature.marvelapi.presentation.home.activity
 
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.animation.AnimationUtils
@@ -33,7 +34,6 @@ class MarvelHomeActivity : AppCompatActivity() {
     private var isLoading = false
     private var mList = mutableListOf<CharactersPresentation>()
     private var canLoadMore = false
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,18 +81,59 @@ class MarvelHomeActivity : AppCompatActivity() {
     private fun setUpSearch() {
 
         binding.apply {
-            marvelLogo.setOnClickListener {
-                isLoading = true
 
-                name = inputText.editText?.text.toString()
-                offset = 0
-                mList.clear()
-                mAdapter.notifyDataSetChanged()
+            searchBtn.apply {
 
-                if (!name.isNullOrBlank()) {
-                    setUpObservers(offset, name)
-                } else {
-                    setUpObservers(offset, null)
+                setOnClickListener {
+
+                    ObjectAnimator.ofFloat(layoutLogo, "translationX", -320f).apply {
+                        duration = 1000
+                        start()
+                    }
+
+                    ObjectAnimator.ofFloat(marvelLogo, "alpha", 1.0f, 0f).apply {
+                        duration = 1000
+                        start()
+                    }
+
+                    ObjectAnimator.ofFloat(replaceLogo, "alpha", 0f, 1.0f).apply {
+                        replaceLogo.isVisible = true
+                        duration = 1500
+                        start()
+                    }
+
+                    ObjectAnimator.ofFloat(inputText, "translationX", 0f).apply {
+                        duration = 1000
+                        start()
+                    }
+                }
+            }
+
+            ObjectAnimator.ofFloat(layoutLogo, "alpha", 0.2f, 1.0f).apply {
+                duration = 2000
+                start()
+            }
+
+            layoutLogo.apply {
+//                startAnimation(
+//                    AnimationUtils.loadAnimation(
+//                        this@MarvelHomeActivity,
+//                        R.anim.translate_first
+//                    )
+//                )
+
+                setOnClickListener {
+                    isLoading = true
+                    name = inputText.editText?.text.toString()
+                    offset = 0
+                    mList.clear()
+                    mAdapter.notifyDataSetChanged()
+
+                    if (!name.isNullOrBlank()) {
+                        setUpObservers(offset, name)
+                    } else {
+                        setUpObservers(offset, null)
+                    }
                 }
             }
         }

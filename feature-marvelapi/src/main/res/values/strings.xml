@@ -1,1 +1,4 @@
-<resources></resources>
+<resources>
+
+    <string name="characters_search_hint">character name</string>
+</resources>

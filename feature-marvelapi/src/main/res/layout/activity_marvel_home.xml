@@ -19,34 +19,71 @@
             android:background="@color/black_700"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/marvelLogo"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutLogo"
             android:layout_width="@dimen/medium_size_120dp"
             android:layout_height="0dp"
-            android:contentDescription="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_marvel" />
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/marvelLogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_marvel" />
+
+            <ImageView
+                android:id="@+id/replaceLogo"
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:src="@drawable/marvel_m_logo"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/searchBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="@dimen/margin_small_5dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputText"
-        app:startIconDrawable="@drawable/ic_search"
         android:layout_width="match_parent"
-        tools:translationX="450dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/replaceView">
+        android:translationX="450dp"
+        android:paddingHorizontal="50dp"
+        android:textColorHint="@color/black_200"
+        app:endIconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/replaceView"
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editText"
-            android:layout_gravity="center_vertical"
+            android:textColor="@color/white"
+            android:hint="@string/characters_search_hint"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            />
+            android:layout_gravity="center_vertical"
+            android:background="@color/invisible" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
