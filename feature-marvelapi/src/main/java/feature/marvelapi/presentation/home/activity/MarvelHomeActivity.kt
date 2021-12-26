@@ -111,17 +111,16 @@ class MarvelHomeActivity : AppCompatActivity() {
     private fun handleLoading(isLoading: Boolean) {
         binding.mainProgressBar.apply {
 
+            val slideDown = AnimationUtils.loadAnimation(this@MarvelHomeActivity, R.anim.slide_down)
+            val slideTop = AnimationUtils.loadAnimation(this@MarvelHomeActivity, R.anim.slide_top)
+
             if (isLoading) {
-                val slideDown =
-                    AnimationUtils.loadAnimation(this@MarvelHomeActivity, R.anim.slide_down)
                 startAnimation(slideDown)
-                isVisible = true
+                isVisible = isLoading
                 show()
             } else {
-                val slideTop =
-                    AnimationUtils.loadAnimation(this@MarvelHomeActivity, R.anim.slide_top)
                 startAnimation(slideTop)
-                isVisible = false
+                isVisible = isLoading
                 hide()
             }
         }
