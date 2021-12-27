@@ -1,13 +1,21 @@
 package feature.marvelapi.presentation.home.activity
 
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
+import feature.commons.utils.PaginationListener
 import feature.commons.utils.StateMachine
+import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
 import feature.marvelapi.marvelModule
 import feature.marvelapi.presentation.home.adapter.MainMarvelAdapter
 import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
+import feature.marvelapi.presentation.model.CharactersPresentation
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -17,6 +25,9 @@ class MarvelHomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMarvelHomeBinding
     private val viewModel: MarvelHomeViewModel by viewModel()
     private val mAdapter = MainMarvelAdapter()
+    private var offset = 0
+    private var isLoading = false
+    private var mList = mutableListOf<CharactersPresentation>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,38 +39,94 @@ class MarvelHomeActivity : AppCompatActivity() {
     }
 
     private fun onEnterActivity() {
-        initObservers()
+        initObservers(offset)
         initAdapter()
+        isLoading = true
+    }
+
+    private fun initObservers(offSet: Int) {
+
+        viewModel.getCharacters(offSet).observe(this) { event ->
+            when (event) {
+                is StateMachine.Loading -> handleLoading(isLoading)
+                is StateMachine.Success -> {
+                    isLoading = false
+                    handleLoading(isLoading)
+                    mList.addAll(event.value.data.results)
+                    setList()
+                }
+                is StateMachine.ApiError -> {
+                    isLoading = false
+                    handleLoading(isLoading)
+                    Toast.makeText(
+                        this,
+                        "${event.error}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                is StateMachine.UnknownError -> handleLoading(false)
+
+                else -> handleLoading(false)
+            }
+        }
     }
 
     private fun initAdapter() {
+
         binding.homeRecycler.apply {
             adapter = mAdapter
             setHasFixedSize(true)
         }
     }
 
-    private fun initObservers() {
+    private fun setList() {
 
-        viewModel.getCharacters().observe(this) { event ->
-            when (event) {
-                is StateMachine.Loading -> doNothingForNow()
-                is StateMachine.Success -> mAdapter.submitList(event.value.data.results)
-                is StateMachine.ApiError -> Toast.makeText(
-                    this,
-                    "${event.error}",
-                    Toast.LENGTH_SHORT
-                ).show()
-                is StateMachine.UnknownError -> doNothingForNow()
-                else -> doNothingForNow()
+        mAdapter.submitList(mList)
+
+        binding.homeRecycler.addOnScrollListener(object :
+            PaginationListener(binding.homeRecycler.layoutManager as LinearLayoutManager) {
+
+            override fun loadMoreItems() {
+
+                isLoading = true
+                offset += PAGINATION_OFFSET
+
+                runBlocking {
+                    delay(1000)
+                    initObservers(offset)
+                }
             }
-        }
-    }
 
-    private fun doNothingForNow() {}
+            override fun isLoading(): Boolean {
+                return isLoading
+            }
+        })
+    }
 
     override fun onDestroy() {
         super.onDestroy()
         unloadKoinModules(listOf(marvelModule))
+    }
+
+    private fun handleLoading(isLoading: Boolean) {
+        binding.mainProgressBar.apply {
+
+            val slideDown = AnimationUtils.loadAnimation(this@MarvelHomeActivity, R.anim.slide_down)
+            val slideTop = AnimationUtils.loadAnimation(this@MarvelHomeActivity, R.anim.slide_top)
+
+            if (isLoading) {
+                startAnimation(slideDown)
+                isVisible = isLoading
+                show()
+            } else {
+                startAnimation(slideTop)
+                isVisible = isLoading
+                hide()
+            }
+        }
+    }
+
+    companion object {
+        const val PAGINATION_OFFSET = 50
     }
 }
