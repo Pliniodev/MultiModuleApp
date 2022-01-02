@@ -1,17 +1,17 @@
 package feature.marvelapi.domain.model
 
-internal data class MainDomain(
+internal data class MainCharactersDomain(
     val code: Int,
     val status: String,
     val copyright: String,
     val attributionText: String,
     val attributionHTML: String,
     val eTag: String,
-    val data: SubResponseDomain
+    val data: SubCharactersDomain
 
 )
 
-internal data class SubResponseDomain(
+internal data class SubCharactersDomain(
     val offset: Int,
     val limit: Int,
     val total: Int,

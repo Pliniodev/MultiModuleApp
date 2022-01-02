@@ -2,8 +2,8 @@ package feature.marvelapi.domain.mapper
 
 import feature.marvelapi.domain.model.CharactersDomain
 import feature.marvelapi.domain.model.ImagesDomain
-import feature.marvelapi.domain.model.MainDomain
-import feature.marvelapi.domain.model.SubResponseDomain
+import feature.marvelapi.domain.model.MainCharactersDomain
+import feature.marvelapi.domain.model.SubCharactersDomain
 import feature.marvelapi.presentation.model.CharactersPresentation
 import feature.marvelapi.presentation.model.ImagesPresentation
 import feature.marvelapi.presentation.model.MainPresentation
@@ -11,7 +11,7 @@ import feature.marvelapi.presentation.model.SubResponsePresentation
 
 internal object MapperCharactersDomain {
 
-    fun toPresentation(source: MainDomain): MainPresentation =
+    fun toPresentation(source: MainCharactersDomain): MainPresentation =
         with(source) {
             MainPresentation(
                 code = code,
@@ -25,7 +25,7 @@ internal object MapperCharactersDomain {
             )
         }
 
-    private fun subDomainToPresentation(source: SubResponseDomain): SubResponsePresentation {
+    private fun subDomainToPresentation(source: SubCharactersDomain): SubResponsePresentation {
         with(source) {
             return SubResponsePresentation(
                 offset = offset,

@@ -1,6 +1,7 @@
 package feature.marvelapi.data.api
 
-import feature.marvelapi.data.model.MainResponse
+import feature.marvelapi.data.model.MainCharactersResponse
+import feature.marvelapi.data.model.MainSeriesResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -11,5 +12,8 @@ internal interface MarvelApi {
         @Query("offset") offset: Int,
         @Query("nameStartsWith") name: String? = null,
         @Query("limit") limit: Int = 40
-    ): MainResponse
+    ): MainCharactersResponse
+
+    @GET("series")
+    suspend fun getSeries() : MainSeriesResponse
 }

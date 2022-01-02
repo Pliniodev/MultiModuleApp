@@ -2,18 +2,18 @@ package feature.marvelapi.data.mapper
 
 import feature.marvelapi.data.model.CharactersResponse
 import feature.marvelapi.data.model.ImagesResponse
-import feature.marvelapi.data.model.MainResponse
-import feature.marvelapi.data.model.SubResponse
+import feature.marvelapi.data.model.MainCharactersResponse
+import feature.marvelapi.data.model.SubCharacterResponse
 import feature.marvelapi.domain.model.CharactersDomain
 import feature.marvelapi.domain.model.ImagesDomain
-import feature.marvelapi.domain.model.MainDomain
-import feature.marvelapi.domain.model.SubResponseDomain
+import feature.marvelapi.domain.model.MainCharactersDomain
+import feature.marvelapi.domain.model.SubCharactersDomain
 
 internal object MapperCharactersResponse {
 
-    fun toDomain(source: MainResponse): MainDomain =
+    fun toDomain(source: MainCharactersResponse): MainCharactersDomain =
         with(source) {
-            MainDomain(
+            MainCharactersDomain(
                 code = code,
                 status = status,
                 copyright = copyright,
@@ -24,9 +24,9 @@ internal object MapperCharactersResponse {
             )
         }
 
-    private fun subResponseToDomain(source: SubResponse): SubResponseDomain {
+    private fun subResponseToDomain(source: SubCharacterResponse): SubCharactersDomain {
         with(source) {
-            return SubResponseDomain(
+            return SubCharactersDomain(
                 offset = offset,
                 limit = limit,
                 total = total,

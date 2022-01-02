@@ -2,7 +2,7 @@ package feature.marvelapi.data.model
 
 import com.google.gson.annotations.SerializedName
 
-internal data class MainCharactersResponse(
+internal data class MainSeriesResponse(
     val code: Int,
     val status: String,
     val copyright: String,
@@ -10,25 +10,22 @@ internal data class MainCharactersResponse(
     val attributionHTML: String,
     @SerializedName("etag")
     val eTag: String,
-    val data: SubCharacterResponse
+    val data: SubSeriesResponse
 )
 
-internal data class SubCharacterResponse(
+internal data class SubSeriesResponse(
+
     val offset: Int,
     val limit: Int,
     val total: Int,
     val count: Int,
-    val results: List<CharactersResponse>
+    val results: List<SeriesResponse>
 )
 
-internal data class CharactersResponse(
+internal data class SeriesResponse(
     val id: Int,
-    val name: String,
-    val description: String,
-    val thumbnail: ImagesResponse
-)
-
-internal data class ImagesResponse(
-    val path: String,
-    val extension: String
+    val title: String,
+    val description : String,
+    val rating : String,
+    val thumbnail : ImagesResponse
 )

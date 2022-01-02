@@ -1,8 +1,11 @@
 package feature.marvelapi.data.remotedatasource
 
-import feature.marvelapi.domain.model.MainDomain
+import feature.marvelapi.domain.model.MainCharactersDomain
+import feature.marvelapi.domain.model.MainSeriesDomain
 
 internal interface RemoteDataSource {
 
-    suspend fun getCharactersDomain(offset: Int, name: String?): MainDomain
+    suspend fun getCharactersDomain(offset: Int, name: String?): MainCharactersDomain
+
+    suspend fun getSeriesDomain(): MainSeriesDomain
 }
