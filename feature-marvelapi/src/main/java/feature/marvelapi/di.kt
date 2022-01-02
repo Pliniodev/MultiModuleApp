@@ -7,6 +7,7 @@ import feature.marvelapi.data.remotedatasource.RemoteDataSourceImpl
 import feature.marvelapi.domain.repository.MarvelRepository
 import feature.marvelapi.domain.repository.MarvelRepositoryImpl
 import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
+import feature.marvelapi.presentation.home.viewmodel.SeriesViewModel
 import feature.network.constants.BaseUrl
 import feature.network.constants.InjectionTag
 import feature.network.retrofit.BuildRetrofit
@@ -32,4 +33,5 @@ val marvelModule = module {
     single<MarvelRepository> { MarvelRepositoryImpl(remoteDataSource = get()) }
 
     viewModel { MarvelHomeViewModel(repository = get()) }
+    viewModel { SeriesViewModel(repository = get()) }
 }

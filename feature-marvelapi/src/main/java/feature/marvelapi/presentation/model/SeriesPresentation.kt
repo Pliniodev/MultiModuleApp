@@ -1,7 +1,5 @@
 package feature.marvelapi.presentation.model
 
-import feature.marvelapi.domain.model.ImagesDomain
-
 internal data class MainSeriesPresentation(
     val code: Int,
     val status: String,

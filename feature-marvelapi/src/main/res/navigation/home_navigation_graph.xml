@@ -12,7 +12,7 @@
 
     <fragment
         android:id="@+id/comicsFragment"
-        android:name="feature.marvelapi.presentation.home.fragments.ComicsFragment"
-        tools:layout="@layout/fragment_comics" />
+        android:name="feature.marvelapi.presentation.home.fragments.SeriesFragment"
+        tools:layout="@layout/fragment_series" />
 
 </navigation>
