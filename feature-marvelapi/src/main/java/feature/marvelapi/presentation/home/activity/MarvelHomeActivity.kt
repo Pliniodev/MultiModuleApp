@@ -10,7 +10,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import feature.commons.utils.PaginationListener
 import feature.commons.utils.StateMachine
@@ -22,7 +21,6 @@ import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
 import feature.marvelapi.presentation.model.CharactersPresentation
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
-import okhttp3.internal.notify
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -51,7 +49,7 @@ class MarvelHomeActivity : AppCompatActivity() {
         setUpObservers(offset)
         initAdapter()
         isLoading = true
-        setUpSearch()
+        setUpSearchAnimations()
         performSearch()
     }
 
@@ -81,8 +79,7 @@ class MarvelHomeActivity : AppCompatActivity() {
         }
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    private fun setUpSearch() {
+    private fun setUpSearchAnimations() {
 
         binding.apply {
 
@@ -117,18 +114,10 @@ class MarvelHomeActivity : AppCompatActivity() {
                 duration = 2000
                 start()
             }
-
-            layoutLogo.apply {
-//                startAnimation(
-//                    AnimationUtils.loadAnimation(
-//                        this@MarvelHomeActivity,
-//                        R.anim.translate_first
-//                    )
-//                )
-            }
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun performSearch() {
 
         binding.inputText.editText?.setOnEditorActionListener(object :
