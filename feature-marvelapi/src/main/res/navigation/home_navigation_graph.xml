@@ -10,4 +10,9 @@
         android:name="feature.marvelapi.presentation.home.fragments.CharactersFragment"
         tools:layout="@layout/fragment_characters" />
 
+    <fragment
+        android:id="@+id/comicsFragment"
+        android:name="feature.marvelapi.presentation.home.fragments.ComicsFragment"
+        tools:layout="@layout/fragment_comics" />
+
 </navigation>

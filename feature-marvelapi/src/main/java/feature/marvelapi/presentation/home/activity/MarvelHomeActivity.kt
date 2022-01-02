@@ -34,7 +34,8 @@ class MarvelHomeActivity : AppCompatActivity() {
         val navController = supportFM.navController
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.charactersFragment
+                R.id.charactersFragment,
+                R.id.comicsFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
