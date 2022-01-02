@@ -3,6 +3,8 @@ package feature.marvelapi.presentation.home.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
@@ -29,7 +31,9 @@ class MarvelHomeActivity : AppCompatActivity() {
 
     private fun setUpNavigation() {
 
-        val navController = findNavController(R.id.frameMenuWrapper)
+        val supportFM = supportFragmentManager.findFragmentById(R.id.fragmentContainer) as NavHostFragment
+
+        val navController = supportFM.navController
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.charactersFragment
