@@ -26,6 +26,7 @@ class MarvelSplashScreen : AppCompatActivity() {
     }
 
     private fun onEnter(){
+        supportActionBar?.hide()
         initSplashScreen()
     }
 

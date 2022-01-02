@@ -27,6 +27,7 @@ object Versions {
     const val glideCompilerVersion = "4.12.0"
     const val mockkVersion = "1.12.1"
     const val assertjVersion = "3.21.0"
+    const val navigationComponentVersion = "2.3.5"
 }
 
 object ConfigData {
@@ -72,6 +73,8 @@ object Dependencies {
     val jUnit = "junit:junit:${Versions.jUnitVersionVersion}"
     val mockk = "io.mockk:mockk:${Versions.mockkVersion}"
     val mockkAndroid = "io.mockk:mockk-android:${Versions.mockkVersion}"
+    val navigationCOmponentUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigationComponentVersion}"
+    val navigationCOmponentFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationComponentVersion}"
 
     val androidJUnit = "androidx.test.ext:junit:${Versions.androidJUnitVersion}"
     val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoVersion}"
@@ -88,7 +91,9 @@ object AndroidModule {
         Dependencies.appCompat,
         Dependencies.material,
         Dependencies.constraintLayout,
-        Dependencies.dataBindingCompiler
+        Dependencies.dataBindingCompiler,
+        Dependencies.navigationCOmponentUi,
+        Dependencies.navigationCOmponentFragment
     )
 }
 
