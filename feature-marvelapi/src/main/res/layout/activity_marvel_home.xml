@@ -79,10 +79,12 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editText"
             android:textColor="@color/white"
+            android:imeOptions="actionSearch"
             android:hint="@string/characters_search_hint"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
+            android:inputType="text"
             android:background="@color/invisible" />
 
     </com.google.android.material.textfield.TextInputLayout>

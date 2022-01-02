@@ -3,7 +3,10 @@ package feature.marvelapi.presentation.home.activity
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.animation.AnimationUtils
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -49,6 +52,7 @@ class MarvelHomeActivity : AppCompatActivity() {
         initAdapter()
         isLoading = true
         setUpSearch()
+        performSearch()
     }
 
     private fun setUpObservers(offSet: Int, name: String? = null) {
@@ -121,10 +125,19 @@ class MarvelHomeActivity : AppCompatActivity() {
 //                        R.anim.translate_first
 //                    )
 //                )
+            }
+        }
+    }
 
-                setOnClickListener {
+    private fun performSearch() {
+
+        binding.inputText.editText?.setOnEditorActionListener(object :
+            TextView.OnEditorActionListener {
+
+            override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     isLoading = true
-                    name = inputText.editText?.text.toString()
+                    name = binding.inputText.editText?.text.toString()
                     offset = 0
                     mList.clear()
                     mAdapter.notifyDataSetChanged()
@@ -134,9 +147,11 @@ class MarvelHomeActivity : AppCompatActivity() {
                     } else {
                         setUpObservers(offset, null)
                     }
+                    return true
                 }
+                return false
             }
-        }
+        })
     }
 
     private fun initAdapter() {
