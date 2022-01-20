@@ -1,7 +1,6 @@
 package feature.marvelapi.data.api
 
 import feature.marvelapi.data.model.MainCharactersResponse
-import feature.marvelapi.data.model.MainSeriesResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
