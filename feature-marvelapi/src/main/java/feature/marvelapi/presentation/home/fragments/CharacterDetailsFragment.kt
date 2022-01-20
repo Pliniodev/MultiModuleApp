@@ -13,7 +13,7 @@ class CharacterDetailsFragment : Fragment() {
 
     private var _binding : FragmentCharacterDetailsBinding? = null
     private val binding get() = _binding!!
-    val args: CharacterDetailsFragmentArgs by navArgs()
+    private val args: CharacterDetailsFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
