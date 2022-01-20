@@ -6,6 +6,4 @@ import feature.marvelapi.domain.model.MainSeriesDomain
 internal interface RemoteDataSource {
 
     suspend fun getCharactersDomain(offset: Int, name: String?): MainCharactersDomain
-
-    suspend fun getSeriesDomain(): MainSeriesDomain
 }

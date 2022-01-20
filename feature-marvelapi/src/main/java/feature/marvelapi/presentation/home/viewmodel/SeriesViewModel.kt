@@ -10,7 +10,4 @@ import feature.marvelapi.presentation.model.MainSeriesPresentation
 
 internal class SeriesViewModel(private val repository: MarvelRepository) : ViewModel() {
 
-    fun getSeries(): LiveData<StateMachine<MainSeriesPresentation>> = liveResponse {
-        safeRequest { repository.getSeries() }
-    }
 }

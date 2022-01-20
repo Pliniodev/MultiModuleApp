@@ -43,25 +43,25 @@ class SeriesFragment : Fragment() {
     }
 
     private fun setUpObservers() {
-        viewModel.getSeries().observe(viewLifecycleOwner) { event ->
-            when (event) {
-                is StateMachine.Loading -> some()
-                is StateMachine.Success -> {
-
-                    val something = event.value.data.results
-
-                    mAdapter.submitList(something)
-                    mAdapter.notifyDataSetChanged()
-                }
-                is StateMachine.ApiError -> {
-                    event.error
-                    some()
-                }
-                is StateMachine.UnknownError -> some()
-
-                else -> some()
-            }
-        }
+//        viewModel.getSeries().observe(viewLifecycleOwner) { event ->
+//            when (event) {
+//                is StateMachine.Loading -> some()
+//                is StateMachine.Success -> {
+//
+//                    val something = event.value.data.results
+//
+//                    mAdapter.submitList(something)
+//                    mAdapter.notifyDataSetChanged()
+//                }
+//                is StateMachine.ApiError -> {
+//                    event.error
+//                    some()
+//                }
+//                is StateMachine.UnknownError -> some()
+//
+//                else -> some()
+//            }
+//        }
     }
 
     private fun setList() {

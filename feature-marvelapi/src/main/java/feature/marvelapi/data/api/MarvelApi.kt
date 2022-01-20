@@ -13,7 +13,4 @@ internal interface MarvelApi {
         @Query("nameStartsWith") name: String? = null,
         @Query("limit") limit: Int = 40
     ): MainCharactersResponse
-
-    @GET("series")
-    suspend fun getSeries() : MainSeriesResponse
 }
