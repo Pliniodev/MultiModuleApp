@@ -13,6 +13,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import feature.commons.utils.PaginationListener
 import feature.commons.utils.StateMachine

@@ -3,4 +3,5 @@
     <string name="characters_search_hint">character name</string>
     <string name="character_bottom_nav_menu">characters</string>
     <string name="comics_bottom_nav_menu">Comics</string>
+    <string name="args_id">character id</string>
 </resources>

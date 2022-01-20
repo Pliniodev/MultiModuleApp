@@ -1,12 +1,14 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply from: "../android-module.gradle"
 
 dependencies {
     implementation project(path: ':feature-commons')
     implementation project(path: ':feature-network')
     implementation Dependencies.glide
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     kapt Dependencies.glideCompiler
 
