@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import feature.marvelapi.R
 import feature.marvelapi.databinding.FragmentCharacterDetailsBinding
 
@@ -12,7 +13,7 @@ class CharacterDetailsFragment : Fragment() {
 
     private var _binding : FragmentCharacterDetailsBinding? = null
     private val binding get() = _binding!!
-
+    val args: CharacterDetailsFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +25,8 @@ class CharacterDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.testTv.text = args.characterId.toString()
     }
 
     override fun onDestroyView() {

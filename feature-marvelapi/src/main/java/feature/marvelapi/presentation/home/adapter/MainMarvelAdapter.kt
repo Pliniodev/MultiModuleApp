@@ -9,14 +9,18 @@ import feature.marvelapi.R
 import feature.marvelapi.databinding.CharactersCardRecyclerBinding
 import feature.marvelapi.presentation.model.CharactersPresentation
 
-internal class MainMarvelAdapter :
+internal class MainMarvelAdapter(private val onClick: (id: Int) -> Unit = {}) :
     androidx.recyclerview.widget.ListAdapter<CharactersPresentation, MainMarvelAdapter.ViewHolder>(
         BaseItemCallBack<CharactersPresentation>()
     ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemBinding =
-            CharactersCardRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            CharactersCardRecyclerBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
         return ViewHolder(itemBinding)
     }
 
@@ -24,7 +28,7 @@ internal class MainMarvelAdapter :
         holder.bind(getItem(position))
     }
 
-    class ViewHolder(private val binding: CharactersCardRecyclerBinding) :
+   inner class ViewHolder(private val binding: CharactersCardRecyclerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: CharactersPresentation) {
@@ -38,6 +42,10 @@ internal class MainMarvelAdapter :
                     .placeholder(R.drawable.ic_baseline_portrait_24)
                     .centerCrop()
                     .into(characterImage)
+            }
+
+            itemView.setOnClickListener {
+                onClick.invoke(item.id)
             }
         }
     }

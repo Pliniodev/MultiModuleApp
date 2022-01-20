@@ -14,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import feature.commons.utils.PaginationListener
 import feature.commons.utils.StateMachine
@@ -34,12 +35,15 @@ class CharactersFragment : Fragment() {
     private var _binding: FragmentCharactersBinding? = null
     private val binding get() = _binding!!
     private val viewModel: MarvelHomeViewModel by viewModel()
-    private val mAdapter = MainMarvelAdapter()
     private var offset = 0
     private var name: String? = null
     private var isLoading = false
     private var mList = mutableListOf<CharactersPresentation>()
     private var canLoadMore = false
+    private val mAdapter = MainMarvelAdapter(){
+        val action = CharactersFragmentDirections.actionCharactersFragmentToCharacterDetailsFragment(it)
+        findNavController().navigate(action)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
