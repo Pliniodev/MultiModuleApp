@@ -27,8 +27,8 @@ internal class MarvelApiInterceptor : Interceptor {
 
     private companion object {
 
-        const val PUBLIC_KEY = "a8e89960ad1d172d104fbc9b152bba87"
-        const val PRIVATE_KEY = "779fdd0b62e089b94fa09ffbced0c543b0e1c937"
+        const val PUBLIC_KEY = "3827cfb8b6ff40a51f3fed47938660c2"
+        const val PRIVATE_KEY = "b2d65258840e5d37dca4eadd9b1b78241b4d82a2"
 
         val timestamp = Calendar.getInstance().timeInMillis / 1000
         val ts = timestamp.toString()
