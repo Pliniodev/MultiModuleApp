@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import feature.commons.utils.StateMachine
 import feature.marvelapi.databinding.FragmentSeriesBinding
 import feature.marvelapi.marvelModule
 import feature.marvelapi.presentation.home.adapter.SeriesAdapter
@@ -23,7 +21,8 @@ class SeriesFragment : Fragment() {
     private val mAdapter = SeriesAdapter()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSeriesBinding.inflate(inflater, container, false)
@@ -34,7 +33,6 @@ class SeriesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         loadKoinModules(marvelModule)
         onEnter()
-
     }
 
     private fun onEnter() {
@@ -68,7 +66,6 @@ class SeriesFragment : Fragment() {
 
         binding.rvMain.adapter = mAdapter
         mAdapter.notifyDataSetChanged()
-
     }
 
     private fun some() {}

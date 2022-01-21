@@ -1,8 +1,7 @@
 package feature.marvelapi.data.model
 
-import com.google.gson.annotations.SerializedName
 //
-//data class MainCharacterDetailsResponse(
+// data class MainCharacterDetailsResponse(
 //
 //    val code: Int,
 //    val status: String,
@@ -12,14 +11,14 @@ import com.google.gson.annotations.SerializedName
 //    @SerializedName("etag")
 //    val eTag: String,
 //    val data: CharacterDetailsResponse
-//)
+// )
 //
-//data class CharacterDetailsResponse(
+// data class CharacterDetailsResponse(
 //    val offset: Int,
 //    val limit: Int,
 //    val total: Int,
 //    val count: Int,
 //    val results: List<CharactersResponse>
-//)
+// )
 //
 //

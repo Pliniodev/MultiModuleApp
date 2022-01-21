@@ -28,7 +28,7 @@ internal class MainMarvelAdapter(private val onClick: (id: Int) -> Unit = {}) :
         holder.bind(getItem(position))
     }
 
-   inner class ViewHolder(private val binding: CharactersCardRecyclerBinding) :
+    inner class ViewHolder(private val binding: CharactersCardRecyclerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: CharactersPresentation) {

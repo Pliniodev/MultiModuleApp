@@ -22,7 +22,7 @@ internal data class SubSeriesPresentation(
 internal data class SeriesPresentation(
     val id: Int,
     val title: String,
-    val description : String,
-    val rating : String,
-    val thumbnail : ImagesPresentation
+    val description: String,
+    val rating: String,
+    val thumbnail: ImagesPresentation
 )

@@ -1,7 +1,6 @@
 package feature.marvelapi.domain.repository
 
 import feature.marvelapi.presentation.model.MainPresentation
-import feature.marvelapi.presentation.model.MainSeriesPresentation
 
 internal interface MarvelRepository {
 

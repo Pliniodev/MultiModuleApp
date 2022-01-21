@@ -7,7 +7,6 @@ import android.os.Handler
 import android.os.Looper
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelSplashScreenBinding
 import feature.marvelapi.presentation.home.activity.MarvelHomeActivity
@@ -25,12 +24,12 @@ class MarvelSplashScreen : AppCompatActivity() {
         onEnter()
     }
 
-    private fun onEnter(){
+    private fun onEnter() {
         supportActionBar?.hide()
         initSplashScreen()
     }
 
-    private fun initSplashScreen(){
+    private fun initSplashScreen() {
 
         binding.mainContent.startAnimation(AnimationUtils.loadAnimation(this, R.anim.splash_fade))
 

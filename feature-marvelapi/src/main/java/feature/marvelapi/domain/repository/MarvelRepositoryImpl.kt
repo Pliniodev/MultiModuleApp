@@ -3,7 +3,6 @@ package feature.marvelapi.domain.repository
 import feature.marvelapi.data.remotedatasource.RemoteDataSource
 import feature.marvelapi.domain.mapper.MapperCharactersDomain
 import feature.marvelapi.presentation.model.MainPresentation
-import feature.marvelapi.presentation.model.MainSeriesPresentation
 
 internal class MarvelRepositoryImpl(
     private val remoteDataSource: RemoteDataSource

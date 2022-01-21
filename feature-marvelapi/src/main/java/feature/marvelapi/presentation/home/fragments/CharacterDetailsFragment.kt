@@ -22,7 +22,8 @@ class CharacterDetailsFragment : Fragment() {
     private val viewModel: CharacterDetailsViewModel by viewModel()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentCharacterDetailsBinding.inflate(inflater, container, false)
@@ -45,7 +46,7 @@ class CharacterDetailsFragment : Fragment() {
                 is StateMachine.Loading -> doNothing()
                 is StateMachine.Success -> {
                     binding.characterName.text = state.value.name
-                    loadCharacterImage( state.value.thumbnail)
+                    loadCharacterImage(state.value.thumbnail)
                 }
                 is StateMachine.ApiError -> {
                     Toast.makeText(requireContext(), "${state.error}", Toast.LENGTH_SHORT).show()
@@ -57,8 +58,7 @@ class CharacterDetailsFragment : Fragment() {
     }
 
     private fun loadCharacterImage(path: ImagesPresentation) {
-
-        val url = "${path.path}/landscape_incredible.${path.extension}]"
+        val url = "${path.path}/landscape_amazing.${path.extension}"
 
         Glide.with(this)
             .load(url)

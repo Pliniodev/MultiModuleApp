@@ -4,7 +4,6 @@ import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.KeyEvent
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +12,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,13 +40,14 @@ class CharactersFragment : Fragment() {
     private var isLoading = false
     private var mList = mutableListOf<CharactersPresentation>()
     private var canLoadMore = false
-    private val mAdapter = MainMarvelAdapter(){
+    private val mAdapter = MainMarvelAdapter() {
         val action = CharactersFragmentDirections.actionCharactersFragmentToCharacterDetailsFragment(it)
         findNavController().navigate(action)
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentCharactersBinding.inflate(inflater, container, false)
@@ -135,26 +136,26 @@ class CharactersFragment : Fragment() {
     private fun performSearch() {
 
         binding.inputText.editText?.setOnEditorActionListener(object :
-            TextView.OnEditorActionListener {
+                TextView.OnEditorActionListener {
 
-            override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                    isLoading = true
-                    name = binding.inputText.editText?.text.toString()
-                    offset = 0
-                    mList.clear()
-                    mAdapter.notifyDataSetChanged()
+                override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
+                    if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                        isLoading = true
+                        name = binding.inputText.editText?.text.toString()
+                        offset = 0
+                        mList.clear()
+                        mAdapter.notifyDataSetChanged()
 
-                    if (!name.isNullOrBlank()) {
-                        setUpObservers(offset, name)
-                    } else {
-                        setUpObservers(offset, null)
+                        if (!name.isNullOrBlank()) {
+                            setUpObservers(offset, name)
+                        } else {
+                            setUpObservers(offset, null)
+                        }
+                        return true
                     }
-                    return true
+                    return false
                 }
-                return false
-            }
-        })
+            })
     }
 
     private fun initAdapter() {
@@ -172,25 +173,25 @@ class CharactersFragment : Fragment() {
         canLoadMore = mAdapter.currentList.size >= 40
 
         binding.homeRecycler.addOnScrollListener(object :
-            PaginationListener(binding.homeRecycler.layoutManager as LinearLayoutManager) {
+                PaginationListener(binding.homeRecycler.layoutManager as LinearLayoutManager) {
 
-            override fun loadMoreItems() {
+                override fun loadMoreItems() {
 
-                if (canLoadMore) {
-                    isLoading = true
-                    offset += PAGINATION_OFFSET
+                    if (canLoadMore) {
+                        isLoading = true
+                        offset += PAGINATION_OFFSET
 
-                    runBlocking {
-                        delay(1000)
-                        setUpObservers(offset)
+                        runBlocking {
+                            delay(1000)
+                            setUpObservers(offset)
+                        }
                     }
                 }
-            }
 
-            override fun isLoading(): Boolean {
-                return isLoading
-            }
-        })
+                override fun isLoading(): Boolean {
+                    return isLoading
+                }
+            })
     }
 
     private fun handleLoading(isLoading: Boolean) {
