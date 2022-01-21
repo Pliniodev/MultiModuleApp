@@ -11,4 +11,8 @@ internal class RemoteDataSourceImpl(
     override suspend fun getCharactersDomain(offset: Int, name: String?): MainCharactersDomain {
         return MapperCharactersResponse.toDomain(api.getCharacters(offset, name))
     }
+
+    override suspend fun getCharacterDetailsDomain(id: Int): MainCharactersDomain {
+        return MapperCharactersResponse.toDomain(api.getCharacterDetails(id))
+    }
 }

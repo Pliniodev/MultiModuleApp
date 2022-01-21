@@ -2,6 +2,7 @@ package feature.marvelapi.data.api
 
 import feature.marvelapi.data.model.MainCharactersResponse
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 internal interface MarvelApi {
@@ -14,5 +15,5 @@ internal interface MarvelApi {
     ): MainCharactersResponse
 
     @GET("characters/{characterId}")
-    suspend fun getCharacterDetails(id: Int): Unit
+    suspend fun getCharacterDetails(@Path("characterId") id: Int): MainCharactersResponse
 }

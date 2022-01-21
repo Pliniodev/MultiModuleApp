@@ -12,4 +12,8 @@ internal class MarvelRepositoryImpl(
     override suspend fun getCharacters(offset: Int, name: String?): MainPresentation {
         return MapperCharactersDomain.toPresentation(remoteDataSource.getCharactersDomain(offset, name))
     }
+
+    override suspend fun getCharacterDetails(id: Int): MainPresentation {
+        return MapperCharactersDomain.toPresentation(remoteDataSource.getCharacterDetailsDomain(id))
+    }
 }
