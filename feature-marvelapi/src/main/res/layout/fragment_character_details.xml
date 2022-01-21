@@ -6,13 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".presentation.home.fragments.CharacterDetailsFragment">
 
+    <ImageView
+        android:id="@+id/characterImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:contentDescription="@null"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_comics" />
+
     <TextView
-        android:id="@+id/testTv"
-        android:layout_width="wrap_content"
+        android:id="@+id/characterName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="@font/regular_font"
+        android:gravity="center"
+        android:textSize="@dimen/character_details_name"
+        app:layout_constraintTop_toBottomOf="@id/characterImage"
+        tools:text="iron man" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

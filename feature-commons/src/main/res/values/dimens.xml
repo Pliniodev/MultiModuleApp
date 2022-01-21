@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Naming Pattern-->
+<?xml version="1.0" encoding="utf-8"?><!--Naming Pattern-->
 <!--component_property_value_dp-->
 <resources>
     <dimen name="default_card_view_size">100dp</dimen>
@@ -27,4 +26,8 @@
     <dimen name="textview_on_recycler_margin_start_8dp">8dp</dimen>
 
     <dimen name="layout_padding_8dp">8dp</dimen>
+
+    <!--    dimens for text size-->
+    <dimen name="character_details_name">30sp</dimen>
+
 </resources>

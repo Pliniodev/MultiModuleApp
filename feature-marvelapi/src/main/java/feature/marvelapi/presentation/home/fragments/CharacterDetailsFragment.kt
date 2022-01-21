@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import feature.commons.utils.StateMachine
 import feature.marvelapi.databinding.FragmentCharacterDetailsBinding
 import feature.marvelapi.presentation.home.viewmodel.CharacterDetailsViewModel
+import feature.marvelapi.presentation.model.ImagesPresentation
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CharacterDetailsFragment : Fragment() {
@@ -42,7 +44,8 @@ class CharacterDetailsFragment : Fragment() {
             when (state) {
                 is StateMachine.Loading -> doNothing()
                 is StateMachine.Success -> {
-                    binding.testTv.text = state.value.name
+                    binding.characterName.text = state.value.name
+                    loadCharacterImage( state.value.thumbnail)
                 }
                 is StateMachine.ApiError -> {
                     Toast.makeText(requireContext(), "${state.error}", Toast.LENGTH_SHORT).show()
@@ -51,6 +54,15 @@ class CharacterDetailsFragment : Fragment() {
                 is StateMachine.Finish -> doNothing()
             }
         }
+    }
+
+    private fun loadCharacterImage(path: ImagesPresentation) {
+
+        val url = "${path.path}/landscape_incredible.${path.extension}]"
+
+        Glide.with(this)
+            .load(url)
+            .into(binding.characterImage)
     }
 
     private fun doNothing() {}
