@@ -8,7 +8,7 @@ import feature.marvelapi.data.localdatasource.dao.CharactersDao
 import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 import feature.marvelapi.utils.Constants
 
-@Database(entities = [CharacterEntity::class], version = 1)
+@Database(entities = [CharacterEntity::class], version = 2)
 internal abstract class MarvelDataBase : RoomDatabase() {
 
     abstract val charactersDao: CharactersDao
@@ -19,7 +19,7 @@ internal fun provideDataBase(application: Application): MarvelDataBase {
     return Room.databaseBuilder(
         application,
         MarvelDataBase::class.java,
-        Constants.CHARACTERS_ROOM_TABLE_NAME
+        Constants.ROOM_DATABASE_NAME
     ).build()
 }
 
