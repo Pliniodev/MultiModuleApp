@@ -35,7 +35,7 @@ private val networkModule = module {
         createApi<MarvelApi>(get(named(InjectionTag.RETROFIT_MARVEL_API)))
     }
 
-marvelModules.add(this)
+    marvelModules.add(this)
 
 }
 
@@ -57,7 +57,13 @@ private val viewModelModule = module {
 
 private val repositoryModule = module {
 
-    single<RemoteDataSource> { RemoteDataSourceImpl(api = get(named(InjectionTag.API_MARVEL_API))) }
+    single<RemoteDataSource> {
+        RemoteDataSourceImpl(
+            api = get(named(InjectionTag.API_MARVEL_API)), dao = get(
+                named(InjectionTag.LOCAL_MARVEL_DAO)
+            )
+        )
+    }
 
     single<MarvelRepository> { MarvelRepositoryImpl(remoteDataSource = get()) }
     marvelModules.add(this)

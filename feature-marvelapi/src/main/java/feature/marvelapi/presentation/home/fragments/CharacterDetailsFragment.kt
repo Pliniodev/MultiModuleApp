@@ -9,9 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import feature.commons.utils.StateMachine
+import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 import feature.marvelapi.databinding.FragmentCharacterDetailsBinding
 import feature.marvelapi.marvelModules
 import feature.marvelapi.presentation.home.viewmodel.CharacterDetailsViewModel
+import feature.marvelapi.presentation.model.CharactersPresentation
 import feature.marvelapi.presentation.model.ImagesPresentation
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
@@ -50,6 +52,11 @@ class CharacterDetailsFragment : Fragment() {
                 is StateMachine.Loading -> doNothing()
                 is StateMachine.Success -> {
                     binding.characterName.text = state.value.name
+
+                    binding.saveCharacter.setOnClickListener {
+                        saveCharacter(state.value)
+                    }
+
                     loadCharacterImage(state.value.thumbnail)
                 }
                 is StateMachine.ApiError -> {
@@ -69,9 +76,11 @@ class CharacterDetailsFragment : Fragment() {
             .into(binding.characterImage)
     }
 
-    private fun saveCharacter(){
+    private fun saveCharacter(characterRemote: CharactersPresentation){
 
+        val character = CharacterEntity(name = characterRemote.name)
 
+        viewModel.saveCharacterOnDB(character)
 
 
     }

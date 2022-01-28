@@ -1,5 +1,6 @@
 package feature.marvelapi.domain.repository
 
+import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 import feature.marvelapi.data.remotedatasource.RemoteDataSource
 import feature.marvelapi.domain.mapper.MapperCharactersDomain
 import feature.marvelapi.presentation.model.MainPresentation
@@ -14,5 +15,9 @@ internal class MarvelRepositoryImpl(
 
     override suspend fun getCharacterDetails(id: Int): MainPresentation {
         return MapperCharactersDomain.toPresentation(remoteDataSource.getCharacterDetailsDomain(id))
+    }
+
+    override suspend fun saveCharacterOnDB(character: CharacterEntity) {
+        remoteDataSource.saveCharacterOnDB(character)
     }
 }
