@@ -9,7 +9,7 @@ import feature.marvelapi.utils.Constants
 data class CharacterEntity(
 
     @PrimaryKey(autoGenerate = true)
-    val id: Int = -1,
+    val id: Long,
 
     @ColumnInfo(name = "characterName")
     val name: String = ""

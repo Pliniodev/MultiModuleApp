@@ -10,4 +10,6 @@ interface CharactersDao {
     @Insert()
     suspend fun insertCharacter(character: CharacterEntity): Long
 
+
+
 }

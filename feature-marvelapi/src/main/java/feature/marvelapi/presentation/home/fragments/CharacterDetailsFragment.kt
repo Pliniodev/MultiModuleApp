@@ -10,9 +10,12 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import feature.commons.utils.StateMachine
 import feature.marvelapi.databinding.FragmentCharacterDetailsBinding
+import feature.marvelapi.marvelModules
 import feature.marvelapi.presentation.home.viewmodel.CharacterDetailsViewModel
 import feature.marvelapi.presentation.model.ImagesPresentation
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.context.loadKoinModules
+import org.koin.core.context.unloadKoinModules
 
 class CharacterDetailsFragment : Fragment() {
 
@@ -32,11 +35,12 @@ class CharacterDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        loadKoinModules(marvelModules)
         onEnter()
     }
 
     private fun onEnter() {
+
         setUpObservers()
     }
 
@@ -65,10 +69,18 @@ class CharacterDetailsFragment : Fragment() {
             .into(binding.characterImage)
     }
 
+    private fun saveCharacter(){
+
+
+
+
+    }
+
     private fun doNothing() {}
 
     override fun onDestroyView() {
         super.onDestroyView()
+        unloadKoinModules(marvelModules)
         _binding = null
     }
 }

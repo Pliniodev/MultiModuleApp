@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import feature.marvelapi.databinding.FragmentSeriesBinding
-import feature.marvelapi.marvelModule
+import feature.marvelapi.marvelModules
 import feature.marvelapi.presentation.home.adapter.SeriesAdapter
 import feature.marvelapi.presentation.home.viewmodel.SeriesViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -31,7 +31,7 @@ class SeriesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadKoinModules(marvelModule)
+        loadKoinModules(marvelModules)
         onEnter()
     }
 
@@ -72,7 +72,7 @@ class SeriesFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        unloadKoinModules(listOf(marvelModule))
+        unloadKoinModules(marvelModules)
         _binding = null
     }
 }

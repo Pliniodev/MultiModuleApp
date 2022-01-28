@@ -13,14 +13,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import feature.commons.utils.PaginationListener
 import feature.commons.utils.StateMachine
 import feature.marvelapi.R
 import feature.marvelapi.databinding.FragmentCharactersBinding
-import feature.marvelapi.marvelModule
+import feature.marvelapi.marvelModules
 import feature.marvelapi.presentation.home.adapter.MainMarvelAdapter
 import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
 import feature.marvelapi.presentation.model.CharactersPresentation
@@ -56,11 +55,12 @@ class CharactersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadKoinModules(marvelModule)
+        loadKoinModules(marvelModules)
         onEnter()
     }
 
     private fun onEnter() {
+        mList.clear()
         setUpObservers(offset)
         initAdapter()
         isLoading = true
@@ -219,6 +219,6 @@ class CharactersFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-        unloadKoinModules(listOf(marvelModule))
+        unloadKoinModules(marvelModules)
     }
 }
