@@ -16,8 +16,8 @@
 
     <fragment
         android:id="@+id/comicsFragment"
-        android:name="feature.marvelapi.presentation.home.fragments.SeriesFragment"
-        tools:layout="@layout/fragment_series" />
+        android:name="feature.marvelapi.presentation.home.fragments.OfflineFragment"
+        tools:layout="@layout/fragment_offline" />
     <fragment
         android:id="@+id/characterDetailsFragment"
         android:name="feature.marvelapi.presentation.home.fragments.CharacterDetailsFragment"

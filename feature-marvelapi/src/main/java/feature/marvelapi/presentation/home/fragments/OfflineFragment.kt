@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import feature.commons.utils.StateMachine
-import feature.marvelapi.databinding.FragmentSeriesBinding
+import feature.marvelapi.databinding.FragmentOfflineBinding
 import feature.marvelapi.marvelModule
 import feature.marvelapi.presentation.home.adapter.SeriesAdapter
 import feature.marvelapi.presentation.home.viewmodel.DataBaseViewModel
@@ -14,9 +14,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 
-class SeriesFragment : Fragment() {
+class OfflineFragment : Fragment() {
 
-    private var _binding: FragmentSeriesBinding? = null
+    private var _binding: FragmentOfflineBinding? = null
     private val binding get() = _binding!!
     private val viewModel: DataBaseViewModel by viewModel()
     private val mAdapter = SeriesAdapter()
@@ -26,7 +26,7 @@ class SeriesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSeriesBinding.inflate(inflater, container, false)
+        _binding = FragmentOfflineBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,7 +37,7 @@ class SeriesFragment : Fragment() {
     }
 
     private fun onEnter() {
-        setList()
+        setUpAdapter()
         setUpObservers()
     }
 
@@ -62,10 +62,9 @@ class SeriesFragment : Fragment() {
         }
     }
 
-    private fun setList() {
+    private fun setUpAdapter() {
 
         binding.rvMain.adapter = mAdapter
-        mAdapter.notifyDataSetChanged()
     }
 
     private fun some() {}
