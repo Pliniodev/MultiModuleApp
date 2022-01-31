@@ -47,9 +47,9 @@ class OfflineFragment : Fragment() {
                 is StateMachine.Loading -> some()
                 is StateMachine.Success -> {
 
-                    val something = event.value
+                    val cachedData = event.value
 
-                    mAdapter.submitList(something)
+                    mAdapter.submitList(cachedData)
                 }
                 is StateMachine.ApiError -> {
                     event.error
