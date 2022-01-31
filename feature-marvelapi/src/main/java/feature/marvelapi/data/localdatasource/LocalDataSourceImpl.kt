@@ -8,4 +8,8 @@ class LocalDataSourceImpl(private val dao: CharactersDao): LocalDataSource {
     override suspend fun saveCharacterOnDB(character: CharacterEntity) {
         dao.insertCharacter(character)
     }
+
+    override suspend fun getAll(): List<CharacterEntity> {
+        return dao.getAll()
+    }
 }

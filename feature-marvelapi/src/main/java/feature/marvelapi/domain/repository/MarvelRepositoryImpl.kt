@@ -22,4 +22,8 @@ internal class MarvelRepositoryImpl(
     override suspend fun saveCharacterOnDB(character: CharacterEntity) {
         localDataSource.saveCharacterOnDB(character)
     }
+
+    override suspend fun getAll(): List<CharacterEntity> {
+        return localDataSource.getAll()
+    }
 }

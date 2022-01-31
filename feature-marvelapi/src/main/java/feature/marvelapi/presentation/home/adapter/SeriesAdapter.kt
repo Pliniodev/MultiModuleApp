@@ -5,11 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import feature.commons.utils.BaseItemCallBack
+import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 import feature.marvelapi.databinding.SeriesCardBinding
 import feature.marvelapi.presentation.model.SeriesPresentation
 
 internal class SeriesAdapter :
-    ListAdapter<SeriesPresentation, SeriesAdapter.ViewHolder>(BaseItemCallBack<SeriesPresentation>()) {
+    ListAdapter<CharacterEntity, SeriesAdapter.ViewHolder>(BaseItemCallBack<CharacterEntity>()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemBinding =
@@ -28,12 +29,12 @@ internal class SeriesAdapter :
     class ViewHolder(private val binding: SeriesCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: SeriesPresentation) {
+        fun bind(item: CharacterEntity) {
 
-            val imagePath = "${item.thumbnail.path}/portrait_incredible.${item.thumbnail.extension}"
+//            val imagePath = "${item.thumbnail.path}/portrait_incredible.${item.thumbnail.extension}"
 
             binding.apply {
-                tvTitle.text = item.title
+                tvTitle.text = item.name
 //                Glide.with(binding.root)
 //                    .load(imagePath)
 //                    .placeholder(R.drawable.ic_baseline_portrait_24)

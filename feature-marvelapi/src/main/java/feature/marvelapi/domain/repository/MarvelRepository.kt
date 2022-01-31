@@ -10,4 +10,6 @@ internal interface MarvelRepository {
     suspend fun getCharacterDetails(id: Int): MainPresentation
 
     suspend fun saveCharacterOnDB(character: CharacterEntity)
+
+    suspend fun getAll() : List<CharacterEntity>
 }

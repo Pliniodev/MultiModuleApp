@@ -6,4 +6,6 @@ interface LocalDataSource {
 
     suspend fun saveCharacterOnDB(character: CharacterEntity)
 
+    suspend fun getAll(): List<CharacterEntity>
+
 }
