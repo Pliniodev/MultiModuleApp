@@ -11,9 +11,9 @@ import feature.marvelapi.data.remotedatasource.RemoteDataSource
 import feature.marvelapi.data.remotedatasource.RemoteDataSourceImpl
 import feature.marvelapi.domain.repository.MarvelRepository
 import feature.marvelapi.domain.repository.MarvelRepositoryImpl
-import feature.marvelapi.presentation.home.viewmodel.CharacterDetailsViewModel
-import feature.marvelapi.presentation.home.viewmodel.DataBaseViewModel
-import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
+import feature.marvelapi.presentation.viewmodel.CharacterDetailsViewModel
+import feature.marvelapi.presentation.viewmodel.DataBaseViewModel
+import feature.marvelapi.presentation.viewmodel.MarvelHomeViewModel
 import feature.marvelapi.utils.Constants
 import feature.network.constants.BaseUrl
 import feature.network.constants.InjectionTag

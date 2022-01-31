@@ -1,4 +1,4 @@
-package feature.marvelapi.presentation.home.adapter
+package feature.marvelapi.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

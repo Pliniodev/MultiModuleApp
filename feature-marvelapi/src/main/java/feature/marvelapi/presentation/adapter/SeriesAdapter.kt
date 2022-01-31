@@ -1,4 +1,4 @@
-package feature.marvelapi.presentation.home.adapter
+package feature.marvelapi.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import feature.commons.utils.BaseItemCallBack
 import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 import feature.marvelapi.databinding.SeriesCardBinding
-import feature.marvelapi.presentation.model.SeriesPresentation
 
 internal class SeriesAdapter :
     ListAdapter<CharacterEntity, SeriesAdapter.ViewHolder>(BaseItemCallBack<CharacterEntity>()) {

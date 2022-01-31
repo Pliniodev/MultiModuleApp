@@ -1,4 +1,4 @@
-package feature.marvelapi.presentation.home.viewmodel
+package feature.marvelapi.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

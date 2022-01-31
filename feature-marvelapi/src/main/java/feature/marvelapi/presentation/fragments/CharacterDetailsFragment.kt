@@ -1,4 +1,4 @@
-package feature.marvelapi.presentation.home.fragments
+package feature.marvelapi.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import feature.commons.utils.StateMachine
 import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 import feature.marvelapi.databinding.FragmentCharacterDetailsBinding
 import feature.marvelapi.marvelModule
-import feature.marvelapi.presentation.home.viewmodel.CharacterDetailsViewModel
+import feature.marvelapi.presentation.viewmodel.CharacterDetailsViewModel
 import feature.marvelapi.presentation.model.CharactersPresentation
 import feature.marvelapi.presentation.model.ImagesPresentation
 import org.koin.androidx.viewmodel.ext.android.viewModel

@@ -1,4 +1,4 @@
-package feature.marvelapi.presentation.home.fragments
+package feature.marvelapi.presentation.fragments
 
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
@@ -20,8 +20,8 @@ import feature.commons.utils.StateMachine
 import feature.marvelapi.R
 import feature.marvelapi.databinding.FragmentCharactersBinding
 import feature.marvelapi.marvelModule
-import feature.marvelapi.presentation.home.adapter.MainMarvelAdapter
-import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
+import feature.marvelapi.presentation.adapter.MainMarvelAdapter
+import feature.marvelapi.presentation.viewmodel.MarvelHomeViewModel
 import feature.marvelapi.presentation.model.CharactersPresentation
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking

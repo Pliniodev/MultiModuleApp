@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/charactersFragment"
-        android:name="feature.marvelapi.presentation.home.fragments.CharactersFragment"
+        android:name="feature.marvelapi.presentation.fragments.CharactersFragment"
         tools:layout="@layout/fragment_characters">
         <action
             android:id="@+id/action_charactersFragment_to_characterDetailsFragment"
@@ -16,11 +16,11 @@
 
     <fragment
         android:id="@+id/comicsFragment"
-        android:name="feature.marvelapi.presentation.home.fragments.OfflineFragment"
+        android:name="feature.marvelapi.presentation.fragments.OfflineFragment"
         tools:layout="@layout/fragment_offline" />
     <fragment
         android:id="@+id/characterDetailsFragment"
-        android:name="feature.marvelapi.presentation.home.fragments.CharacterDetailsFragment"
+        android:name="feature.marvelapi.presentation.fragments.CharacterDetailsFragment"
         android:label="fragment_character_details"
         tools:layout="@layout/fragment_character_details">
 

@@ -1,4 +1,4 @@
-package feature.marvelapi.presentation.home.activity
+package feature.marvelapi.presentation.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
+import feature.marvelapi.presentation.notification.NotificationManager
 
 class MarvelHomeActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package feature.marvelapi.presentation.home
+package feature.marvelapi.presentation.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -9,7 +9,7 @@ import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelSplashScreenBinding
-import feature.marvelapi.presentation.home.activity.MarvelHomeActivity
+import feature.marvelapi.presentation.notification.NotificationManager
 
 @SuppressLint("CustomSplashScreen")
 class MarvelSplashScreen : AppCompatActivity() {
@@ -26,6 +26,7 @@ class MarvelSplashScreen : AppCompatActivity() {
 
     private fun onEnter() {
         supportActionBar?.hide()
+        NotificationManager(this)
         initSplashScreen()
     }
 

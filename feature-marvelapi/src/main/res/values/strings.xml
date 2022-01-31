@@ -4,4 +4,6 @@
     <string name="character_bottom_nav_menu">characters</string>
     <string name="comics_bottom_nav_menu">Comics</string>
     <string name="args_id">character id</string>
+    <string name="channel_name">channel name</string>
+    <string name="channel_description">channel description</string>
 </resources>
