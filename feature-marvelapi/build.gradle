@@ -13,9 +13,11 @@ dependencies {
     kapt Dependencies.glideCompiler
 
     AndroidModule.main.forEach {implementation it }
-    RoomModule.main.forEach {implementation it}
     DiModule.main.forEach {implementation it }
     NetworkModule.withCoroutines.forEach {implementation it }
     TestModule.main.forEach {testImplementation it }
     AndroidTestModule.main.forEach {androidTestImplementation it }
+    RoomModule.main.forEach {implementation it}
+    AnnotationProcessorsModule.main.forEach{annotationProcessor it}
+    AnnotationProcessorsModule.kapt.forEach{kapt it}
 }

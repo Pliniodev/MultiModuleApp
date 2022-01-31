@@ -9,5 +9,4 @@ internal interface RemoteDataSource {
 
     suspend fun getCharacterDetailsDomain(id: Int): MainCharactersDomain
 
-    suspend fun saveCharacterOnDB(character: CharacterEntity)
 }

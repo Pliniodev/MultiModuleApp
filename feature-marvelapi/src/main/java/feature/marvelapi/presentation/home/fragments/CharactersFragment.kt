@@ -19,7 +19,7 @@ import feature.commons.utils.PaginationListener
 import feature.commons.utils.StateMachine
 import feature.marvelapi.R
 import feature.marvelapi.databinding.FragmentCharactersBinding
-import feature.marvelapi.marvelModules
+import feature.marvelapi.marvelModule
 import feature.marvelapi.presentation.home.adapter.MainMarvelAdapter
 import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
 import feature.marvelapi.presentation.model.CharactersPresentation
@@ -55,7 +55,7 @@ class CharactersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadKoinModules(marvelModules)
+        loadKoinModules(marvelModule)
         onEnter()
     }
 
@@ -219,6 +219,6 @@ class CharactersFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-        unloadKoinModules(marvelModules)
+        unloadKoinModules(marvelModule)
     }
 }

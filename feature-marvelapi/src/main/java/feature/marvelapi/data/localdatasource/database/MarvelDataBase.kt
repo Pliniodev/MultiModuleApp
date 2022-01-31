@@ -1,6 +1,6 @@
 package feature.marvelapi.data.localdatasource.database
 
-import android.app.Application
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -15,16 +15,6 @@ internal abstract class MarvelDataBase : RoomDatabase() {
 
 }
 
-internal fun provideDataBase(application: Application): MarvelDataBase {
-    return Room.databaseBuilder(
-        application,
-        MarvelDataBase::class.java,
-        Constants.ROOM_DATABASE_NAME
-    ).build()
-}
-
 internal fun provideDao(db: MarvelDataBase): CharactersDao {
-
     return db.charactersDao
-
 }

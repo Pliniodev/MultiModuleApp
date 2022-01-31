@@ -7,8 +7,7 @@ import feature.marvelapi.data.mapper.MapperCharactersResponse
 import feature.marvelapi.domain.model.MainCharactersDomain
 
 internal class RemoteDataSourceImpl(
-    private val api: MarvelApi,
-    private val dao: CharactersDao
+    private val api: MarvelApi
 ) : RemoteDataSource {
 
     override suspend fun getCharactersDomain(offset: Int, name: String?): MainCharactersDomain {
@@ -17,9 +16,5 @@ internal class RemoteDataSourceImpl(
 
     override suspend fun getCharacterDetailsDomain(id: Int): MainCharactersDomain {
         return MapperCharactersResponse.toDomain(api.getCharacterDetails(id))
-    }
-
-    override suspend fun saveCharacterOnDB(character: CharacterEntity) {
-        dao.insertCharacter(character)
     }
 }

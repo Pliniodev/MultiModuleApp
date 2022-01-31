@@ -1,9 +1,12 @@
 package feature.marvelapi
 
+import androidx.room.Room
 import feature.commons.utils.createApi
 import feature.marvelapi.data.api.MarvelApi
+import feature.marvelapi.data.localdatasource.LocalDataSource
+import feature.marvelapi.data.localdatasource.LocalDataSourceImpl
+import feature.marvelapi.data.localdatasource.database.MarvelDataBase
 import feature.marvelapi.data.localdatasource.database.provideDao
-import feature.marvelapi.data.localdatasource.database.provideDataBase
 import feature.marvelapi.data.remotedatasource.RemoteDataSource
 import feature.marvelapi.data.remotedatasource.RemoteDataSourceImpl
 import feature.marvelapi.domain.repository.MarvelRepository
@@ -11,19 +14,22 @@ import feature.marvelapi.domain.repository.MarvelRepositoryImpl
 import feature.marvelapi.presentation.home.viewmodel.CharacterDetailsViewModel
 import feature.marvelapi.presentation.home.viewmodel.MarvelHomeViewModel
 import feature.marvelapi.presentation.home.viewmodel.SeriesViewModel
+import feature.marvelapi.utils.Constants
 import feature.network.constants.BaseUrl
 import feature.network.constants.InjectionTag
 import feature.network.retrofit.BuildRetrofit
 import feature.network.retrofit.provideOkHttpClientMarvelApi
+import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.core.module.Module
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
+val marvelModule = module {
 
-val marvelModules = mutableListOf<Module>()
+    /**
+     * network
+     */
 
-private val networkModule = module {
     single(named(InjectionTag.RETROFIT_MARVEL_API)) {
         BuildRetrofit(
             apiBaseUrl = BaseUrl.marvelApi,
@@ -35,39 +41,48 @@ private val networkModule = module {
         createApi<MarvelApi>(get(named(InjectionTag.RETROFIT_MARVEL_API)))
     }
 
-    marvelModules.add(this)
+    /**
+     * Data base
+     */
 
-}
+    single {
+        Room.databaseBuilder(
+            androidApplication(),
+            MarvelDataBase::class.java,
+            Constants.ROOM_DATABASE_NAME
+        ).build()
+    }
 
-private val dataBaseModule = module {
+    single(named(InjectionTag.PROVIDE_DAO)) { provideDao(db = get()) }
 
-    single { provideDataBase(get()) }
+    /**
+     * Data source
+     */
 
-    single { provideDao(get()) }
-    marvelModules.add(this)
-}
+    single<RemoteDataSource> {
+        RemoteDataSourceImpl(
+            api = get(named(InjectionTag.API_MARVEL_API))
+        )
+    }
 
-private val viewModelModule = module {
+    single<LocalDataSource> { LocalDataSourceImpl(get(named(InjectionTag.PROVIDE_DAO))) }
+
+    /**
+     * Repository
+     */
+
+    single<MarvelRepository> {
+        MarvelRepositoryImpl(
+            remoteDataSource = get(),
+            localDataSource = get()
+        )
+    }
+
+    /**
+     * VewModel
+     */
 
     viewModel { MarvelHomeViewModel(repository = get()) }
     viewModel { SeriesViewModel(repository = get()) }
     viewModel { CharacterDetailsViewModel(repository = get()) }
-    marvelModules.add(this)
 }
-
-private val repositoryModule = module {
-
-    single<RemoteDataSource> {
-        RemoteDataSourceImpl(
-            api = get(named(InjectionTag.API_MARVEL_API)), dao = get(
-                named(InjectionTag.LOCAL_MARVEL_DAO)
-            )
-        )
-    }
-
-    single<MarvelRepository> { MarvelRepositoryImpl(remoteDataSource = get()) }
-    marvelModules.add(this)
-}
-
-
-

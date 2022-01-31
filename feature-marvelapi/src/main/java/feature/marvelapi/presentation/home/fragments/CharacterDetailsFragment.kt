@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import feature.commons.utils.StateMachine
 import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 import feature.marvelapi.databinding.FragmentCharacterDetailsBinding
-import feature.marvelapi.marvelModules
+import feature.marvelapi.marvelModule
 import feature.marvelapi.presentation.home.viewmodel.CharacterDetailsViewModel
 import feature.marvelapi.presentation.model.CharactersPresentation
 import feature.marvelapi.presentation.model.ImagesPresentation
@@ -37,7 +37,7 @@ class CharacterDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadKoinModules(marvelModules)
+        loadKoinModules(marvelModule)
         onEnter()
     }
 
@@ -89,7 +89,7 @@ class CharacterDetailsFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        unloadKoinModules(marvelModules)
+        unloadKoinModules(marvelModule)
         _binding = null
     }
 }

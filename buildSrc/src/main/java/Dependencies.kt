@@ -9,8 +9,8 @@ object Versions {
     const val gsonConverterVersion = "2.9.0"
     const val okHttpVersion = "4.9.1"
     const val okHttpLoggingVersion = "4.9.1"
-    const val roomRuntimeVersion = "2.3.0"
-    const val roomCompilerVersion = "2.3.0"
+    const val roomRuntimeVersion = "2.4.1"
+    const val roomCompilerVersion = "2.4.1"
     const val dataBindingCompilerVersion = "3.1.4"
     const val rxJavaVersion = "3.0.0"
     const val rxKotlinVersion = "3.0.0"
@@ -111,6 +111,10 @@ object AnnotationProcessorsModule{
         Dependencies.glideCompiler,
 
     )
+
+    val kapt = listOf(
+        Dependencies.roomCompiler
+    )
 }
 
 object RoomModule {
@@ -118,6 +122,7 @@ object RoomModule {
         Dependencies.room,
         Dependencies.roomForCoroutines
     )
+
 }
 
 object NetworkModule {

@@ -15,5 +15,8 @@ object InjectionTag {
 
     const val RETROFIT_MARVEL_API = "retrofit.marvel.api"
     const val API_MARVEL_API = "api.marvel.api"
+
+    const val ROOM_MARVEL = "api.marvel.api"
     const val LOCAL_MARVEL_DAO = "api.marvel.api"
+    const val PROVIDE_DAO = "marvel.database"
 }

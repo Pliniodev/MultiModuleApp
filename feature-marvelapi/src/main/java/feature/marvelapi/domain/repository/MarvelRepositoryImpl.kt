@@ -1,12 +1,14 @@
 package feature.marvelapi.domain.repository
 
+import feature.marvelapi.data.localdatasource.LocalDataSource
 import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 import feature.marvelapi.data.remotedatasource.RemoteDataSource
 import feature.marvelapi.domain.mapper.MapperCharactersDomain
 import feature.marvelapi.presentation.model.MainPresentation
 
 internal class MarvelRepositoryImpl(
-    private val remoteDataSource: RemoteDataSource
+    private val remoteDataSource: RemoteDataSource,
+    private val localDataSource : LocalDataSource
 ) : MarvelRepository {
 
     override suspend fun getCharacters(offset: Int, name: String?): MainPresentation {
@@ -18,6 +20,6 @@ internal class MarvelRepositoryImpl(
     }
 
     override suspend fun saveCharacterOnDB(character: CharacterEntity) {
-        remoteDataSource.saveCharacterOnDB(character)
+        localDataSource.saveCharacterOnDB(character)
     }
 }
