@@ -8,7 +8,7 @@ import feature.marvelapi.utils.Constants
 @Entity(tableName = Constants.CHARACTERS_ROOM_TABLE_NAME)
 data class CharacterEntity(
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     val id: Long = 0,
 
     @ColumnInfo(name = "characterName")

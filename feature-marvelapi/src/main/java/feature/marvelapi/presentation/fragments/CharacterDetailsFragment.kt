@@ -57,6 +57,9 @@ class CharacterDetailsFragment : Fragment() {
 
                     binding.saveCharacter.setOnClickListener {
                         saveCharacter(state.value)
+
+                        val characterName = state.value.name
+
                         notificationMn.createDefaultNotification(requireActivity())
                     }
                     loadCharacterImage(state.value.thumbnail)
@@ -80,7 +83,8 @@ class CharacterDetailsFragment : Fragment() {
 
     private fun saveCharacter(characterRemote: CharactersPresentation) {
 
-        val character = CharacterEntity(name = characterRemote.name)
+        val character =
+            CharacterEntity(id = characterRemote.id.toLong(), name = characterRemote.name)
 
         viewModel.saveCharacterOnDB(character)
 
