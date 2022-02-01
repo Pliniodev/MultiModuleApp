@@ -60,7 +60,7 @@ class CharacterDetailsFragment : Fragment() {
 
                         val characterName = state.value.name
 
-                        notificationMn.createDefaultNotification(requireActivity())
+                        notificationMn.createDefaultNotification(requireActivity(), characterName)
                     }
                     loadCharacterImage(state.value.thumbnail)
                 }

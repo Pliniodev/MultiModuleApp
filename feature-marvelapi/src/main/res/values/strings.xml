@@ -6,4 +6,5 @@
     <string name="args_id">character id</string>
     <string name="channel_name">channel name</string>
     <string name="channel_description">channel description</string>
+    <string name="notification_title">Avengers! Assemble</string>
 </resources>

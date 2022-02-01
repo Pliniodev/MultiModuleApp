@@ -36,7 +36,7 @@ class MarvelNotificationManager  {
         }
     }
 
-    fun createDefaultNotification(context: Context) {
+    fun createDefaultNotification(context: Context, characterName : String) {
 
         val fullScreenIntent = Intent(context, MarvelHomeActivity::class.java)
         val fullScreenPendingIntent = PendingIntent.getActivity(
@@ -48,12 +48,12 @@ class MarvelNotificationManager  {
 
         val builder = NotificationCompat.Builder(context, DEFAULT_CHANNEL_ID)
 
-        val notification = builder.setContentText("The iron man has ...")
-            .setStyle(
-                NotificationCompat.BigTextStyle().bigText("The iron man has landed on your phone")
-            )
+        val notification = builder
             .setSmallIcon(R.drawable.ic_characters_bottom_nav)
-            .setContentTitle("character added")
+            .setContentTitle(context.getString(R.string.notification_title))
+            .setStyle(
+                NotificationCompat.BigTextStyle().bigText("The $characterName has arrived on your team")
+            )
             .setCategory(NotificationCompat.CATEGORY_MESSAGE)
             .setPriority(NotificationCompat.PRIORITY_MAX)
             .setAutoCancel(true)
