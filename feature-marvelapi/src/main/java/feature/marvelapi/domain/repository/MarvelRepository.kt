@@ -12,4 +12,6 @@ internal interface MarvelRepository {
     suspend fun saveCharacterOnDB(character: CharacterEntity)
 
     suspend fun getAll() : List<CharacterEntity>
+
+    suspend fun characterConsult(id: Long): CharacterEntity?
 }

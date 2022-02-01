@@ -12,4 +12,8 @@ class LocalDataSourceImpl(private val dao: CharactersDao): LocalDataSource {
     override suspend fun getAll(): List<CharacterEntity> {
         return dao.getAll()
     }
+
+    override suspend fun consultCharacter(id: Long): CharacterEntity? {
+        return dao.consultCharacter(id)
+    }
 }

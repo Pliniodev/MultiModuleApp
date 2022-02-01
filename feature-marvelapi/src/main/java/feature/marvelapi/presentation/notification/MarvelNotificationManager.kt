@@ -52,7 +52,7 @@ class MarvelNotificationManager  {
             .setSmallIcon(R.drawable.ic_characters_bottom_nav)
             .setContentTitle(context.getString(R.string.notification_title))
             .setStyle(
-                NotificationCompat.BigTextStyle().bigText("The $characterName has arrived on your team")
+                NotificationCompat.BigTextStyle().bigText("The $characterName has joined to your team")
             )
             .setCategory(NotificationCompat.CATEGORY_MESSAGE)
             .setPriority(NotificationCompat.PRIORITY_MAX)

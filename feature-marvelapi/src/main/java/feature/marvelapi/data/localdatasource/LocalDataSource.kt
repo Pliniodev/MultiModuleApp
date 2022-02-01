@@ -8,4 +8,6 @@ interface LocalDataSource {
 
     suspend fun getAll(): List<CharacterEntity>
 
+    suspend fun consultCharacter(id: Long): CharacterEntity?
+
 }

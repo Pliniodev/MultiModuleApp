@@ -26,4 +26,8 @@ internal class MarvelRepositoryImpl(
     override suspend fun getAll(): List<CharacterEntity> {
         return localDataSource.getAll()
     }
+
+    override suspend fun characterConsult(id: Long): CharacterEntity? {
+        return localDataSource.consultCharacter(id)
+    }
 }

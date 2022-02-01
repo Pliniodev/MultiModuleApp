@@ -22,4 +22,8 @@ internal class CharacterDetailsViewModel(private val repository: MarvelRepositor
             repository.saveCharacterOnDB(character)
         }
     }
+
+    fun consultCharacter(id: Long): LiveData<StateMachine<CharacterEntity?>> = liveResponse {
+        safeRequest { repository.characterConsult(id) }
+    }
 }

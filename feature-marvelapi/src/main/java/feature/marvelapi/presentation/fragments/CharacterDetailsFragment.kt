@@ -86,9 +86,20 @@ class CharacterDetailsFragment : Fragment() {
         val character =
             CharacterEntity(id = characterRemote.id.toLong(), name = characterRemote.name)
 
-        viewModel.saveCharacterOnDB(character)
-
-
+        viewModel.consultCharacter(character.id).observe(viewLifecycleOwner) { event ->
+            when (event) {
+                is StateMachine.Success -> {
+                    if (event.value != null) {
+                        Toast.makeText(requireContext(), "character already added", Toast.LENGTH_SHORT).show()
+                    } else {
+                        viewModel.saveCharacterOnDB(character)
+                    }
+                }
+                is StateMachine.UnknownError -> {
+                        Toast.makeText(requireContext(), "character already sla added", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
     private fun doNothing() {}
