@@ -8,7 +8,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
-import feature.marvelapi.presentation.notification.NotificationManager
 
 class MarvelHomeActivity : AppCompatActivity() {
 

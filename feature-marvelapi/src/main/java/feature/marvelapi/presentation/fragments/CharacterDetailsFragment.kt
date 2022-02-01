@@ -15,6 +15,7 @@ import feature.marvelapi.marvelModule
 import feature.marvelapi.presentation.viewmodel.CharacterDetailsViewModel
 import feature.marvelapi.presentation.model.CharactersPresentation
 import feature.marvelapi.presentation.model.ImagesPresentation
+import feature.marvelapi.presentation.notification.MarvelNotificationManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
@@ -25,6 +26,7 @@ class CharacterDetailsFragment : Fragment() {
     private val binding get() = _binding!!
     private val args: CharacterDetailsFragmentArgs by navArgs()
     private val viewModel: CharacterDetailsViewModel by viewModel()
+    private val notificationMn: MarvelNotificationManager by lazy { MarvelNotificationManager() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -55,6 +57,7 @@ class CharacterDetailsFragment : Fragment() {
 
                     binding.saveCharacter.setOnClickListener {
                         saveCharacter(state.value)
+                        notificationMn.createDefaultNotification(requireContext())
                     }
 
                     loadCharacterImage(state.value.thumbnail)
@@ -76,7 +79,7 @@ class CharacterDetailsFragment : Fragment() {
             .into(binding.characterImage)
     }
 
-    private fun saveCharacter(characterRemote: CharactersPresentation){
+    private fun saveCharacter(characterRemote: CharactersPresentation) {
 
         val character = CharacterEntity(name = characterRemote.name)
 
