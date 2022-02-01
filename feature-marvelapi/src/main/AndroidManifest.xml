@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="feature.marvelapi">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
     <application android:usesCleartextTraffic="true">
+
         <activity
             android:theme="@style/MarvelThemes"
             android:name=".presentation.activity.MarvelSplashScreen"

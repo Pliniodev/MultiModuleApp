@@ -29,7 +29,10 @@ class MarvelSplashScreen : AppCompatActivity() {
         supportActionBar?.hide()
         initSplashScreen()
 
+        val intent = Intent(this, MarvelHomeActivity::class.java)
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(intent)
             MarvelNotificationManager().createNotificationChannel(this)
         }
     }

@@ -57,9 +57,8 @@ class CharacterDetailsFragment : Fragment() {
 
                     binding.saveCharacter.setOnClickListener {
                         saveCharacter(state.value)
-                        notificationMn.createDefaultNotification(requireContext())
+                        notificationMn.createDefaultNotification(requireActivity())
                     }
-
                     loadCharacterImage(state.value.thumbnail)
                 }
                 is StateMachine.ApiError -> {
