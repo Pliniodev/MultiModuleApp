@@ -9,7 +9,7 @@ import androidx.navigation.ui.setupWithNavController
 import feature.marvelapi.R
 import feature.marvelapi.databinding.ActivityMarvelHomeBinding
 
-class MarvelHomeActivity : AppCompatActivity() {
+internal class MarvelHomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMarvelHomeBinding
 

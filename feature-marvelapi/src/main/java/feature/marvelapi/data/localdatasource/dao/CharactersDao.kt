@@ -7,7 +7,7 @@ import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 import feature.marvelapi.utils.Constants
 
 @Dao
-interface CharactersDao {
+internal interface CharactersDao {
 
     @Insert
     suspend fun insertCharacter(character: CharacterEntity): Long

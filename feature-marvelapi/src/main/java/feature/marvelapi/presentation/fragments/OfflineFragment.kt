@@ -14,7 +14,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 
-class OfflineFragment : Fragment() {
+internal class OfflineFragment : Fragment() {
 
     private var _binding: FragmentOfflineBinding? = null
     private val binding get() = _binding!!

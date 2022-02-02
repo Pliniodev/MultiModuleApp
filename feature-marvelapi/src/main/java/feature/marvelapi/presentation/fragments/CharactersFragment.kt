@@ -29,7 +29,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 
-class CharactersFragment : Fragment() {
+internal class CharactersFragment : Fragment() {
 
     private var _binding: FragmentCharactersBinding? = null
     private val binding get() = _binding!!
@@ -39,10 +39,7 @@ class CharactersFragment : Fragment() {
     private var isLoading = false
     private var mList = mutableListOf<CharactersPresentation>()
     private var canLoadMore = false
-    private val mAdapter = MainMarvelAdapter() {
-        val action = CharactersFragmentDirections.actionCharactersFragmentToCharacterDetailsFragment(it)
-        findNavController().navigate(action)
-    }
+    private lateinit var mAdapter : MainMarvelAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -160,6 +157,8 @@ class CharactersFragment : Fragment() {
 
     private fun initAdapter() {
 
+        mAdapter = MainMarvelAdapter(::onCLick)
+
         binding.homeRecycler.apply {
             adapter = mAdapter
             setHasFixedSize(true)
@@ -214,6 +213,11 @@ class CharactersFragment : Fragment() {
 
     companion object {
         const val PAGINATION_OFFSET = 40
+    }
+
+    private fun onCLick(id:Int){
+        val action = CharactersFragmentDirections.actionCharactersFragmentToCharacterDetailsFragment(id)
+        findNavController().navigate(action)
     }
 
     override fun onDestroy() {

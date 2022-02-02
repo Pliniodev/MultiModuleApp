@@ -20,7 +20,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.unloadKoinModules
 
-class CharacterDetailsFragment : Fragment() {
+internal class CharacterDetailsFragment : Fragment() {
 
     private var _binding: FragmentCharacterDetailsBinding? = null
     private val binding get() = _binding!!

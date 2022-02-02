@@ -2,7 +2,7 @@ package feature.marvelapi.data.localdatasource
 
 import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 
-interface LocalDataSource {
+internal interface LocalDataSource {
 
     suspend fun saveCharacterOnDB(character: CharacterEntity)
 

@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import feature.marvelapi.utils.Constants
 
 @Entity(tableName = Constants.CHARACTERS_ROOM_TABLE_NAME)
-data class CharacterEntity(
+internal data class CharacterEntity(
 
     @PrimaryKey
     val id: Long = 0,
