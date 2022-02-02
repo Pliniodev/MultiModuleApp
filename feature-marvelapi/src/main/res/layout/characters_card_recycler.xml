@@ -5,7 +5,8 @@
     android:layout_width="@dimen/medium_size_150dp"
     android:layout_height="250dp"
     android:layout_margin="@dimen/recyclerview_padding_16dp"
-    android:background="@color/black_700">
+    android:background="@color/black_700"
+    android:foreground="?attr/selectableItemBackgroundBorderless">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
