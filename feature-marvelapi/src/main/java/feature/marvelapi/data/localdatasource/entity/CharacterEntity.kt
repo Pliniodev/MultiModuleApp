@@ -12,5 +12,8 @@ data class CharacterEntity(
     val id: Long = 0,
 
     @ColumnInfo(name = "characterName")
-    val name: String = ""
+    val name: String = "",
+
+    @ColumnInfo(name = "characterImage")
+    val image : String = ""
 )

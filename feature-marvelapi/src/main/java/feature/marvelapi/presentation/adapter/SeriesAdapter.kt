@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import feature.commons.utils.BaseItemCallBack
+import feature.marvelapi.R
 import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 import feature.marvelapi.databinding.SeriesCardBinding
 
@@ -30,15 +32,13 @@ internal class SeriesAdapter :
 
         fun bind(item: CharacterEntity) {
 
-//            val imagePath = "${item.thumbnail.path}/portrait_incredible.${item.thumbnail.extension}"
-
             binding.apply {
                 tvTitle.text = item.name
-//                Glide.with(binding.root)
-//                    .load(imagePath)
-//                    .placeholder(R.drawable.ic_baseline_portrait_24)
-//                    .centerCrop()
-//                    .into(characterImage)
+                Glide.with(binding.root)
+                    .load(item.image)
+                    .placeholder(R.drawable.ic_baseline_portrait_24)
+                    .centerCrop()
+                    .into(characterImage)
             }
         }
     }

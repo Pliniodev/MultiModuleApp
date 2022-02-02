@@ -57,10 +57,6 @@ class CharacterDetailsFragment : Fragment() {
 
                     binding.saveCharacter.setOnClickListener {
                         saveCharacter(state.value)
-
-                        val characterName = state.value.name
-
-                        notificationMn.createDefaultNotification(requireActivity(), characterName)
                     }
                     loadCharacterImage(state.value.thumbnail)
                 }
@@ -83,8 +79,11 @@ class CharacterDetailsFragment : Fragment() {
 
     private fun saveCharacter(characterRemote: CharactersPresentation) {
 
+        val path = characterRemote.thumbnail
+        val url = "${path.path}/standard_amazing.${path.extension}"
+
         val character =
-            CharacterEntity(id = characterRemote.id.toLong(), name = characterRemote.name)
+            CharacterEntity(id = characterRemote.id.toLong(), name = characterRemote.name, image = url)
 
         viewModel.consultCharacter(character.id).observe(viewLifecycleOwner) { event ->
             when (event) {
@@ -93,6 +92,7 @@ class CharacterDetailsFragment : Fragment() {
                         Toast.makeText(requireContext(), "character already added", Toast.LENGTH_SHORT).show()
                     } else {
                         viewModel.saveCharacterOnDB(character)
+                        notificationMn.createDefaultNotification(requireActivity(), characterRemote.name)
                     }
                 }
                 is StateMachine.UnknownError -> {

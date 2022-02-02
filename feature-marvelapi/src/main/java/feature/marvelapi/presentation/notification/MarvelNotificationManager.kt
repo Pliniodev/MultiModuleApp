@@ -54,7 +54,6 @@ class MarvelNotificationManager  {
             .setStyle(
                 NotificationCompat.BigTextStyle().bigText("The $characterName has joined to your team")
             )
-            .setCategory(NotificationCompat.CATEGORY_MESSAGE)
             .setPriority(NotificationCompat.PRIORITY_MAX)
             .setAutoCancel(true)
             .setContentIntent(fullScreenPendingIntent)
