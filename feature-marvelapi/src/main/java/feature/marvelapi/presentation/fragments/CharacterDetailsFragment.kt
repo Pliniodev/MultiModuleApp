@@ -107,13 +107,7 @@ class CharacterDetailsFragment : Fragment() {
                         )
                     }
                 }
-                is StateMachine.UnknownError -> {
-                    Toast.makeText(
-                        requireContext(),
-                        "character already sla added",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+                is StateMachine.UnknownError -> Unit
                 is StateMachine.ApiError -> Unit
                 is StateMachine.Finish -> Unit
             }
