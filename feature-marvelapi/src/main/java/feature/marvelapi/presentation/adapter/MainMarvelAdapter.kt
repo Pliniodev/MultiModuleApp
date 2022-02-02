@@ -8,9 +8,10 @@ import feature.commons.utils.BaseItemCallBack
 import feature.marvelapi.R
 import feature.marvelapi.databinding.CharactersCardRecyclerBinding
 import feature.marvelapi.presentation.model.CharactersPresentation
+import androidx.recyclerview.widget.ListAdapter
 
 internal class MainMarvelAdapter(private val onClick: (id: Int) -> Unit = {}) :
-    androidx.recyclerview.widget.ListAdapter<CharactersPresentation, MainMarvelAdapter.ViewHolder>(
+    ListAdapter<CharactersPresentation, MainMarvelAdapter.ViewHolder>(
         BaseItemCallBack<CharactersPresentation>()
     ) {
 
