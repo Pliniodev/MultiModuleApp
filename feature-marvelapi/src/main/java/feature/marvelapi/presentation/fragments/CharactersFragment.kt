@@ -211,13 +211,13 @@ internal class CharactersFragment : Fragment() {
         }
     }
 
-    companion object {
-        const val PAGINATION_OFFSET = 40
-    }
-
     private fun onCLick(id:Int){
         val action = CharactersFragmentDirections.actionCharactersFragmentToCharacterDetailsFragment(id)
         findNavController().navigate(action)
+    }
+
+    companion object {
+        const val PAGINATION_OFFSET = 40
     }
 
     override fun onDestroy() {
