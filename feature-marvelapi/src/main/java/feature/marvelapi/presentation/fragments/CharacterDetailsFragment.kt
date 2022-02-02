@@ -51,7 +51,7 @@ class CharacterDetailsFragment : Fragment() {
     private fun setUpObservers() {
         viewModel.getCharacterDetails(args.characterId).observe(viewLifecycleOwner) { state ->
             when (state) {
-                is StateMachine.Loading -> doNothing()
+                is StateMachine.Loading -> Unit
                 is StateMachine.Success -> {
                     binding.characterName.text = state.value.name
 
@@ -63,8 +63,8 @@ class CharacterDetailsFragment : Fragment() {
                 is StateMachine.ApiError -> {
                     Toast.makeText(requireContext(), "${state.error}", Toast.LENGTH_SHORT).show()
                 }
-                is StateMachine.UnknownError -> doNothing()
-                is StateMachine.Finish -> doNothing()
+                is StateMachine.UnknownError -> Unit
+                is StateMachine.Finish -> Unit
             }
         }
     }
@@ -83,26 +83,42 @@ class CharacterDetailsFragment : Fragment() {
         val url = "${path.path}/standard_amazing.${path.extension}"
 
         val character =
-            CharacterEntity(id = characterRemote.id.toLong(), name = characterRemote.name, image = url)
+            CharacterEntity(
+                id = characterRemote.id.toLong(),
+                name = characterRemote.name,
+                image = url
+            )
 
         viewModel.consultCharacter(character.id).observe(viewLifecycleOwner) { event ->
             when (event) {
+                is StateMachine.Loading -> Unit
                 is StateMachine.Success -> {
                     if (event.value != null) {
-                        Toast.makeText(requireContext(), "character already added", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            requireContext(),
+                            "character already added",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     } else {
                         viewModel.saveCharacterOnDB(character)
-                        notificationMn.createDefaultNotification(requireActivity(), characterRemote.name)
+                        notificationMn.createDefaultNotification(
+                            requireActivity(),
+                            characterRemote.name
+                        )
                     }
                 }
                 is StateMachine.UnknownError -> {
-                        Toast.makeText(requireContext(), "character already sla added", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "character already sla added",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
+                is StateMachine.ApiError -> Unit
+                is StateMachine.Finish -> Unit
             }
         }
     }
-
-    private fun doNothing() {}
 
     override fun onDestroyView() {
         super.onDestroyView()
