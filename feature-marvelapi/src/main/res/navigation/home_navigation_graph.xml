@@ -23,12 +23,11 @@
         android:name="feature.marvelapi.presentation.fragments.CharacterDetailsFragment"
         android:label="fragment_character_details"
         tools:layout="@layout/fragment_character_details">
-
+        <deepLink app:uri="multiModuleApp://marvel-api.com" />
         <argument
             android:name="characterId"
-            app:argType="integer"
             android:defaultValue="-1"
-            />
+            app:argType="integer" />
 
     </fragment>
 

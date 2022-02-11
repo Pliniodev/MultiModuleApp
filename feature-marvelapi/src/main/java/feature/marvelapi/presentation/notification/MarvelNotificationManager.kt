@@ -36,7 +36,7 @@ class MarvelNotificationManager  {
         }
     }
 
-    fun createDefaultNotification(context: Context, characterName : String) {
+    fun createDefaultNotification(context: Context, characterName : String, intent: PendingIntent) {
 
         val fullScreenIntent = Intent(context, MarvelHomeActivity::class.java)
         val fullScreenPendingIntent = PendingIntent.getActivity(
@@ -55,6 +55,7 @@ class MarvelNotificationManager  {
                 NotificationCompat.BigTextStyle().bigText("The $characterName has joined to your team")
             )
             .setPriority(NotificationCompat.PRIORITY_MAX)
+            .setContentIntent(intent)
             .setAutoCancel(true)
             .setContentIntent(fullScreenPendingIntent)
 

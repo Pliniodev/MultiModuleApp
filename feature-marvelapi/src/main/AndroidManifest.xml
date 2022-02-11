@@ -2,18 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="feature.marvelapi">
 
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application android:usesCleartextTraffic="true">
 
         <activity
-            android:theme="@style/MarvelThemes"
             android:name=".presentation.activity.MarvelSplashScreen"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/MarvelThemes" />
         <activity
-            android:theme="@style/MarvelThemes"
+
             android:name="feature.marvelapi.presentation.activity.MarvelHomeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/MarvelThemes">
+            <nav-graph android:value="@navigation/home_navigation_graph" />
+        </activity>
     </application>
 
 </manifest>

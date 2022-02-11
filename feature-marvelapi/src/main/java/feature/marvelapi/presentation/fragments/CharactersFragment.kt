@@ -152,6 +152,7 @@ internal class CharactersFragment : Fragment() {
                     }
                     return false
                 }
+
             })
     }
 

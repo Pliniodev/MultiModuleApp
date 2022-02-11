@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import feature.commons.utils.StateMachine
+import feature.marvelapi.R
 import feature.marvelapi.data.localdatasource.entity.CharacterEntity
 import feature.marvelapi.databinding.FragmentCharacterDetailsBinding
 import feature.marvelapi.marvelModule
@@ -101,9 +103,17 @@ internal class CharacterDetailsFragment : Fragment() {
                         ).show()
                     } else {
                         viewModel.saveCharacterOnDB(character)
+
+                        val intent = findNavController()
+                            .createDeepLink()
+                            .setGraph(R.navigation.home_navigation_graph)
+                            .setDestination(R.id.characterDetailsFragment)
+                            .createPendingIntent()
+
                         notificationMn.createDefaultNotification(
                             requireActivity(),
-                            characterRemote.name
+                            characterRemote.name,
+                            intent
                         )
                     }
                 }
